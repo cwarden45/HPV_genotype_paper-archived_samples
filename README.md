@@ -9,6 +9,8 @@ Will provide script for combining and indexing reference, along with HPV referen
 
 ### Order to Run Scripts ###
 
+Scripts use a parameter file (set as `parameters.txt` in code).  Please see below for description of parameters.
+
 Most dependencies are available in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
 1) `downsample_reads.py`
