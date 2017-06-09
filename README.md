@@ -17,6 +17,9 @@ Most dependencies are available in this [Docker image](https://hub.docker.com/r/
 
 2) `cutadapt_filter.py`  You may need to modify regular expression to extract sample ID from your reads.
 
+3) `BWA_MEM_alignment.py`
+
+4) `call_genotype_mixed_ref.py`
 
 ### Dependencies (some optional) ###
 
@@ -43,3 +46,9 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 |Max_Reads|Maximum Number of Down-Sampled Reads|
 |Forward_Primer|Sequence for Forward Primer for Amplicon|
 |Reverse_Primer|Sequence for Reverse Primer for Amplicon|
+|Alignment_Folder|Output folder for BWA-MEM Alignment and Associated Files|
+|BWA_Ref|Path to hg38 + HPV Indexed Reference|
+|Threads|Number of Threads for BWA|
+|HPV_Freq_Cutoff|Minimum Frequency to Call Sample HPV+|
+|Type_Freq_Cutoff|Minimum Frequency to Call Specific HPV Type|
+|Summary_File|HPV Type Table, for all samples in *Alignment_Folder*|
