@@ -15,7 +15,7 @@ Most dependencies are available in this [Docker image](https://hub.docker.com/r/
 
 1) `downsample_reads.py`
 
-2) 'cutadapt_filter.py'
+2) `cutadapt_filter.py`
 
 
 ### Dependencies (some optional) ###
