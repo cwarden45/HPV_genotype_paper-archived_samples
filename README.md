@@ -13,12 +13,14 @@ Scripts use a parameter file (set as `parameters.txt` in code).  Please see belo
 
 Most dependencies are available in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
-1) `downsample_reads.py`
+1) `downsample_reads.py` You may need to modify regular expression to extract sample ID from your reads.
 
-2) `cutadapt_filter.py`
+2) `cutadapt_filter.py`  You may need to modify regular expression to extract sample ID from your reads.
 
 
 ### Dependencies (some optional) ###
+
+Biopython: http://biopython.org/wiki/Biopython
 
 Cutadapt: http://cutadapt.readthedocs.io/en/stable/index.html
 
