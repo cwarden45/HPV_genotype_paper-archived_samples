@@ -49,6 +49,6 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 |Alignment_Folder|Output folder for BWA-MEM Alignment and Associated Files|
 |BWA_Ref|Path to hg38 + HPV Indexed Reference|
 |Threads|Number of Threads for BWA|
-|HPV_Freq_Cutoff|Minimum Frequency to Call Sample HPV+|
-|Type_Freq_Cutoff|Minimum Frequency to Call Specific HPV Type|
+|HPV_Freq_Cutoff|Minimum Frequency to Call Sample HPV+ (Percent, 0-100)|
+|Type_Freq_Cutoff|Minimum Frequency to Call Specific HPV Type (Percent, 0-100)|
 |Summary_File|HPV Type Table, for all samples in *Alignment_Folder*|
