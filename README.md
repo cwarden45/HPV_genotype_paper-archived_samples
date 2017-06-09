@@ -20,8 +20,6 @@ Most dependencies are available in this [Docker image](https://hub.docker.com/r/
 
 Cutadapt: http://cutadapt.readthedocs.io/en/stable/index.html
 
-Biopython: http://biopython.org/wiki/Biopython
-
 PEAR: http://sco.h-its.org/exelixis/web/software/pear/
 
 BWA: http://bio-bwa.sourceforge.net/
@@ -38,3 +36,4 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 | Parameter | Value|
 |---|---|
 |Reads_Folder|Path to Raw Reads|
+|Max_Reads|Maximum Number of Down-Sampled Reads|
