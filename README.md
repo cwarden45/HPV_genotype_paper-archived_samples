@@ -15,6 +15,8 @@ Most dependencies are available in this [Docker image](https://hub.docker.com/r/
 
 1) `downsample_reads.py`
 
+2) 'cutadapt_filter.py'
+
 
 ### Dependencies (some optional) ###
 
@@ -37,3 +39,5 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 |---|---|
 |Reads_Folder|Path to Raw Reads|
 |Max_Reads|Maximum Number of Down-Sampled Reads|
+|Forward_Primer|Sequence for Forward Primer for Amplicon|
+|Reverse_Primer|Sequence for Reverse Primer for Amplicon|
