@@ -106,7 +106,7 @@ for file in fileResults:
 			percentHuman = 100*float(humanCount)/float(readCount)
 			
 			hpvStatus = "neg"
-			if percentHPV > hpv_cutoff:
+			if percentHPV >= hpv_cutoff:
 				hpvStatus = "pos"
 			
 			genoStatus = "NA"
@@ -119,7 +119,7 @@ for file in fileResults:
 			for geno in genoHash:
 				genoCount = genoHash[geno]
 				percentGeno = 100* float(genoCount)/float(readCount)
-				if percentGeno > geno_cutoff:
+				if percentGeno >= geno_cutoff:
 					revGenoHash[percentGeno]=geno
 			
 			#order by frequency
