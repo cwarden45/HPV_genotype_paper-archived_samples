@@ -21,6 +21,8 @@ Most dependencies are available in this [Docker image](https://hub.docker.com/r/
 
 4) `call_genotype_mixed_ref.py`
 
+5) `PE_HPVtype_counts.R`
+
 ### Dependencies (some optional) ###
 
 Biopython: http://biopython.org/wiki/Biopython
@@ -52,3 +54,4 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 |HPV_Freq_Cutoff|Minimum Frequency to Call Sample HPV+ (Percent, 0-100)|
 |Type_Freq_Cutoff|Minimum Frequency to Call Specific HPV Type (Percent, 0-100)|
 |Summary_File|HPV Type Table, for all samples in *Alignment_Folder*|
+|Count_File|Table of Counts for HPV types (with total idxstats fragment counts at bottom of table), for all samples in *Alignment_Folder*|
