@@ -11,7 +11,7 @@ Will provide script for combining and indexing reference, along with HPV referen
 
 Scripts use a parameter file (set as `parameters.txt` in code).  Please see below for description of parameters.
 
-Most dependencies are available in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
+Dependencies are installed in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
 1) `python downsample_reads.py` You may need to modify regular expression to extract sample ID from your reads.
 
@@ -39,11 +39,11 @@ BWA: http://bio-bwa.sourceforge.net/
 
 samtools: http://samtools.sourceforge.net/
 
-limma: http://bioconductor.org/packages/release/bioc/html/limma.html
+### Recommendations for Downstream Analysis ###
 
-heatmap.3: https://github.com/obigriffith/biostar-tutorials/blob/master/Heatmaps/heatmap.3.R
+* Remember that the final line in the count table produced by `PE_HPVtype_counts.R` is the total joint aligned fragments from idxstats (they can be used to define library sizes or define abundances, but should not be treated like a HPV type count)
 
-heatmap.3 example: https://www.biostars.org/p/18211/
+* limma can be used for analysis of abundances (percent HPV type, values between 0 and 1, for example) or counts (with limma-voom)
 
 ### Parameter Values ###
 | Parameter | Value|
