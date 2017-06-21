@@ -13,17 +13,21 @@ Scripts use a parameter file (set as `parameters.txt` in code).  Please see belo
 
 Most dependencies are available in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
-1) `downsample_reads.py` You may need to modify regular expression to extract sample ID from your reads.
+1) `python downsample_reads.py` You may need to modify regular expression to extract sample ID from your reads.
 
-2) `cutadapt_filter.py`  You may need to modify regular expression to extract sample ID from your reads.
+2) `python cutadapt_filter.py`  You may need to modify regular expression to extract sample ID from your reads.
 
-3) `BWA_MEM_alignment.py`
+3) `python BWA_MEM_alignment.py`
 
-4) `call_genotype_mixed_ref.py`
+4) `python call_genotype_mixed_ref.py`
 
 5) `PE_HPVtype_counts.R`
 
+Within an R session, you can run `source("PE_HPVtype_counts.R")`. Running `Rscript PE_HPVtype_counts.R` via command line should also do the trick.
+
 ### Dependencies (some optional) ###
+
+R: https://cran.r-project.org/
 
 Biopython: http://biopython.org/wiki/Biopython
 
