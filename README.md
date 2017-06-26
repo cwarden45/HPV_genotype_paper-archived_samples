@@ -43,6 +43,8 @@ samtools: http://samtools.sourceforge.net/
 
 * Remember that the final line in the count table produced by `PE_HPVtype_counts.R` is the total joint aligned fragments from idxstats (they can be used to define library sizes or define abundances, but should not be treated like a HPV type count)
 
+* Likewise, the 2nd to last line in the count table produced by `PE_HPVtype_counts.R` is the number of human-aligned reads, which you may want to take into consideration.
+
 * limma can be used for analysis of abundances (percent HPV type, values between 0 and 1, for example) or counts (with limma-voom)
 
 ### Parameter Values ###
