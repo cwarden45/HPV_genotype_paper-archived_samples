@@ -46,7 +46,8 @@ samtools: http://samtools.sourceforge.net/
 |Alignment_Folder|Output folder for BWA-MEM Alignment and Associated Files|
 |BWA_Ref|Path to hg38 + HPV Indexed Reference|
 |Threads|Number of Threads for BWA|
-|Min_Human_Ref_FC|Minimum Fold-Change above Off-Target Human Counts, for overall HPV status and specific HPV type (if value is 1.5, human counts must be below 40%, since 1.5x of 40% is 60%).  Most likely over-rides *HPV_Freq_Cutoff*.|
+|HPV_Human_Ref_FC|Minimum Fold-Change above Off-Target Human Counts, for overall HPV status (if value is 1.5, human counts must be below 40%, since 1.5x of 40% is 60%).  Most likely over-rides *HPV_Freq_Cutoff*.|
 |HPV_Freq_Cutoff|Minimum Frequency to Call Sample HPV+ (Percent, 0-100)|
+|Type_Human_Ref_FC|Minimum Fold-Change above Off-Target Human Counts, for specific HPV type.  Should be less than or equal to *HPV_Human_Ref_FC*|
 |Type_Freq_Cutoff|Minimum Frequency to Call Specific HPV Type (Percent, 0-100)|
 |Summary_File|HPV Type Table, for all samples in *Alignment_Folder*|
