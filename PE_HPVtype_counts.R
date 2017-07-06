@@ -1,3 +1,11 @@
+#NOTES:
+
+#'Count_File' in parameter file is the name of the output file: Table of Counts for HPV types (with total idxstats fragment counts at bottom of table), for all samples in *Alignment_Folder*
+
+#The final line in 'Count_File' is the total joint aligned fragments from idxstats
+
+#The 2nd to last line in 'Count_File' is the number of human-aligned reads.
+
 param.table = read.table("parameters.txt", header=T, sep="\t")
 alignmentFolder=as.character(param.table$Value[param.table$Parameter == "Alignment_Folder"])
 summaryFile=as.character(param.table$Value[param.table$Parameter == "Count_File"])
