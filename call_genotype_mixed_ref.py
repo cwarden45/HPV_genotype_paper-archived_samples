@@ -6,6 +6,8 @@ alignmentFolder = ""
 summaryFile = ""
 hpv_cutoff = 5
 geno_cutoff = 5
+hpv_human_fc = 1.5
+geno_human_fc = 1.2
 
 parameterFile = "parameters.txt"
 
@@ -31,6 +33,12 @@ for line in lines:
 
 	if param == "Type_Freq_Cutoff":
 		geno_cutoff = int(value)
+
+	if param == "HPV_Human_Ref_FC":
+		hpv_human_fc = float(value)
+		
+	if param == "Type_Human_Ref_FC":
+		geno_human_fc = float(value)
 		
 if (alignmentFolder== "") or (alignmentFolder == "[required]"):
 	print "Need to enter a value for 'Alignment_Folder'!"
@@ -46,6 +54,14 @@ if (hpv_cutoff== "") or (hpv_cutoff == "[required]"):
 
 if (geno_cutoff== "") or (geno_cutoff == "[required]"):
 	print "Need to enter a value for 'Type_Freq_Cutoff'!"
+	sys.exit()
+	
+if (hpv_human_fc== "") or (hpv_human_fc == "[required]"):
+	print "Need to enter a value for 'HPV_Human_Ref_FC'!"
+	sys.exit()
+	
+if (geno_human_fc== "") or (geno_human_fc == "[required]"):
+	print "Need to enter a value for 'Type_Human_Ref_FC'!"
 	sys.exit()
 	
 outHandle = open(summaryFile, 'w')
@@ -106,7 +122,7 @@ for file in fileResults:
 			percentHuman = 100*float(humanCount)/float(readCount)
 			
 			hpvStatus = "neg"
-			if percentHPV >= hpv_cutoff:
+			if (percentHPV > hpv_cutoff) and (hpvCount > hpv_human_fc * humanCount):
 				hpvStatus = "pos"
 			
 			genoStatus = "NA"
@@ -115,26 +131,26 @@ for file in fileResults:
 			if hpvStatus == "pos":
 				genoStatus = "unclear"
 				
-			revGenoHash = {}
-			for geno in genoHash:
-				genoCount = genoHash[geno]
-				percentGeno = 100* float(genoCount)/float(readCount)
-				if percentGeno >= geno_cutoff:
-					revGenoHash[percentGeno]=geno
+				revGenoHash = {}
+				for geno in genoHash:
+					genoCount = genoHash[geno]
+					percentGeno = 100* float(genoCount)/float(readCount)
+					if (percentGeno > geno_cutoff) and (genoCount > geno_human_fc * humanCount):
+						revGenoHash[percentGeno]=geno
 			
-			#order by frequency
-			typeAb = revGenoHash.keys()
-			typeAb.sort(reverse=True)
+				#order by frequency
+				typeAb = revGenoHash.keys()
+				typeAb.sort(reverse=True)
+				
+				for percentGeno in typeAb:
+					geno = revGenoHash[percentGeno]
+					if genoStatus == "unclear":
+						genoStatus = geno
+						genoPercent = '{0:.3f}'.format(percentGeno) + "%"
+					else:
+						genoStatus = genoStatus + "," + geno
+						genoPercent = genoPercent + "," + '{0:.3f}'.format(percentGeno)	+ "%"					
 			
-			for percentGeno in typeAb:
-				geno = revGenoHash[percentGeno]
-				if genoStatus == "unclear":
-					genoStatus = geno
-					genoPercent = '{0:.3g}'.format(percentGeno) + "%"
-				else:
-					genoStatus = genoStatus + "," + geno
-					genoPercent = genoPercent + "," + '{0:.3g}'.format(percentGeno)	+ "%"					
-			
-			text = sample + "\t" + hpvStatus + "\t" + '{0:.3g}'.format(percentHPV) + "%\t"+ '{0:.3g}'.format(percentHuman) + "%\t" + genoStatus + "\t" + genoPercent + "\n"
+			text = sample + "\t" + hpvStatus + "\t" + '{0:.3f}'.format(percentHPV) + "%\t"+ '{0:.3f}'.format(percentHuman) + "%\t" + genoStatus + "\t" + genoPercent + "\n"
 			outHandle.write(text)
 		
