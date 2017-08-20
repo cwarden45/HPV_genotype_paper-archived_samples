@@ -13,9 +13,9 @@ Scripts use a parameter file (set as `parameters.txt` in code).  Please see belo
 
 Dependencies are installed in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
-1) `python downsample_reads.py` You may need to modify regular expression to extract sample ID from your reads.
+1) `python downsample_reads.py` - assumes you have uncompressed reads with .fastq extension
 
-2) `python cutadapt_filter.py`  You may need to modify regular expression to extract sample ID from your reads.
+2) `python cutadapt_filter.py` - uses sample description to extract / re-name samples (in format used for next step)
 
 3) `python BWA_MEM_alignment.py`
 
@@ -39,6 +39,7 @@ samtools: http://samtools.sourceforge.net/
 ### Parameter Values ###
 | Parameter | Value|
 |---|---|
+|Sample_Description_File|Name of Tab-Delimited Sample Description File; **SampleID** column for sample ID, **Foward_Read** column for forward (R1) read, and **Reverse_Read** column for reverse (R2) read|
 |Reads_Folder|Path to Raw Reads|
 |Max_Reads|Maximum Number of Down-Sampled Reads|
 |Forward_Primer|Sequence for Forward Primer for Amplicon|
