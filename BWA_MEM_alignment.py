@@ -52,6 +52,9 @@ if (threads== "") or (threads == "[required]"):
 	
 readsFolder = fullReadFolder + "/Cutadapt_Downsample_Reads"
 
+command = "mkdir " + hpvAlignmentFolder
+os.system(command)
+
 fileResults = os.listdir(readsFolder)
 
 for file in fileResults:
