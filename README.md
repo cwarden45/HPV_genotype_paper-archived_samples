@@ -39,7 +39,7 @@ samtools: http://samtools.sourceforge.net/
 ### Parameter Values ###
 | Parameter | Value|
 |---|---|
-|Sample_Description_File|Name of Tab-Delimited Sample Description File; **SampleID** column for sample ID, **Foward_Read** column for forward (R1) read, and **Reverse_Read** column for reverse (R2) read.  Used by `python cutadapt_filter.py`.|
+|Sample_Description_File|Name of Tab-Delimited Sample Description File; **SampleID** column for sample ID, **Foward_Read** column for forward (R1) read, and **Reverse_Read** column for reverse (R2) read.  Used by `python cutadapt_filter.py`.  You only need to provide the basenames (e.g. Sample1_R1.fastq and Sample1_R2.fastq), with the full path for each step of read processing determined using *Reads_Folder*.|
 |Reads_Folder|Path to Raw Reads|
 |Max_Reads|Maximum Number of Down-Sampled Reads|
 |Forward_Primer|Sequence for Forward Primer for Amplicon|
