@@ -3,10 +3,12 @@ import sys
 import re
 from Bio.Seq import Seq
 
+sampleFile = ""
 fullReadFolder = ""
 Fadapter = ""
 Radapter = ""
 
+finishedSamples = []
 parameterFile = "parameters.txt"
 
 inHandle = open(parameterFile)
@@ -19,6 +21,9 @@ for line in lines:
 	lineInfo = line.split("\t")
 	param = lineInfo[0]
 	value = lineInfo[1]
+
+	if param == "Sample_Description_File":
+		sampleFile = value
 	
 	if param == "Reads_Folder":
 		fullReadFolder = value
@@ -28,6 +33,10 @@ for line in lines:
 
 	if param == "Reverse_Primer":
 		Radapter = value
+
+if (sampleFile== "") or (sampleFile == "[required]"):
+	print "Need to enter a value for 'Sample_Description_File'!"
+	sys.exit()
 		
 if (fullReadFolder== "") or (fullReadFolder == "[required]"):
 	print "Need to enter a value for 'Reads_Folder'!"
@@ -47,21 +56,47 @@ outputFolder = fullReadFolder + "/Cutadapt_Downsample_Reads"
 command = "mkdir " + outputFolder
 os.system(command)
 
-finishedSamples = []
+lineCount = 0
+sampleIndex = -1
+r1Index = -1
+r2Index = -1
 
-fileResults = os.listdir(inputFolder)
-
-
-for file in fileResults:
-	result = re.search("(.*)_\w{6}_L\d{3}_R1_001.fastq$",file)
+inHandle = open(sampleFile)
+lines = inHandle.readlines()
+			
+for line in lines:
+	line = re.sub("\n","",line)
+	line = re.sub("\r","",line)
 	
-	if result:
-		sample = result.group(1)
+	lineInfo = line.split("\t")
+	
+	lineCount += 1
+	
+	if lineCount == 1:
+		for i in range(0,len(lineInfo)):
+			if lineInfo[i] == "SampleID":
+				sampleIndex = i
+			elif lineInfo[i] == "Forward_Read":
+				r1Index = i
+			elif lineInfo[i] == "Reverse_Read":
+				r2Index = i
+
+		if sampleIndex == -1:
+			print "Need to have column 'SampleID' in " + sampleFile + " to map sampleID"
+			sys.exit()
+		if r1Index == -1:
+			print "Need to have column 'Forward_Read' in " + sampleFile + " to map R1 read"
+			sys.exit()
+		if r2Index == -1:
+			print "Need to have column 'Reverse_Read' in " + sampleFile + " to map R2 read"
+			sys.exit()			
+	else:
+		sample = lineInfo[sampleIndex]
 		if sample not in finishedSamples:
 			print sample
 
-			read1 = inputFolder + "/" + file
-			read2 = re.sub("_R1_001.fastq$","_R2_001.fastq",read1)
+			read1 = inputFolder + "/" + lineInfo[r1Index]
+			read2 = inputFolder + "/" + lineInfo[r2Index]
 
 			trim1 = outputFolder + "/" + sample + "_R1.fastq"
 			trim2 = outputFolder + "/" + sample + "_R2.fastq"
