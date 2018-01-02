@@ -29,8 +29,6 @@ Biopython: http://biopython.org/wiki/Biopython
 
 Cutadapt: http://cutadapt.readthedocs.io/en/stable/index.html
 
-PEAR: http://sco.h-its.org/exelixis/web/software/pear/
-
 BWA: http://bio-bwa.sourceforge.net/
 
 samtools: http://samtools.sourceforge.net/
