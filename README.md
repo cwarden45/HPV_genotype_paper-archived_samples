@@ -1,4 +1,9 @@
 # HPV_typing
+
+```diff
++ This code was developed for a project within the lab of Javier Gordon Ogembo.
+```
+
 Code for Assigning HPV Types (tested with L1 amplicons)
 
 ### Reference Preparation ###
