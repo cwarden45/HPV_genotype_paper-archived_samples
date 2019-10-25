@@ -1,5 +1,5 @@
 Parameter	Value
-Sample_Description_File	sample_description.txt
+Sample_Description_File	sample_description_file.txt
 Reads_Folder	/path/to/Reads
 Max_Reads	10000
 Forward_Primer	TTTGTTACTGTGGTAGATACTAC
