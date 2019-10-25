@@ -39,6 +39,8 @@ Dependencies are installed in this [Docker image](https://hub.docker.com/r/cward
 
 *Because the FASTQ format can vary, a sample description file is used at this step (**with the output from the previous step**).*
 
+*If you have a lot of samples `create_sample_description_file-for_cutadapt.R` provides a **template** to create the sample description file.  However, that may need to be modified, which would require some familarity with R.*
+
 *If you have reads saved in multiple folders, you will need to run the script multiple times (with different parameter files).*
 
 3) `python BWA_MEM_alignment.py`
