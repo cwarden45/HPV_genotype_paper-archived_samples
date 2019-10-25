@@ -13,6 +13,7 @@ Please download full hg38 reference.  Code uses reference with UCSC chromosome n
 Using the set of provided 35 HPV sequences, you can create (and index) a combined reference sequence with the following command line steps:
 
 ```
+#!/bin/bash
 HPVREF=35HPV.fa
 HG38REF=/path/to/hg38.fa
 NEWREF=hg38_plus_35HPV.fa
