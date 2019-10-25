@@ -10,7 +10,17 @@ Code for Assigning HPV Types (tested with L1 amplicons)
 
 Please download full hg38 reference.  Code uses reference with UCSC chromosome names (starting with "chr"), so I would recommend downloading sequence from ftp://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
 
-Will provide script for combining and indexing reference, along with HPV reference set with paper submission.
+Using the set of provided 35 HPV sequences, you can create (and index) a combined reference sequence with the following command line steps:
+
+```
+HPVREF=35HPV.fa
+HG38REF=/path/to/hg38.fa
+NEWREF=hg38_plus_35HPV.fa
+
+cat $HPVREF $HG38REF > $NEWREF
+samtools faidx $NEWREF
+bwa index -a bwtsw $NEWREF
+```
 
 ### Order to Run Scripts ###
 
