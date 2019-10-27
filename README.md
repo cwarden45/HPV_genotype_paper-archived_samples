@@ -29,13 +29,13 @@ Scripts use a parameter file (set as `parameters.txt` in code).  Please see belo
 
 Dependencies are installed in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
-**1)** `python downsample_reads.py` - assumes you have uncompressed reads with .fastq extension
+***Optional Step 0)*** `python downsample_reads.py` - assumes you have uncompressed reads with .fastq extension
 
 *No formatting requirements beyong the file extension, so you **don't** need the sample description file for this step.*
 
 *However, if you have reads saved in multiple folders, you will need to run the script multiple times (with different parameter files).*
 
-**2)** `python cutadapt_filter.py` - uses sample description to extract / re-name samples (in format used for next step)
+**Step 1)** `python cutadapt_filter.py` - uses sample description to extract / re-name samples (in format used for next step)
 
 *Because the FASTQ format can vary, a sample description file is used at this step (**with the output from the previous step**).*
 
@@ -43,13 +43,13 @@ Dependencies are installed in this [Docker image](https://hub.docker.com/r/cward
 
 *If you have reads saved in multiple folders, you will need to run the script multiple times (with different parameter files).*
 
-**3)** `python BWA_MEM_alignment.py`
+**Step 2)** `python BWA_MEM_alignment.py`
 
 *The FASTQ output format from the previous step is uniform, which hopefully avoids the need to modify the code.*
 
 *If you have reads saved in multiple folders, you will need to run the script multiple times (with different parameter files).  However, if you have a common alignment output folder, then the next step can be run across batches of samples.*
 
-**4)** `python call_genotype_mixed_ref.py`
+**Step 3)** `python call_genotype_mixed_ref.py`
 
 ### Dependencies (some optional) ###
 
