@@ -1,5 +1,3 @@
-# HPV_genotyping
-
 ```diff
 + This code was developed for a project within the lab of Javier Gordon Ogembo.
 ```
