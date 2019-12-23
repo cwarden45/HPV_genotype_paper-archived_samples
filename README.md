@@ -8,8 +8,12 @@ We wanted to be more careful about providing the right emphasis for the HPV geno
 
 Nevertheless, this is the subfolder with code that may be more easy for others to use:
 
-**Paried-End_FASTQ_Code**
+```
+Paried-End_FASTQ_Code
+```
 
 and this is the subfolder with R code to help reproduce figures for our study (but which we don't expect others to directly use for new samples):
 
-**Downstream_R_Code**
+```
+Downstream_R_Code
+```
