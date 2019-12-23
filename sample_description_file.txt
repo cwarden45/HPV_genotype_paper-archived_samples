@@ -1,2 +1,0 @@
-SampleID	Forward_Read	Reverse_Read
-Sample1	15918_16142-01-1_CTTTTT_L999_R1_001.fastq	15918_16142-01-1_CTTTTT_L999_R2_001.fastq
