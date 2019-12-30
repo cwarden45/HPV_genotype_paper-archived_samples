@@ -22,7 +22,7 @@ for(i in 1:length(comp.type)){
 	linear.lm.1var.table = read.table(linear.lm.1var.file, head=T, sep="\t")
 	linear.lm.1var.table = linear.lm.1var.table[match(min5.FE.table$HPV.subtype,linear.lm.1var.table$HPV.subtype),]
 	linear.lm.2var.table = read.table(linear.lm.2var.file, head=T, sep="\t")
-	linear.lm.2var.table = linear.lm.1var.table[match(min5.FE.table$HPV.subtype,linear.lm.2var.table$HPV.subtype),]
+	linear.lm.2var.table = linear.lm.2var.table[match(min5.FE.table$HPV.subtype,linear.lm.2var.table$HPV.subtype),]
 	log.lm.1var.table = read.table(log.lm.1var.file, head=T, sep="\t")
 	log.lm.1var.table = log.lm.1var.table[match(min5.FE.table$HPV.subtype,log.lm.1var.table$HPV.subtype),]
 	log.lm.2var.table = read.table(log.lm.2var.file, head=T, sep="\t")
