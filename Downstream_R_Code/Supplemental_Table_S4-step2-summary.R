@@ -26,7 +26,7 @@ for(i in 1:length(comp.type)){
 	log.lm.1var.table = read.table(log.lm.1var.file, head=T, sep="\t")
 	log.lm.1var.table = log.lm.1var.table[match(min5.FE.table$HPV.subtype,log.lm.1var.table$HPV.subtype),]
 	log.lm.2var.table = read.table(log.lm.2var.file, head=T, sep="\t")
-	log.lm.2var.table = log.lm.1var.table[match(min5.FE.table$HPV.subtype,log.lm.2var.table$HPV.subtype),]
+	log.lm.2var.table = log.lm.2var.table[match(min5.FE.table$HPV.subtype,log.lm.2var.table$HPV.subtype),]
 		
 	genotypes = as.character(min5.FE.table$HPV.subtype)
 	min5.detection.diff = paste(as.character(min5.FE.table$detection.diff),"%",sep="")
