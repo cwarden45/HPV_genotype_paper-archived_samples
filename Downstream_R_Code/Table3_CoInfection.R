@@ -30,7 +30,6 @@ print(dim(input.table))
 input.table = input.table[-grep("adjacent normal", input.table$sample.type),]
 print(dim(input.table))
 
-
 batch = rep(NA,nrow(input.table))
 batch[grep("^13",as.character(input.table$Sample))]="161007"
 batch[grep("^14",as.character(input.table$Sample))]="161206"
@@ -46,6 +45,12 @@ HPV.counts = table(coinfection.count, batch)
 print(HPV.counts)
 coinfection.percent = t(apply(HPV.counts, 1, function(type, counts){return(sprintf(type/counts,fmt="%#.3f"))},counts = batch.count))
 print(coinfection.percent)
+
+		fit = aov(coinfection.count ~ batch)
+		result = summary(fit)
+		aov.pvalue = result[[1]][['Pr(>F)']][1]
+
+print(paste("ANOVA Sample Type co-infection p-value: ",aov.pvalue,sep=""))
 
 #15%
 coinfection.count = sapply(as.character(input.table$genotype.percent), parse.coinfection.count2, threshold=15)
