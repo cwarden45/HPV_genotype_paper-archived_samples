@@ -46,7 +46,7 @@ plot.mat = data.frame(Type=c(rep("HPV16",nrow(previous.sample.stats)),rep("HPV18
 						percent.HPV.leak = c(previous.sample.stats$percent.HPV16, previous.sample.stats$percent.HPV18, previous.sample.stats$percent.HPV58),
 						absolute.HPV.leak = c(previous.sample.stats$absolute.HPV16, previous.sample.stats$absolute.HPV18, previous.sample.stats$absolute.HPV58))
 
-pdf("Selected_Output_Files/Additional_File_06_Supplemental_Figure_S1.pdf")
+pdf("Selected_Output_Files/Additional_File_07_Supplemental_Figure_S2.pdf")
 par(mfcol=c(1,3))
 plot(plot.mat$Type, plot.mat$percent.HPV.leak, pch=16,
 	xlab="HPV L1 Cross-Contamination Genotype", ylab="Percent Cross-Contamination (%)")
