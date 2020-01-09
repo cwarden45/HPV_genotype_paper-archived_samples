@@ -79,4 +79,5 @@ samtools: http://samtools.sourceforge.net/
 |HPV_Freq_Cutoff|Minimum Frequency to Call Sample HPV+ (Percent, 0-100)|
 |Type_Human_Ref_FC|Minimum Fold-Change above Off-Target Human Counts, for specific HPV type.  Should be less than or equal to *HPV_Human_Ref_FC*|
 |Type_Freq_Cutoff|Minimum Frequency to Call Specific HPV Type (Percent, 0-100)|
+|Unclear_Cutoff|If a sample would be called HPV- with other parameters but it has >X% HPV reads overall then this is the threshold to call that sample "unclear" rather than "HPV-" (Percent, 0-100)|
 |Summary_File|HPV Type Table, for all samples in *Alignment_Folder*|
