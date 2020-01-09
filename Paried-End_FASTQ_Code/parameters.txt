@@ -11,4 +11,5 @@ HPV_Human_Ref_FC	1.2
 HPV_Freq_Cutoff	5
 Type_Human_Ref_FC	1.0
 Type_Freq_Cutoff	5
+Unclear_Cutoff  15
 Summary_File	hg38_plus_35HPV_genotype_calls.txt
