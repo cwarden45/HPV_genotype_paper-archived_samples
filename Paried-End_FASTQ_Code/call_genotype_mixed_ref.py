@@ -6,6 +6,7 @@ alignmentFolder = ""
 summaryFile = ""
 hpv_cutoff = 5
 geno_cutoff = 5
+unclear_cutoff = 15
 hpv_human_fc = 1.5
 geno_human_fc = 1.2
 
@@ -33,6 +34,9 @@ for line in lines:
 
 	if param == "Type_Freq_Cutoff":
 		geno_cutoff = int(value)
+
+	if param == "Unclear_Cutoff":
+		unclear_cutoff = int(value)
 
 	if param == "HPV_Human_Ref_FC":
 		hpv_human_fc = float(value)
@@ -150,7 +154,10 @@ for file in fileResults:
 					else:
 						genoStatus = genoStatus + "," + geno
 						genoPercent = genoPercent + "," + '{0:.3f}'.format(percentGeno)	+ "%"					
-			
+			else:
+				if (percentHPV > unclear_cutoff):
+					hpvStatus = "unclear"
+
 			text = sample + "\t" + hpvStatus + "\t" + '{0:.3f}'.format(percentHPV) + "%\t"+ '{0:.3f}'.format(percentHuman) + "%\t" + genoStatus + "\t" + genoPercent + "\n"
 			outHandle.write(text)
 		
