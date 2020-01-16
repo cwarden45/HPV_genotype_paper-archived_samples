@@ -31,7 +31,7 @@ Dependencies are installed in this [Docker image](https://hub.docker.com/r/cward
 
 ***Optional Step 0)*** `python downsample_reads.py` - assumes you have uncompressed reads with .fastq extension
 
-*No formatting requirements beyong the file extension, so you **don't** need the sample description file for this step.*
+*No formatting requirements beyond the file extension, so you **don't** need the sample description file for this step.*
 
 *However, if you have reads saved in multiple folders, you will need to run the script multiple times (with different parameter files).*
 
