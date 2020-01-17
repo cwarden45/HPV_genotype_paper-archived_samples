@@ -1,5 +1,7 @@
 set.seed(0)
 
+#NOTE: Using the 15% frequency causes us to lose the 2 lower freqeuncy HPV18 sequences (while keeping the overall trend for HPV16)
+
 HPV16.seqs = c("ACGCAGTACAAATATGTCATTATGTGCTGCCATATCTACTTCAGAAACTACATATAAAAATACTAACTTTAAGGAGTACCTACGACATGGGGAG",
 				"ACGCAGTACAAATATGTCATTATGTGCTGCCATATCTACTTCAGAACCTACATATAAAAATACTAACTTTAAAGAGTACCTACGACATGGGGAG",
 				"ACGCAGTACAAATATGTCATTATGTGCTGCCATATCTACTTCAGAAACTACATATAAAAATACTAACTTTAAGGAGTACCTACGACATGGGGAA",
@@ -9,11 +11,11 @@ HPV18.seqs = c("TCGCAGTACCAATTTAACAATATGTGCTTCTACACAGTCTCCTGTACCTGGGCAATATGATGCT
 				"TCGTAGTACCAATTTAACAATATGTGCTTCTACACAGTCTCCTGTACCTGGGCAATATGATGCTACCAAATTTAAGCAGTATAGCAGACATGTTGAA")
 HPV58.seqs = c("TCGTAGCACTAATATGACATTATGCACTGAAGTAACTAAGGAAGGTACATATAAAAATGATAATTTTAAGGAATATGTACGTCATGTTGAA")
 
-HPV16.table = read.table("Public_Input_Files/HPV16_seq_stats_v2.txt", head=T, sep="\t")
-HPV18.table = read.table("Public_Input_Files/HPV18_seq_stats_v2.txt", head=T, sep="\t")
-HPV58.table = read.table("Public_Input_Files/HPV58_seq_stats_v2.txt", head=T, sep="\t")
+HPV16.table = read.table("Public_Input_Files/HPV16_seq_stats_freq15.txt", head=T, sep="\t")
+HPV18.table = read.table("Public_Input_Files/HPV18_seq_stats_freq15.txt", head=T, sep="\t")
+HPV58.table = read.table("Public_Input_Files/HPV58_seq_stats_freq15.txt", head=T, sep="\t")
 
-meta.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt", head=T, sep="\t")
+meta.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt", head=T, sep="\t")
 
 
 HPV16.sample = c()
@@ -92,7 +94,7 @@ print(table(HPV18.rep.seqs))
 print(tapply(HPV18.freq, HPV18.rep.seqs, mean))
 print(tapply(HPV18.freq, HPV18.rep.seqs, sd))
 
-pdf("Additional_File_05_Supplemental_Figure_S1.pdf", height = 8, width = 12)
+pdf("to_AI/Additional_File_05_Supplemental_Figure_S1.pdf", height = 8, width = 12)
 par(mfrow=c(2,3))
 ###########################
 ### HPV16 - Sample Type ###
