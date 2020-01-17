@@ -7,8 +7,8 @@ summaryFile = ""
 hpv_cutoff = 5
 geno_cutoff = 5
 unclear_cutoff = 15
-hpv_human_fc = 1.5
-geno_human_fc = 1.2
+hpv_human_fc = 1.2
+geno_human_fc = 1.0
 
 parameterFile = "parameters.txt"
 
