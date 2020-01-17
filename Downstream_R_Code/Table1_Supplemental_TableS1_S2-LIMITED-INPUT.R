@@ -28,14 +28,26 @@ get.igcid = function(char.name){
 ### For Table S2, "“Unclear” HPV+ Assignments" can be determined from output file ###
 #####################################################################################
 
+###Not Shown (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 15% frequency
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq15_conservative.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15_conservative.txt"#not provided on GitHub
+
 ## Table S1 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 15% frequency
 ## This is the input for Table 2 (since we want to report the intermediate 15% frequency assignments)
 input.file = "Public_Input_Files/hg38_plus_35HPV_genotype_calls_freq15.txt"
 output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt"
 
+###Not Shown (> 1.0x Human Overall, > 0.8x Human Specific Genotype) --> 15% frequency
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq15_liberal.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15_liberal.txt"#not provided on GitHub
+
+###Not Shown (> 0.8x Human Overall, > 0.6x Human Specific Genotype) --> 15% frequency
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq15_liberal2.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15_liberal2.txt"#not provided on GitHub
+
 ###Table S2 (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 5% frequency
-##input.file = "../path/to/hg38_plus_35HPV_genotype_calls_freq5_conservative.txt"#not provided on GitHub
-##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_conservative.txt"
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq5_conservative.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_conservative.txt"#not provided on GitHub
 
 ##Table S2 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 5% frequency
 ## This is the input for Table 3 (since we need to go up from the 5% frequency assignments)
@@ -43,12 +55,12 @@ output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_f
 #output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
 
 ###Table S2 (> 1.0x Human Overall, > 0.8x Human Specific Genotype) --> 5% frequency
-##input.file = "../path/to/hg38_plus_35HPV_genotype_calls_freq5_liberal.txt"#not provided on GitHub
-##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_liberal.txt"
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq5_liberal.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_liberal.txt"#not provided on GitHub
 
 ###Table S2 (> 0.8x Human Overall, > 0.6x Human Specific Genotype) --> 5% frequency
-##input.file = "../path/to/hg38_plus_35HPV_genotype_calls_freq5_liberal2.txt"#not provided on GitHub
-##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_liberal2.txt"
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq5_liberal2.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_liberal2.txt"#not provided on GitHub
 
 input.table = read.table(input.file,head=T, sep="\t")
 
@@ -118,7 +130,7 @@ prev.HPV.status = gsub("\\s","",prev.HPV.status)
 
 meta.table = data.frame(meta.table, sample.type, prev.HPV.status)
 
-prev.HPV.table = table(paste(meta.table$sample.type,meta.table$genotype,sep=" "), prev.HPV.status)
+prev.HPV.table = table(paste(meta.table$sample.type,meta.table$HPV.status,meta.table$genotype,sep=" "), prev.HPV.status)
 print(prev.HPV.table)
 print(sum(prev.HPV.table))
 
