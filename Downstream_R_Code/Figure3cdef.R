@@ -1,4 +1,4 @@
-meta.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt"
+meta.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt"
 
 meta.table = read.table(meta.file, head=T, sep = "\t")
 meta.table$batch = as.character(meta.table$batch)
