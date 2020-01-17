@@ -29,20 +29,20 @@ get.igcid = function(char.name){
 #####################################################################################
 
 ##Table S2 (> 1.5x Human Overall, > 1.2x Human Specific Genotype)
-#input.file = "../path/to/hg38_plus_35HPV_genotype_calls_conservative.txt"#not provided on GitHub
-#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_conservative.txt"
+#input.file = "../path/to/hg38_plus_35HPV_genotype_calls_freq5_conservative.txt"#not provided on GitHub
+#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_conservative.txt"
 
 ##Table S1 and S2 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype)
-input.file = "Public_Input_Files/hg38_plus_35HPV_genotype_calls.txt"
-output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt"
+input.file = "Public_Input_Files/hg38_plus_35HPV_genotype_calls_freq5.txt"
+output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
 
 ##Table S2 (> 1.0x Human Overall, > 0.8x Human Specific Genotype)
-#input.file = "../path/to/hg38_plus_35HPV_genotype_calls_liberal.txt"#not provided on GitHub
-#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_liberal.txt"
+#input.file = "../path/to/hg38_plus_35HPV_genotype_calls_freq5_liberal.txt"#not provided on GitHub
+#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_liberal.txt"
 
 ##Table S2 (> 0.8x Human Overall, > 0.6x Human Specific Genotype)
-#input.file = "../path/to/hg38_plus_35HPV_genotype_calls_liberal2.txt"#not provided on GitHub
-#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_liberal2.txt"
+#input.file = "../path/to/hg38_plus_35HPV_genotype_calls_freq5_liberal2.txt"#not provided on GitHub
+#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_liberal2.txt"
 
 input.table = read.table(input.file,head=T, sep="\t")
 
@@ -271,51 +271,6 @@ print(mean(meta.table$Age, na.rm=T))
 print(sd(meta.table$Age, na.rm=T))
 print(tapply(meta.table$Age, meta.table$batch, mean, na.rm=T))
 print(tapply(meta.table$Age, meta.table$batch, sd, na.rm=T))
-
-#QC array batch information
-extract.arrayID = function(char){
-	sample.info = unlist(strsplit(char,split="_"))
-	return(sample.info[1])
-}
-#####################################################################################################################################
-###              This was changed from an earlier version, since we had to fix the sample mappings within arrays 				   ##
-### For batch information, this would have been OK.  However, if you want to check the code, I need to fix the individual mappings ##
-###               All other steps were using the corrected sample mappings (from the "revise_names" subfolder)                     ##
-#####################################################################################################################################
-array.table = read.table("../../Copied_Files/QC_Array_revised_sample_description.txt", head=T, sep="\t")
-
-sentrixIDs= gsub("_R\\d{2}C\\d{2}","",as.character(array.table$SentrixBarcode_Position))
-
-matched.samples = as.character(array.table$SampleID[match(meta.table$SAMPLEID,as.character(array.table$SampleID), nomatch=0)])
-unmatched.array.samples = array.table$SampleID[-match(matched.samples,as.character(array.table$SampleID))]
-print(unmatched.array.samples)
-
-meta.table = data.frame(meta.table,
-						QCarray.matchID=as.character(array.table$SampleID[match(meta.table$SAMPLEID,as.character(array.table$SampleID))]),
-						QCarray.chipID=sentrixIDs[match(meta.table$SAMPLEID,as.character(array.table$SampleID))],
-						QCarray.sample=as.character(array.table$SentrixBarcode_Position)[match(meta.table$SAMPLEID,as.character(array.table$SampleID))])
-
-print(table(meta.table$batch[!is.na(meta.table$QCarray.matchID)],qc.array = meta.table$batch[!is.na(meta.table$QCarray.matchID)]))
-
-#call rate information	
-array.table = read.table("../../Copied_Files/R_call_rate.txt", head=T, sep="\t")					
-
-QCarray.call.rate = array.table$overall.call.rate[match(meta.table$SAMPLEID,array.table$SampleID)]
-meta.table = data.frame(meta.table,QCarray.call.rate)
-				
-#LRR SD information
-array.table = read.table("../../Copied_Files/LRR_SD_per_sample.txt", head=T, sep="\t")					
-
-QCarray.LRR.SD = array.table$LRR.SD[match(meta.table$SAMPLEID,array.table$SampleID)]
-meta.table = data.frame(meta.table,QCarray.LRR.SD)
-
-#total signal
-GenomeStudio.stats = read.table("../../Copied_Files/QC_Array_stat_table.txt", head=T, sep="\t")
-
-QCarray.TotalSignal.Max = GenomeStudio.stats$total.max[match(meta.table$SAMPLEID,GenomeStudio.stats$sample.label)]
-QCarray.TotalSignal.Median = GenomeStudio.stats$total.median[match(meta.table$SAMPLEID,GenomeStudio.stats$sample.label)]
-meta.table = data.frame(meta.table,
-						QCarray.TotalSignal.Max, QCarray.TotalSignal.Median)
 
 #L1 Amplicon-Seq Insert Size
 
