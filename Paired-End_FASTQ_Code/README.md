@@ -29,12 +29,6 @@ Scripts use a parameter file (set as `parameters.txt` in code).  Please see belo
 
 Dependencies are installed in this [Docker image](https://hub.docker.com/r/cwarden45/hpv-project/).
 
-***Optional Step 0)*** `python downsample_reads.py` - assumes you have uncompressed reads with .fastq extension
-
-*No formatting requirements beyond the file extension, so you **don't** need the sample description file for this step.*
-
-*However, if you have reads saved in multiple folders, you will need to run the script multiple times (with different parameter files).*
-
 **Step 1)** `python cutadapt_filter.py` - uses sample description to extract / re-name samples (in format used for next step)
 
 *Because the FASTQ format can vary, a sample description file is used at this step (**with the output from the previous step**).*
