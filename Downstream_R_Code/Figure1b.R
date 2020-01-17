@@ -7,7 +7,8 @@ total.counts = as.numeric(count.table[count.table$HPV.type == "TOTAL",2:ncol(cou
 count.mat = count.table[1:(nrow(count.table)-2),2:ncol(count.table)]
 rownames(count.mat) = count.table$HPV.type[1:(nrow(count.table)-2)]
 
-meta.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt", head=T, sep="\t")
+#I don't use the "genotype" column, so I can use either file with extended meta data (5% or 15%)
+meta.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt", head=T, sep="\t")
 percent.human = as.character(meta.table$human.percent[match(names(count.mat), meta.table$SAMPLEID)])
 percent.human = gsub("\\%","",percent.human)
 percent.human = as.numeric(percent.human)

@@ -1,5 +1,7 @@
 count.file = "Public_Input_Files/PE_HPVtype_counts_final_names.txt"
-meta.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt"
+meta.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
+
+#I don't use the "genotype" column, so I can use either file with extended meta data (5% or 15%)
 
 count.to.ab = function(counts, total){
 	return(100*(counts/total))
