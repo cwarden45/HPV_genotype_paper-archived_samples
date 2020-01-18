@@ -50,7 +50,7 @@ parse.HPV58.percent.15 = function(arr){
 	}#end else
 }#end def parse.HPV58.percent.15
 
-input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt", head=T, sep="\t")
+input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt", head=T, sep="\t")
 print(dim(input.table))
 input.table = input.table[-grep("prostate", input.table$sample.type),]
 print(dim(input.table))
