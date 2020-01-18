@@ -1,0 +1,6 @@
+HPV.subtype	gt50	lt50	detection.diff	fe.pvalue	fe.fdr	fe.status
+HPV16	53.3	50	3.3	1	1	No Change
+HPV18	20	33.3	-13.3	0.66183574879227	1	No Change
+HPV45	0	8.3	-8.3	0.444444444444444	1	No Change
+HPV58	20	8.3	11.7	0.605128205128205	1	No Change
+HPV59	6.7	0	6.7	1	1	No Change
