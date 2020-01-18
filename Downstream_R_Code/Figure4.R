@@ -1,5 +1,5 @@
 count.file = "Public_Input_Files/PE_HPVtype_counts_final_names.txt"
-meta.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt"
+meta.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt"
 
 count.to.ab = function(counts, total){
 	return(100*(counts/total))
@@ -37,7 +37,7 @@ for (i in 1:length(group.levels)){
 
 print(paste("ANOVA Insert Size co-infection p-value: ",aov.pvalue,sep=""))
 
-pdf("Figure4.pdf", width=6, height=2, useDingbats=FALSE)
+pdf("to_AI/Figure4.pdf", width=6, height=2, useDingbats=FALSE)
 par(mfcol=c(1,3))
 
 	boxplot(median.insert.size~meta.table$batch,cex.main=0.8, cex.axis=0.8,cex.lab=0.8, cex=0.6,
