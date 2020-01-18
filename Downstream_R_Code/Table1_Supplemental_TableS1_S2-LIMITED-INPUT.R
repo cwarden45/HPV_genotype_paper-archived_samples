@@ -115,6 +115,7 @@ count.coinfections = function(char){
 	return(length(char.arr))
 }
 print(max(sapply(as.character(rownames(geno.table)), count.coinfections)))
+coinfections.per.sample = sapply(as.character(meta.table$genotype), count.coinfections)
 
 #Pathology Department Archived DNA
 temp.table= read.table("../../Copied_Files/HPV_cases_Ogembo_Sharon.txt", head=T,sep="\t")
@@ -189,6 +190,16 @@ year.bin = factor(year.bin, levels = c("lt2000","gt2000"))
 print(table(HPV58.status,year.bin))
 print(table(HPV58.status[temp.batch == 161206],year.bin[temp.batch == 161206]))
 print(table(HPV58.status[temp.batch == 170118],year.bin[temp.batch == 170118]))
+
+		fit = lm(coinfections.per.sample ~ meta.table$collection.year)
+		result = summary(fit)
+		pvalue = result$coefficients[2,4]
+print(paste("Co-Infection vs Year (1-var) p-value: ",pvalue,sep=""))
+
+		fit = lm(coinfections.per.sample ~ meta.table$collection.year + meta.table$batch)
+		result = summary(fit)
+		pvalue = result$coefficients[2,4]
+print(paste("Co-Infection vs Year (2-var) p-value: ",pvalue,sep=""))
 
 #extra meta.data (Pathology Core)
 extra.pairs = read.table("../../Copied_Files/Yafan_same_samples.txt", head=T, sep="\t")
@@ -289,6 +300,16 @@ print(mean(meta.table$Age, na.rm=T))
 print(sd(meta.table$Age, na.rm=T))
 print(tapply(meta.table$Age, meta.table$batch, mean, na.rm=T))
 print(tapply(meta.table$Age, meta.table$batch, sd, na.rm=T))
+
+		fit = lm(coinfections.per.sample ~ meta.table$Age)
+		result = summary(fit)
+		pvalue = result$coefficients[2,4]
+print(paste("Co-Infection vs Age (1-var) p-value: ",pvalue,sep=""))
+
+		fit = lm(coinfections.per.sample ~ meta.table$Age + meta.table$batch)
+		result = summary(fit)
+		pvalue = result$coefficients[2,4]
+print(paste("Co-Infection vs Age (2-var) p-value: ",pvalue,sep=""))
 
 #L1 Amplicon-Seq Insert Size
 
