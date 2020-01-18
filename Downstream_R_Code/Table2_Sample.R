@@ -6,7 +6,7 @@ parse.HPV.status = function(string, type){
 	}
 }#end def parse.HPV.status
 
-input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt", head=T, sep="\t")
+input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt", head=T, sep="\t")
 print(dim(input.table))
 input.table = input.table[-grep("prostate", input.table$sample.type),]
 print(dim(input.table))
