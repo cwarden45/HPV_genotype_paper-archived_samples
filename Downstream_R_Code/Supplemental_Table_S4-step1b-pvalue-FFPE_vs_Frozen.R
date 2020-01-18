@@ -62,7 +62,10 @@ calc.fe.pvalue = function(binary.arr, grp){
 	return(result$p.value)
 }#end def calc.fe.pvalue
 
-meta.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity.txt", head=T, sep = "\t")
+pvalue.dir = paste("../../calculate_pvalues/",compID,sep="")
+dir.create(pvalue.dir)
+
+meta.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt", head=T, sep = "\t")
 print(dim(meta.table))
 meta.table = meta.table[meta.table$HPV.status == "pos",]
 print(dim(meta.table))
@@ -152,7 +155,7 @@ print(genotypes[fe.fdr<0.05])
 
 deg.table = data.frame(HPV.subtype = genotypes, detection.diff,
 						fe.pvalue=fe.pvalue,fe.fdr=fe.fdr, fe.status=fe.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_status_FE_test.txt",sep=""),
+write.table(deg.table,paste(pvalue.dir,"/differential_status_FE_test.txt",sep=""),
 			row.names=F, sep="\t", quote=F)
 
 ab.mat = ab.mat[match(genotypes, rownames(ab.mat)),]
@@ -192,7 +195,7 @@ print(genotypes[bGLM.fdr<0.05])
 
 deg.table = data.frame(HPV.subtype = genotypes, 
 						bGLM.pvalue=bGLM.pvalue, bGLM.fdr=bGLM.fdr, bGLM.status=bGLM.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_status_binomial_GLM.txt",sep=""), row.names=F, sep="\t", quote=F)
+write.table(deg.table,paste(pvalue.dir,"/differential_status_binomial_GLM.txt",sep=""), row.names=F, sep="\t", quote=F)
 
 #limma-voom code
 ab.mat = ab.mat[match(genotypes, rownames(ab.mat)),]
@@ -207,7 +210,7 @@ colnames(grp.ab)=paste(colnames(grp.ab),"grp.avg.ab",sep=".")
 library("edgeR")
 design = model.matrix(~group+percent.human)
 y <- DGEList(counts=count.mat, genes=genotypes, lib.size=total.counts)
-png(paste("../../calculate_pvalues/",compID,"/voom_plot.png",sep=""))
+png(paste(pvalue.dir,"/voom_plot.png",sep=""))
 v <- voom(y,design,plot=TRUE)
 dev.off()
 fit <- lmFit(v,design)
@@ -223,7 +226,7 @@ print(genotypes[limma.fdr<0.05])
 deg.table = data.frame(HPV.subtype = genotypes,
 						round(grp.ab, digits=2), grp.fc = grp.fc,
 						limma.pvalue=limma.pvalue,limma.fdr=limma.fdr, limma.status=limma.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_abundance_limma-voom_2var.txt",sep=""),
+write.table(deg.table,paste(pvalue.dir,"/differential_abundance_limma-voom_2var.txt",sep=""),
 			row.names=F, sep="\t", quote=F)
 
 #linear regression (linear, 2var)
@@ -255,7 +258,7 @@ print(genotypes[lm.fdr<0.05])
 
 deg.table = data.frame(HPV.subtype = genotypes, 
 						lm.pvalue=lm.pvalue, lm.fdr=lm.fdr, lm.status=lm.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_status_linear-linear_regression_1var.txt",sep=""),
+write.table(deg.table,paste(pvalue.dir,"/differential_status_linear-linear_regression_1var.txt",sep=""),
 			row.names=F, sep="\t", quote=F)
 
 #linear regression (log2, 2-var)
@@ -271,7 +274,7 @@ print(genotypes[lm.fdr<0.05])
 
 deg.table = data.frame(HPV.subtype = genotypes, 
 						lm.pvalue=lm.pvalue, lm.fdr=lm.fdr, lm.status=lm.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_status_log2-linear_regression_1var.txt",sep=""),
+write.table(deg.table,paste(pvalue.dir,"/differential_status_log2-linear_regression_1var.txt",sep=""),
 			row.names=F, sep="\t", quote=F)
 
 #linear regression (linear, 2var)
@@ -285,7 +288,7 @@ print(genotypes[lm.fdr<0.05])
 
 deg.table = data.frame(HPV.subtype = genotypes, 
 						lm.pvalue=lm.pvalue, lm.fdr=lm.fdr, lm.status=lm.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_status_linear-linear_regression_2var.txt",sep=""),
+write.table(deg.table,paste(pvalue.dir,"/differential_status_linear-linear_regression_2var.txt",sep=""),
 			row.names=F, sep="\t", quote=F)
 
 #linear regression (log2, 2-var)
@@ -299,5 +302,5 @@ print(genotypes[lm.fdr<0.05])
 
 deg.table = data.frame(HPV.subtype = genotypes, 
 						lm.pvalue=lm.pvalue, lm.fdr=lm.fdr, lm.status=lm.status)
-write.table(deg.table,paste("../../calculate_pvalues/",compID,"/differential_status_log2-linear_regression_2var.txt",sep=""),
+write.table(deg.table,paste(pvalue.dir,"/differential_status_log2-linear_regression_2var.txt",sep=""),
 			row.names=F, sep="\t", quote=F)
