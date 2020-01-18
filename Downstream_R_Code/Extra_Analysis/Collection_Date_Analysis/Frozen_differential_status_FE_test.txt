@@ -1,0 +1,6 @@
+HPV.subtype	gt2000	lt2000	detection.diff	fe.pvalue	fe.fdr	fe.status
+HPV16	50	61.5	-11.5	0.708598779788991	1	No Change
+HPV18	30	19.2	10.8	0.657626120526075	1	No Change
+HPV45	0	7.7	-7.7	1	1	No Change
+HPV58	20	7.7	12.3	0.304812834224599	1	No Change
+HPV59	0	3.8	-3.8	1	1	No Change
