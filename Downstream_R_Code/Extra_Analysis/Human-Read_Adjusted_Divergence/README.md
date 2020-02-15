@@ -17,7 +17,7 @@ HPV58 in Tumor-Normal Pairs
     </tr>
     <tr>
 	<th align="center">Overall HPV Threshold</th>
-  	<th align="center">&gt1.5x Human</th>
+  	<th align="center">1.5x Human</th>
 	<th align="center"><i>&gt1.2x Human</i></th>
 	<th align="center"><i>&gt1.0x Human</i></th>
 	<th align="center"><i>&gt0.8x Human</i></th>
