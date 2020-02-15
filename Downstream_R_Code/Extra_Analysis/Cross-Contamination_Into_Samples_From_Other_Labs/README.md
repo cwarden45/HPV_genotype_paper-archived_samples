@@ -11,7 +11,7 @@ Cross-Contamination of Our L1 Amplicon-Sequencing Sequences into Other Lab's Sam
 
 ![HPV L1 Amplicon Exact Matches](2017-FFPE-Runs_HPV-L1-Amplicon-Cross-Contamination.png "HPV L1 Amplicon Exact Matches")
 
-The archived DNA and frozen tissues were from 2016 runs.  Since we could not recover those run folders, we could not do a similar comparison for those runs.
+The archived DNA and frozen tissues were from 2016 runs.  Since we could not recover those run folders, we could not do a similar comparison for those runs.  So, the above plots only show 2017 runs, mixed with the FFPE L1 Amplicon-Sequencing samples for this project.
 
 Nevertheless, the exact HPV L1 amplicon sequence also provides a measure of cross-contamination into other samples, which we can see in samples for other laboratories that shared a lane with samples from this project. We observed that one sample from another laboratory, which was not expected to have any L1 amplicon sequencing reads but shared a lane with samples from this project, had high HPV58 percentages (~10%) in each of the 2 lanes used for sequencing. This sample was processed in a run with 26 FFPE L1 amplicon sequencing samples (Run 271, with barcode GACCGG).  We believe this sample also had the wrong barcode (or otherwise had a QC issue, with few fragments to be sequenced), which would mean that it was incorrectly de-multiplexed.  This resulted in substantially fewer reads (**<2000 total**) compared to the L1 amplicon sequencing samples (**311,370–3,757,409**) and most other samples from the other laboratory (**5–10 million**).
 
