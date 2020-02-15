@@ -34,7 +34,7 @@ HPV58 in Tumor-Normal Pairs
   	<th align="center">All HPV58 Tumor Frequencies Low</th>
 	<th align="center">All HPV58 Tumor Frequencies Low</th>
 	<th align="center">All HPV58 Tumor Frequencies Low</th>
-	    <th align="center"><b>HPV58 Tumor-Normal Divergence</b></th>
+	<th align="center"><b>HPV58 Tumor-Normal Divergence</b></th>
     </tr>
 </tbody>
 </table>
