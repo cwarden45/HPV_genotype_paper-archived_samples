@@ -1,4 +1,4 @@
-P-values for ancestry (EUR vs AMR) analysis were calculated using the following strategies:
+P-values for ancestry (**EUR vs AMR**) analysis were calculated using the following strategies:
 
 **1)** ***Fisher’s exact test*** (using tentative **genotype** assignments, for 15% read fractions), using the `fisher.test()` R-base function.
 
