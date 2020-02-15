@@ -13,7 +13,7 @@ False Discovery Rates (FDRs) were calculated using the method of [Benjamini and 
 
 For analysis of sample type (FFPE versus DNA, FFPE versus frozen, and frozen versus DNA) samples were compared using the following strategies:
 
-**1)** ***Fisher’s exact test*** (using tentative **genotype** assignments, for both 5% and 15% read fractions)
+**1)** ***Fisher’s exact test*** (using tentative **genotype** assignments, for both 5% and 15% read fractions), using the `fisher.test()` R-base function.
 
 **2)** ***limma-voom*** ([Law et al. 2014](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)) on **read counts*** (adjusting for percent human reads), 
 
