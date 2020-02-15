@@ -15,7 +15,7 @@ For analysis of sample type (FFPE versus DNA, FFPE versus frozen, and frozen ver
 
 **1)** ***Fisher’s exact test*** (using tentative **genotype** assignments, for both 5% and 15% read fractions), using the `fisher.test()` R-base function.
 
-**2)** ***limma-voom*** ([Law et al. 2014](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)) on **read counts*** (adjusting for percent human reads), 
+**2)** ***limma-voom*** ([Law et al. 2014](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)) on **read counts** (adjusting for percent human reads), 
 
 **3)** ***logistic regression*** (binomial generalized linear model, or binomial GLM) was performed on tentative **genotype** assignments using the `glm()` R-base function with the parameter “family=’binomial’”
 
