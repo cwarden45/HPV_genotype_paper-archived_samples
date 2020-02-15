@@ -18,7 +18,7 @@ HPV58 in Tumor-Normal Pairs
     <tr>
 	<th align="center">Overall HPV Threshold</th>
   	<th align="center"><i>&gt1.5x Human</i></th>
-	<th align="center">&gt1.2x Human</th>
+	<th align="center"><i>&gt1.2x Human</i></th>
 	<th align="center"><i>&gt1.0x Human</i></th>
 	<th align="center"><i>&gt0.8x Human</i></th>
     </tr>
@@ -34,7 +34,7 @@ HPV58 in Tumor-Normal Pairs
   	<th align="center">All HPV58 Tumor Frequencies Low</th>
 	<th align="center">All HPV58 Tumor Frequencies Low</th>
 	<th align="center">All HPV58 Tumor Frequencies Low</th>
-	<th align="center"><b>HPV58 Tumor-Normal Divergence</b></th>
+	<th align="center"><i>HPV58 Tumor-Normal Divergence</i></th>
     </tr>
 </tbody>
 </table>
