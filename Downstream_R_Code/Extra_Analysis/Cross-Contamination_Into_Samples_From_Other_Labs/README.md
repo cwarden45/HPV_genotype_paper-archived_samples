@@ -1,4 +1,4 @@
-De-Multiplexing Considerations for Our L1 Amplicon-Seq Samples
+De-Multiplexing Considerations for Our L1 Amplicon-Sequencing Samples
 -----------------
 Although we expect that a small fraction of samples were affected, we observed that both technical and human error that could influence our results
 
@@ -6,7 +6,7 @@ One example of human error would be a sample that we withdrew from our Sequence 
 
 As described below, we also observed some evidence of cross contamination in samples from other laboratories that were processed with ours.  In most situations, we believe this is likely the result of “index hopping” ([Illumina Index Hopping Link](https://www.illumina.com/science/education/minimizing-index-hopping.html); [Costello et al. 2018](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4703-0); [Kircher et al. 2011](https://www.ncbi.nlm.nih.gov/pubmed/22021376)).  This may be harder to estimate (and possibly be more frequent) between L1 Amplicon Sequencing samples.  However, this exact sequence should be rare in samples that aren't supposed to have any HPV L1 Amplicons.
 
-Cross-Contamination of Our L1 Amplicon-Seq Sequences into Other Lab's Samples
+Cross-Contamination of Our L1 Amplicon-Sequencing Sequences into Other Lab's Samples
 -----------------
 
 ![HPV L1 Amplicon Exact Matches](2017-FFPE-Runs_HPV-L1-Amplicon-Cross-Contamination.png "HPV L1 Amplicon Exact Matches")
