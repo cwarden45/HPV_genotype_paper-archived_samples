@@ -12,15 +12,15 @@ HPV58 in Tumor-Normal Pairs
 <table>
   <tbody>
     <tr>
-	<th align="center">HPV Genotype</th>
-	<td colspan="4">Parameters for Assigning HPV Genotypes</td>
+	    <th align="center"><b>HPV Genotype</b></th>
+	<td align="center"colspan="4"><b>Parameters for Assigning HPV Genotypes</b></td>
     </tr>
     <tr>
 	<th align="center">Overall HPV Threshold</th>
-  <th align="center"><b>&gt1.5x Human</b></th>
-	<th align="center"><b>1.0x Human</b></th>
-	<th align="center"><b>1.2x Human</b></th>
-	<th align="center"><b>0.8x Human</b></th>
+  <th align="center"><i>&gt1.5x Human</i></th>
+	<th align="center"><i>1.0x Human</i></th>
+	<th align="center"><i>1.2x Human</i></th>
+	<th align="center"><i>0.8x Human</i></th>
     </tr>
 </tbody>
 </table>
