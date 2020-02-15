@@ -5,7 +5,9 @@ Statistical significance of the effects of sample type on HPV genotype assignmen
 
 Unless the analysis directly uses the 15% read fraction genotypes, it should be assumed that genotypes and HPV+ samples were defined with 5% read fractions (to be more similar to not using a genotyping step).
 
-Fisher’s exact test (FE) and logistic regression (binomial GLM) require discrete genotype assignments. All other p-values were calculated without making genotype assignments. False Discovery Rates (FDRs) were calculated using the method of [Benjamini and Hochberg](https://www.jstor.org/stable/2346101).
+Fisher’s exact test (FE) and logistic regression (binomial GLM) require discrete genotype assignments. All other p-values were calculated without making genotype assignments.
+
+False Discovery Rates (FDRs) were calculated using the method of [Benjamini and Hochberg](https://www.jstor.org/stable/2346101).
 
 ### P-value Methods Summary
 
