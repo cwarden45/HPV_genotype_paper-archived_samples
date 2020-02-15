@@ -45,7 +45,7 @@ Pearson Correlation Coefficients for Tumor-Tumor Pairs
 </tbody>
 </table>
 
-![Tumor-Tumor Correlations](Tumor-Tumor_Correlations.jpg "Tumor-Tumor Correlations")
+![Tumor-Tumor Correlations](Tumor-Tumor_Correlations.png "Tumor-Tumor Correlations")
 
 Tumor-tumor pairs: FFPE-FFPE; FFPE-frozen; Mixed: QC Array (DNA-frozen).
 
@@ -84,4 +84,4 @@ HPV58 in Tumor-Normal Pairs
 </tbody>
 </table>
 
-![Tumor-Normal Correlations](Tumor-Normal_Correlations.jpg "Tumor-Normal Correlations")
+![Tumor-Normal Correlations](Tumor-Normal_Correlations.png "Tumor-Normal Correlations")
