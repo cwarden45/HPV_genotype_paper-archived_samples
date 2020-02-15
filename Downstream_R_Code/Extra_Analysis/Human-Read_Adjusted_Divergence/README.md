@@ -16,25 +16,25 @@ HPV58 in Tumor-Normal Pairs
 	<th align="center" colspan="4">Parameters for Assigning HPV Genotypes</th>
     </tr>
     <tr>
-	<th align="center">Overall HPV Threshold</th>
+	<td align="center">Overall HPV Threshold</td>
 	<td align="center"><b>1.5x Human</b></td>
-	<th align="center"><i>&gt1.2x Human</i></th>
-	<th align="center"><i>&gt1.0x Human</i></th>
-	<th align="center"><i>&gt0.8x Human</i></th>
+	<td align="center"><i>&gt1.2x Human</i></td>
+	<td align="center"><i>&gt1.0x Human</i></td>
+	<td align="center"><i>&gt0.8x Human</i></td>
     </tr>
     <tr>
-	<th align="center">HPV Genotype Threshold</th>
-  	<th align="center"><i>&gt1.2x Human</i></th>
-	<th align="center"><i>&gt1.0x Human</i></th>
-	<th align="center"><i>&gt0.8x Human</i></th>
-	<th align="center"><i>&gt0.6x Human</i></th>
+	<td align="center">HPV Genotype Threshold</td>
+  	<td align="center"><i>&gt1.2x Human</i></td>
+	<td align="center"><i>&gt1.0x Human</i></td>
+	<td align="center"><i>&gt0.8x Human</i></td>
+	<td align="center"><i>&gt0.6x Human</i></td>
     </tr>
     <tr>
-	<th align="center">HPV58 in Tumor-Normal Pairs/th>
-  	<th align="center">All HPV58 Tumor Frequencies Low</th>
-	<th align="center">All HPV58 Tumor Frequencies Low</th>
-	<th align="center">All HPV58 Tumor Frequencies Low</th>
-	<th align="center"><i>HPV58 Tumor-Normal Divergence</i></th>
+	<td align="center">HPV58 in Tumor-Normal Pairs/td>
+  	<td align="center">All HPV58 Tumor Frequencies Low</td>
+	<td align="center">All HPV58 Tumor Frequencies Low</td>
+	<td align="center">All HPV58 Tumor Frequencies Low</td>
+	<td align="center"><i>HPV58 Tumor-Normal Divergence</i></td>
     </tr>
 </tbody>
 </table>
