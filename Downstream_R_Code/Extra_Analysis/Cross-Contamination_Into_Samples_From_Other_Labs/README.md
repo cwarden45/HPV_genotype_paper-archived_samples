@@ -1,6 +1,6 @@
 De-Multiplexing Considerations for Our L1 Amplicon-Sequencing Samples
 -----------------
-We expect that a small fraction of samples were affected, but we observed that both technical and human error that could have influenced our results (if they are not found and corrected).
+We expect that a small fraction of samples were affected, but we observed that both technical and human error that could have influenced our results (and the underlying principle could apply to other studies).
 
 One example of human error would be a sample that we withdrew from our Sequence Read Archive (SRA) deposit because a sample from another laboratory accidentally had the barcode intended for an HPV L1 amplicon sequencing sample.  *In other words, by taking the time to look at our data more carefully, we could determine one of our samples (with considerably more reads than we should have expected) was mostly not an L1 Amplicon Sequencing sample.*  It is not uncommon to need to change barcode sequences for each run, particuarly if a lot of samples are processed.
 
