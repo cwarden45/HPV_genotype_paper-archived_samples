@@ -73,11 +73,43 @@ print(status.counts)
 status.percent = apply(status.counts, 1, function(type, counts){return(sprintf(type/counts,fmt="%#.3f"))},counts = batch.count)
 print(t(status.percent))
 
+FE.mat.freq5 = matrix(c(status.counts[1,1],sum(status.counts[2:3,1]),
+						status.counts[1,3],sum(status.counts[2:3,3])),
+						ncol=2)
+colnames(FE.mat.freq5) = c("DNA","FFPE")
+rownames(FE.mat.freq5) = c("Negative","Positive")
+print(FE.mat.freq5)
+
+	result = fisher.test(FE.mat.freq5)
+	print(paste("FFPE vs DNA, FE P-value (5%) :", result$p.value, sep=""))
+
+FE.mat.plurality = matrix(c(status.counts[1,1],status.counts[2,1],
+						status.counts[1,3],status.counts[2,3]),
+						ncol=2)
+colnames(FE.mat.plurality) = c("DNA","FFPE")
+rownames(FE.mat.plurality) = c("Negative","Positive")
+print(FE.mat.plurality)
+
+	result = fisher.test(FE.mat.plurality)
+	print(paste("FFPE vs DNA, FE P-value (Plurality) :", result$p.value, sep=""))
+
+
 mod.detect = apply(input.table, 1, parse.HPV58.percent.15)
 status.counts = table(mod.detect, batch)
 print(status.counts)
 status.percent = apply(status.counts, 1, function(type, counts){return(sprintf(type/counts,fmt="%#.3f"))},counts = batch.count)
 print(t(status.percent))
+
+FE.mat.freq15 = matrix(c(sum(status.counts[1:2,1]),status.counts[3,1],
+						sum(status.counts[1:2,3]),status.counts[3,3]),
+						ncol=2)
+colnames(FE.mat.freq15) = c("DNA","FFPE")
+rownames(FE.mat.freq15) = c("Negative","Positive")
+print(FE.mat.freq15)
+
+	result = fisher.test(FE.mat.freq15)
+	print(paste("FFPE vs DNA, FE P-value (15%) :", result$p.value, sep=""))
+
 
 #alternative strategy for calling plurality
 HPV.plurality = input.table[grep("^HPV58",input.table$genotype),]
@@ -86,8 +118,43 @@ status.counts = table(HPV.plurality$batch)
 status.percent = status.counts / batch.count
 #print(status.percent)
 
+#calculate majority
 majority.percent = apply(input.table, 1, parse.HPV58.percent)
 status.counts = table(majority.percent,batch)
 print(status.counts)
 status.percent = apply(status.counts, 1, function(type, counts){return(sprintf(type/counts,fmt="%#.3f"))},counts = batch.count)
 print(t(status.percent))
+
+FE.mat.majority = matrix(c(status.counts[3,1],status.counts[1,1],
+						status.counts[3,3],status.counts[1,3]),
+						ncol=2)
+colnames(FE.mat.majority) = c("DNA","FFPE")
+rownames(FE.mat.majority) = c("Negative","Positive")
+print(FE.mat.majority)
+
+	result = fisher.test(FE.mat.majority)
+	print(paste("FFPE vs DNA, FE P-value (Majority) :", result$p.value, sep=""))
+
+#alternative counts from https://www.nature.com/articles/6601024/tables/2
+FE.mat.majority = matrix(c((5646 + 2175)-(0.03 * 5646 + 0.069 * 2175),0.03 * 5646 + 0.069 * 2175,
+						status.counts[3,1],status.counts[1,1]),
+						ncol=2)
+FE.mat.majority = round(FE.mat.majority)
+colnames(FE.mat.majority) = c("Clifford","FFPE")
+rownames(FE.mat.majority) = c("Negative","Positive")
+#print(FE.mat.majority)
+
+	result = fisher.test(FE.mat.majority)
+	#print(paste("DNA vs Public SCC+HSIL, FE P-value (Majority) :", result$p.value, sep=""))
+	
+FE.mat.majority = matrix(c((5646 + 2175)-(0.03 * 5646 + 0.069 * 2175),0.03 * 5646 + 0.069 * 2175,
+						status.counts[3,3],status.counts[1,3]),
+						ncol=2)
+FE.mat.majority = round(FE.mat.majority)
+colnames(FE.mat.majority) = c("Clifford","FFPE")
+rownames(FE.mat.majority) = c("Negative","Positive")
+#print(FE.mat.majority)
+
+	result = fisher.test(FE.mat.majority)
+	#print(paste("FFPE vs Public SCC+HSIL, FE P-value (Majority) :", result$p.value, sep=""))
+#the p-value for this comparison is so low that I wonder if a different strategy should be used for the p-value calculation (although the DNA p-value was ~1.00)
