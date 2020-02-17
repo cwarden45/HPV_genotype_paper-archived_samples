@@ -56,36 +56,3 @@ for (i in 1:ncol(plot.table)){
 	plot.index = plot.index + 1
 }#end for (i in 1:ncol(plot.table))
 dev.off()
-
-#HPV16 pie chart
-HPV16.table = meta.table[grep("HPV16",meta.table$genotype),]
-print(dim(HPV16.table))
-
-HPV16.table2 = table(HPV16.table$batch)
-
-pdf("to_AI/Figure3d.pdf")
-pie(HPV16.table2, col=c("green","orange","cyan"), font=2, cex=2, cex.main=2,
-	main = paste("HPV16, n=",nrow(HPV16.table),"samples"))
-dev.off()
-
-#HPV18 pie chart
-HPV18.table = meta.table[grep("HPV18",meta.table$genotype),]
-print(dim(HPV18.table))
-
-HPV18.table2 = table(HPV18.table$batch)
-
-pdf("to_AI/Figure3e.pdf")
-pie(HPV18.table2, col=c("green","orange","cyan"), font=2, cex=2, cex.main=2,
-	main = paste("HPV18, n=",nrow(HPV18.table),"samples"))
-dev.off()
-
-#HPV58 pie chart
-HPV58.table = meta.table[grep("HPV58",meta.table$genotype),]
-print(dim(HPV58.table))
-
-HPV58.table2 = table(HPV58.table$batch)
-
-pdf("to_AI/Figure3f.pdf")
-pie(HPV58.table2, col=c("green","orange","cyan"), font=2, cex=2, cex.main=2,
-	main = paste("HPV58, n=",nrow(HPV58.table),"samples"))
-dev.off()
