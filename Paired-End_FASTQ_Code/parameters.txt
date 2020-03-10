@@ -8,8 +8,8 @@ Alignment_Folder	/path/to/hg38_plus_35HPV_Alignment
 Threads	2
 BWA_Ref	/path/to/hg38_plus_35HPV.fa
 HPV_Human_Ref_FC	1.2
-HPV_Freq_Cutoff	5
+HPV_Freq_Cutoff	20
 Type_Human_Ref_FC	1.0
-Type_Freq_Cutoff	5
+Type_Freq_Cutoff	20
 Unclear_Cutoff  15
 Summary_File	hg38_plus_35HPV_genotype_calls.txt
