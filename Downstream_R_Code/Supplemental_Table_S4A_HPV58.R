@@ -1,3 +1,10 @@
+#without qPCR flags
+#input.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
+
+#with qPCR flags
+input.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5-FLAGGED.txt"
+
+
 parse.HPV58.status = function(string){
 	if(length(grep("^HPV58",string))!=0){
 		return("Plurality")
@@ -9,8 +16,8 @@ parse.HPV58.status = function(string){
 }#end def parse.HPV58.status
 
 parse.HPV58.percent = function(arr){
-	HPV.text = arr[8]
-	percent.text = arr[9]
+	HPV.text = arr[9]
+	percent.text = arr[10]
 	if(length(grep("HPV58",HPV.text))==0){
 		return("Negative")
 	}else{
@@ -29,9 +36,9 @@ parse.HPV58.percent = function(arr){
 	}#end else
 }#end def parse.HPV58.percent
 
-parse.HPV58.percent.15 = function(arr){
-	HPV.text = arr[8]
-	percent.text = arr[9]
+parse.HPV58.percent.20 = function(arr){
+	HPV.text = arr[9]
+	percent.text = arr[10]
 	if(length(grep("HPV58",HPV.text))==0){
 		return("Negative")
 	}else{
@@ -40,7 +47,7 @@ parse.HPV58.percent.15 = function(arr){
 		percent.info = as.double(unlist(strsplit(percent.text, split=",")))
 		for (i in 1:length(HPV.info)){
 			if(HPV.info[i] == "HPV58"){
-				if(percent.info[i] >= 15){
+				if(percent.info[i] >= 20){
 					return("Pos.2")
 				}else{
 					return("Neg.2")
@@ -48,15 +55,16 @@ parse.HPV58.percent.15 = function(arr){
 			}
 		}#end for (i in 1:length(HPV.info))
 	}#end else
-}#end def parse.HPV58.percent.15
+}#end def parse.HPV58.percent.20
 
-input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt", head=T, sep="\t")
+input.table = read.table(input.file, head=T, sep="\t")
 print(dim(input.table))
 input.table = input.table[-grep("prostate", input.table$sample.type),]
 print(dim(input.table))
 input.table = input.table[-grep("adjacent normal", input.table$sample.type),]
 print(dim(input.table))
-
+input.table = input.table[input.table$HPV.status != "qPCR Flag",]
+print(dim(input.table))
 
 batch = rep(NA,nrow(input.table))
 batch[grep("^13",as.character(input.table$Sample))]="161007"
@@ -93,8 +101,7 @@ print(FE.mat.plurality)
 	result = fisher.test(FE.mat.plurality)
 	print(paste("FFPE vs DNA, FE P-value (Plurality) :", result$p.value, sep=""))
 
-
-mod.detect = apply(input.table, 1, parse.HPV58.percent.15)
+mod.detect = apply(input.table, 1, parse.HPV58.percent.20)
 status.counts = table(mod.detect, batch)
 print(status.counts)
 status.percent = apply(status.counts, 1, function(type, counts){return(sprintf(type/counts,fmt="%#.3f"))},counts = batch.count)
@@ -108,7 +115,7 @@ rownames(FE.mat.freq15) = c("Negative","Positive")
 print(FE.mat.freq15)
 
 	result = fisher.test(FE.mat.freq15)
-	print(paste("FFPE vs DNA, FE P-value (15%) :", result$p.value, sep=""))
+	print(paste("FFPE vs DNA, FE P-value (20%) :", result$p.value, sep=""))
 
 
 #alternative strategy for calling plurality

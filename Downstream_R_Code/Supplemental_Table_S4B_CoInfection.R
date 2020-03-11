@@ -1,3 +1,9 @@
+#without qPCR flags
+#input.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
+
+#with qPCR flags
+input.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5-FLAGGED.txt"
+
 parse.coinfection.count = function(string){
 	if(is.na(string)){
 		return(0)
@@ -23,11 +29,13 @@ parse.coinfection.count2 = function(string, threshold){
 	}
 }#end def parse.coinfection.count
 
-input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt", head=T, sep="\t")
+input.table = read.table(input.file, head=T, sep="\t")
 print(dim(input.table))
 input.table = input.table[-grep("prostate", input.table$sample.type),]
 print(dim(input.table))
 input.table = input.table[-grep("adjacent normal", input.table$sample.type),]
+print(dim(input.table))
+input.table = input.table[input.table$HPV.status != "qPCR Flag",]
 print(dim(input.table))
 
 batch = rep(NA,nrow(input.table))
@@ -52,8 +60,8 @@ print(coinfection.percent)
 
 print(paste("ANOVA Sample Type co-infection p-value: ",aov.pvalue,sep=""))
 
-#15%
-coinfection.count = sapply(as.character(input.table$genotype.percent), parse.coinfection.count2, threshold=15)
+#20%
+coinfection.count = sapply(as.character(input.table$genotype.percent), parse.coinfection.count2, threshold=20)
 
 HPV.counts = table(coinfection.count, batch)
 print(HPV.counts)
@@ -67,4 +75,3 @@ HPV.counts = table(coinfection.count, batch)
 print(HPV.counts)
 coinfection.percent = t(apply(HPV.counts, 1, function(type, counts){return(sprintf(type/counts,fmt="%#.3f"))},counts = batch.count))
 print(coinfection.percent)
-
