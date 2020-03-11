@@ -6,11 +6,14 @@ parse.HPV.status = function(string, type){
 	}
 }#end def parse.HPV.status
 
-input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt", head=T, sep="\t")
+input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20-FLAGGED.txt", head=T, sep="\t")
 print(dim(input.table))
 input.table = input.table[-grep("prostate", input.table$sample.type),]
 print(dim(input.table))
 input.table = input.table[-grep("adjacent normal", input.table$sample.type),]
+print(dim(input.table))
+input.table = input.table[input.table$HPV.status != "qPCR Flag",]
+input.table$HPV.status = as.factor(as.character(input.table$HPV.status))
 print(dim(input.table))
 
 batch = rep(NA,nrow(input.table))
@@ -79,4 +82,3 @@ for (type in HPV.types){
 			length(HPV.geno[grep(type,HPV.geno)]),
 			" (",round(100 * length(HPV.geno[grep(type,HPV.geno)]) / length(HPV.geno),digits=1),"%)",sep=""))
 }#end for (type in HPV.types)
-
