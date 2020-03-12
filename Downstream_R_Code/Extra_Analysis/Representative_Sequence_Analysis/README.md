@@ -48,8 +48,8 @@ NA means "Not Applicable"
 
 **NOTE:** These are assignments **before** filtering samples with the qPCR filter.  Most of those HPV58 co-infections (in FFPE samples) are removed using that filter (which is why this content was moved to the "Extra_Analysis" instead of a supplemental figure), even though the SNPs are in HPV16.
 
-**(A)** Scatter plots showing the fraction of reads for each HPV genotype that exactly match the “representative sequences” for that genotype (Seq1–5), which comprised more than 15% of reads in at least one HPV+ sample. Each dot represents one sample, colored according to sample type. Some samples contained more than one representative sequence and thus are represented by multiple points.  In other words, there were 6 representative sequences for HPV16, 2 representative sequences for HPV18, and 1 representative sequence for HPV58.
+**(TOP)** Scatter plots showing the fraction of reads for each HPV genotype that exactly match the “representative sequences” for that genotype (Seq1–5), which comprised more than 15% of reads in at least one HPV+ sample. Each dot represents one sample, colored according to sample type. Some samples contained more than one representative sequence and thus are represented by multiple points.  In other words, there were 6 representative sequences for HPV16, 2 representative sequences for HPV18, and 1 representative sequence for HPV58.
 
-**(B)** Same data as shown in *(A)*, but each sample is colored according whether or not it contains an HPV58 co-infection (in red), which was common for samples with HPV16 present at <80% frequency. 
+**(BOTTOM)** Same data as shown in *(TOP)*, but each sample is colored according whether or not it contains an HPV58 co-infection (in red), which was common for samples with HPV16 present at <80% frequency. 
 
 Most representative sequences found at <70% frequency were in FFPE samples, and most samples containing representative sequences for HPV16 at <80% frequency were co-infected with HPV58 (if considering genotypes **before a qPCR filter is applied**).
