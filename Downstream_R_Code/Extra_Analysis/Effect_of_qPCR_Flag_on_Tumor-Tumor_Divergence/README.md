@@ -8,4 +8,4 @@ If you follow the similar analysis to [Human-Read_Adjusted_Divergence](https://g
 
 **(BOTTOM)** Same as (TOP), but with qPCR flagged samples removed.
 
-Notice that HPV58+ sample pairs can no longer be defined, so we it is no longer reasonable to calculate a correlation coefficient for those samples.  However, correlation coefficient for HPV16 is slightly higher (now matching HPV18).
+Notice that HPV58+ sample pairs can no longer be defined, so we it is no longer reasonable to calculate a correlation coefficient for those samples.  However, correlation coefficient for HPV16 is slightly higher (now, more similar to HPV18).
