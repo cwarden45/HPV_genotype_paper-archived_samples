@@ -43,6 +43,8 @@ NA means "Not Applicable"
 
 ### Frequencies of the representative sequences of common HPV L1 genotypes. (for 20% read fraction genotypes)
 
+To define representative sequences for each HPV genotype per sample, we aligned PEAR-merged reads (rather than paired-end reads) against our joint hg38 + 35 HPV genome reference set. For samples that were identified as positive for a specific HPV genotype using paired-end reads, the reads aligned to the reference sequence for that HPV genotype were tabulated to generate unique sequence counts for each HPV genotype. Unique sequences found in at least 15% of reads aligned to a specific HPV genotype were defined as representative sequences. When summarizing counts of representative sequences, representative sequence frequencies among samples from the same patient were averaged.
+
 ![SNPs with HPV58 co-infections](HPV_genotype_divergence.png "SNPs with HPV58 co-infections")
 
 **NOTE:** These are assignments **before** filtering samples with the qPCR filter.  Most of those HPV58 co-infections (in FFPE samples) are removed using that filter (which is why this content was moved to the "Extra_Analysis" instead of a supplemental figure), even though the SNPs are in HPV16.
