@@ -13,7 +13,7 @@
     <tr>
 	<td align="center"><b>HPV16</b></br>(94 bp, trimmed)</td>
   	<td align="center">50-72 (23 bp)</br>45-67 (23 bp)</br>51-70 (20 bp)</td>
-	<td align="center">chr20:42618942-42618964:- (23 bp)</br>chr18:45784565-45784587:+ (23 bp)</br>chr1:196249786-196249805:- (20 bp)</td>
+	<td align="center"> <font size="-1">chr20:42618942-42618964:- (23 bp)</br>chr18:45784565-45784587:+ (23 bp)</br>chr1:196249786-196249805:- (20 bp)</font></td>
 	<td align="center">100.0%</br>95.7%</br>100.0%</td>
 	<td align="center">LINE</br><i>No</i></br>SINE / LINE</td>
     </tr>
