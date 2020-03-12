@@ -6,4 +6,6 @@ If you follow the similar analysis to [Human-Read_Adjusted_Divergence](https://g
 
 **(TOP)** Three types of tumor-tumor pairs were compared to evaluate consistency in HPV16, HPV18, and HPV58 genotyping: pairs of FFPE tissue samples from the same patient, as reported in patient records (“FFPE:Both”); pairs of frozen and FFPE tissue samples from the same patient, as reported in patient records (“Mixed:Reported”); and pairs of archived DNA and frozen tissue samples, matched via QC Array data (not reported in sample records, “Mixed:QCarray”). Correlations between the read frequencies for each pair were lower for HPV58 than for HPV16 and HPV18. 
 
-**(BOTTOM)** Same as (TOP), but with qPCR flagged samples removed.  Notice that HPV58+ sample pairs can no longer be defined, so we it is no longer reasonable to calculate a correlation coefficient for those samples.  However, correlation coefficient for HPV16 is slightly higher (now matching HPV18).
+**(BOTTOM)** Same as (TOP), but with qPCR flagged samples removed.
+
+Notice that HPV58+ sample pairs can no longer be defined, so we it is no longer reasonable to calculate a correlation coefficient for those samples.  However, correlation coefficient for HPV16 is slightly higher (now matching HPV18).
