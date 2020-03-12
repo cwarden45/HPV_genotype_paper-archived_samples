@@ -5,7 +5,7 @@
     <tr>
     <tr>
 	<th align="center"></th>
-	<th align="center">L1 AmpliconQuery Match</th>
+	<th align="center">L1 Amplicon Query Match</th>
 	<th align="center">hg38 Hit</br>Position Match</th>
 	<th align="center">Percent Identity</th>
 	<th align="center">hg38 RepeatMasker?</th>
