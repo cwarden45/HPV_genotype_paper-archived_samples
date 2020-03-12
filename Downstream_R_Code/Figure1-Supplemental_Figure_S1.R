@@ -33,6 +33,13 @@ coinfection.col[num.coinfections == 3]="red"
 HPV58.col = rep("black",nrow(meta.table))
 HPV58.col[grep("HPV58",meta.table$genotype)]="red"
 
+#confirm that amount of 
+	fit = aov(qPCR ~ sample.col)
+	result = summary(fit)
+	aov.pvalue = result[[1]][['Pr(>F)']][1]
+
+print(paste("qPCR ANOVA p-value = ",aov.pvalue,sep=""))
+
 #plot all
 pdf("Figure1.pdf")
 #color by sample type
