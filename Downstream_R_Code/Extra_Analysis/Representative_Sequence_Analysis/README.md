@@ -28,7 +28,7 @@
     <tr>
 	<td align="center"><b>HPV58</b></br>(91 bp, trimmed)</td>
   	<td align="center">14-47 (33 bp)</br>36-63 (27 bp)</br>51-77 (27 bp)</br>45-78 (34 bp)</br>42-61 (20 bp)</br>51-70 (20 bp)</td>
-	<td align="center">chr13:33648186-33648216:+ (31 bp)</br>chr17:56955818 -56955847:- (30 bp)</br>chr4:166595761-166595808:+ (48 bp)</br>chr2:48225133-48225159:+ (27 bp)</br>chr4:35515819-35515838:+ (20 bp)</br>chr11:110764058-110764077:+ (20 bp)</td>
+	<td align="center">chr13:33648186-33648216:+</br>(31 bp)</br>chr17:56955818 -56955847:-</br>(30 bp)</br>chr4:166595761-166595808:+</br>(48 bp)</br>chr2:48225133-48225159:+</br>(27 bp)</br>chr4:35515819-35515838:+</br>(20 bp)</br>chr11:110764058-110764077:+</br>(20 bp)</td>
 	<td align="center">80.7%</br>100.0%</br>100.0%</br>74.1%</br>100.0%</br>100.0%</td>
 	<td align="center"><i>No</i></br>LINE</br>LINE</br>LINE</br><i>No</i></br>LINE</td>
     </tr>
