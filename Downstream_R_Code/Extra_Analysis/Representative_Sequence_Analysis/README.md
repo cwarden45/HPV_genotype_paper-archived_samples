@@ -43,7 +43,6 @@ NA means "Not Applicable"
 
 ### Frequencies of the representative sequences of common HPV L1 genotypes. (for 20% read fraction genotypes)
 
-
 ![SNPs with HPV58 co-infections](HPV_genotype_divergence.png "SNPs with HPV58 co-infections")
 
 **NOTE:** These are assignments **before** filtering samples with the qPCR filter.  Most of those HPV58 co-infections (in FFPE samples) are removed using that filter (which is why this content was moved to the "Extra_Analysis" instead of a supplemental figure), even though the SNPs are in HPV16.
