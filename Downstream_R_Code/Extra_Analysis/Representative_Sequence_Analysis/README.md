@@ -5,20 +5,20 @@
     <tr>
     <tr>
 	<th align="center"></th>
-	<th align="center">L1 Amplicon</br>Query Match</th>
+	<th align="center">L1 AmpliconQuery Match</th>
 	<th align="center">hg38 Hit</br>Position Match</th>
 	<th align="center">Percent Identity</th>
 	<th align="center">hg38 RepeatMasker?</th>
     </tr>
     <tr>
-	<td align="center">HPV16</br>(94 bp, post primer trimming)</td>
+	<td align="center"><b>HPV16</b></br>(94 bp, post primer trimming)</td>
   	<td align="center">50-72 (23 bp)</br>45-67 (23 bp)</br>51-70 (20 bp)</td>
 	<td align="center">chr20:42618942-42618964:- (23 bp)</br>chr18:45784565-45784587:+ (23 bp)</br>chr1:196249786-196249805:- (20 bp)</td>
 	<td align="center">100.0%</br>95.7%</br>100.0%</td>
 	<td align="center">LINE</br><i>No</i></br>SINE / LINE</td>
     </tr>
     <tr>
-	<td align="center">HPV18</br>(98 bp, post primer trimming)</td>
+	<td align="center"><b>HPV18</b></br>(98 bp, post primer trimming)</td>
   	<td align="center"><i>[no hits]</i></td>
 	<td align="center"><i>[no hits]</i></td>
 	<td align="center"><i>NA</i></td>
@@ -26,7 +26,7 @@
     </tr>
     </tr>
     <tr>
-	<td align="center">HPV58</br>(91 bp, post primer trimming)</td>
+	<td align="center"><b>HPV58</b></br>(91 bp, post primer trimming)</td>
   	<td align="center">14-47 (33 bp)</br>36-63 (27 bp)</br>51-77 (27 bp)</br>45-78 (34 bp)</br>42-61 (20 bp)</br>51-70 (20 bp)</td>
 	<td align="center">chr13:33648186-33648216:+ (31 bp)</br>chr17:56955818 -56955847:- (30 bp)</br>chr4:166595761-166595808:+ (48 bp)</br>chr2:48225133-48225159:+ (27 bp)</br>chr4:35515819-35515838:+ (20 bp)</br>chr11:110764058-110764077:+ (20 bp)</td>
 	<td align="center">80.7%</br>100.0%</br>100.0%</br>74.1%</br>100.0%</br>100.0%</td>
