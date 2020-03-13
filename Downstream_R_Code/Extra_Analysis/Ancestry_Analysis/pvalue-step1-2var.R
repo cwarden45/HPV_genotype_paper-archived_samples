@@ -59,8 +59,10 @@ calc.fe.pvalue = function(binary.arr, grp){
 library(metagenomeSeq)
 library(gplots)
 
-#use 15% read fraction genotypes
-meta.table = read.table("../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt", head=T, sep = "\t")
+#use 20% read fraction genotypes (filtering qPCR flagged samples from all analysis)
+meta.table = read.table("../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20-FLAGGED.txt", head=T, sep = "\t")
+print(dim(meta.table))
+meta.table = meta.table[meta.table$HPV.status != "qPCR Flag",]
 print(dim(meta.table))
 meta.table = meta.table[meta.table$HPV.status == "pos",]
 print(dim(meta.table))
