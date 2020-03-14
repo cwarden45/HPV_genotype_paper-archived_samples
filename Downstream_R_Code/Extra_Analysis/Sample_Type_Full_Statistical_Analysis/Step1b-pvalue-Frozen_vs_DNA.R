@@ -66,6 +66,7 @@ calc.fe.pvalue = function(binary.arr, grp){
 pvalue.dir = compID
 dir.create(pvalue.dir)
 
+#run analysis with lower read fraction and **without** qPCR flag to filter samples
 meta.table = read.table("../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt", head=T, sep = "\t")
 print(dim(meta.table))
 meta.table = meta.table[meta.table$HPV.status == "pos",]

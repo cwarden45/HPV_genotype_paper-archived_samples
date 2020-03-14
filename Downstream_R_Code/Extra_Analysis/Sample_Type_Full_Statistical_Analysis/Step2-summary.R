@@ -4,7 +4,7 @@ comp.type = c("FFPE_vs_DNA","FFPE_vs_Frozen","Frozen_vs_DNA")
 
 for(i in 1:length(comp.type)){
 	min5.FE.file = paste(stat.folder,"/",comp.type[i],"/differential_status_FE_test.txt",sep="")
-	min15.FE.file = paste(stat.folder,"/",comp.type[i],"_freq15/differential_status_FE_test.txt",sep="")
+	min20.FE.file = paste(stat.folder,"/",comp.type[i],"_freq20/differential_status_FE_test.txt",sep="")
 	limma.file= paste(stat.folder,"/",comp.type[i],"/differential_abundance_limma-voom_2var.txt",sep="")
 	binomialGLM.file= paste(stat.folder,"/",comp.type[i],"/differential_status_binomial_GLM.txt",sep="")
 	linear.lm.1var.file= paste(stat.folder,"/",comp.type[i],"/differential_status_linear-linear_regression_1var.txt",sep="")
@@ -13,8 +13,8 @@ for(i in 1:length(comp.type)){
 	log.lm.2var.file= paste(stat.folder,"/",comp.type[i],"/differential_status_log2-linear_regression_2var.txt",sep="")
 	
 	min5.FE.table = read.table(min5.FE.file, head=T, sep="\t")
-	min15.FE.table = read.table(min15.FE.file, head=T, sep="\t")
-	min15.FE.table = min15.FE.table[match(min5.FE.table$HPV.subtype,min15.FE.table$HPV.subtype),]
+	min20.FE.table = read.table(min20.FE.file, head=T, sep="\t")
+	min20.FE.table = min20.FE.table[match(min5.FE.table$HPV.subtype,min20.FE.table$HPV.subtype),]
 	limma.table = read.table(limma.file, head=T, sep="\t")
 	limma.table = limma.table[match(min5.FE.table$HPV.subtype,limma.table$HPV.subtype),]
 	binomialGLM.table = read.table(binomialGLM.file, head=T, sep="\t")
@@ -33,9 +33,9 @@ for(i in 1:length(comp.type)){
 	min5.FE.pvalue = min5.FE.table$fe.pvalue
 	min5.FE.fdr = min5.FE.table$fe.fdr
 		
-	min15.detection.diff = paste(as.character(min15.FE.table$detection.diff),"%",sep="")
-	min15.FE.pvalue = min15.FE.table$fe.pvalue
-	min15.FE.fdr = min15.FE.table$fe.fdr
+	min20.detection.diff = paste(as.character(min20.FE.table$detection.diff),"%",sep="")
+	min20.FE.pvalue = min20.FE.table$fe.pvalue
+	min20.FE.fdr = min20.FE.table$fe.fdr
 
 	limma.voom.pvalue = limma.table$limma.pvalue
 	limma.voom.fdr = limma.table$limma.fdr
@@ -58,7 +58,7 @@ for(i in 1:length(comp.type)){
 	if(i == 1){
 		output.table = data.frame(HPV.type=genotypes, comparison = rep(comp.type[i], length(genotypes)),
 									min5.detection.diff, min5.FE.pvalue, min5.FE.fdr,
-									min15.detection.diff, min15.FE.pvalue, min15.FE.fdr,
+									min20.detection.diff, min20.FE.pvalue, min20.FE.fdr,
 									limma.voom.pvalue, limma.voom.fdr,
 									binomialGLM.pvalue, binomialGLM.fdr,
 									linear.lm.1var.pvalue, linear.lm.1var.fdr,
@@ -69,7 +69,7 @@ for(i in 1:length(comp.type)){
 	}else{
 		temp.table = data.frame(HPV.type=genotypes, comparison = rep(comp.type[i], length(genotypes)),
 									min5.detection.diff, min5.FE.pvalue, min5.FE.fdr,
-									min15.detection.diff, min15.FE.pvalue, min15.FE.fdr,
+									min20.detection.diff, min20.FE.pvalue, min20.FE.fdr,
 									limma.voom.pvalue, limma.voom.fdr,
 									binomialGLM.pvalue, binomialGLM.fdr,
 									linear.lm.1var.pvalue, linear.lm.1var.fdr,
