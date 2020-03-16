@@ -10,4 +10,4 @@ Ancestry predictions required the QC Array, which was only available for archive
 
 ![Predicted Ancestry by Sample Type](predicted_ancestry_by_sample_type.png "Predicted Ancestry by Sample Type")
 
-There are additional benchmarks for the ancestry prediction process on [this page](https://github.com/cwarden45/QCarray_SuperPop), within the code to make the super-population assignments.
+There are additional benchmarks for the ancestry prediction process on [this page](https://github.com/cwarden45/QCarray_SuperPop/tree/master/1000_Genomes_Benchmarks), within the code to make the super-population assignments.
