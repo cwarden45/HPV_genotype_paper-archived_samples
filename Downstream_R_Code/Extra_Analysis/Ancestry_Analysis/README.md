@@ -7,3 +7,7 @@ P-values for ancestry (**EUR vs AMR**) analysis were calculated using the follow
 **2b)** ***limma-voom*** ([Law et al. 2014](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)) on **read counts** with 2-variables (*adjusting for sample type*, along with predicted ancestry).
 
 Ancestry predictions required the QC Array, which was only available for archived DNA and frozen tissue samples (so, only those two types could be combined).
+
+![Predicted Ancestry by Sample Type](predicted_ancestry_by_sample_type.png "Predicted Ancestry by Sample Type")
+
+There are additional benchmarks for the ancestry prediction process on [this page](https://github.com/cwarden45/QCarray_SuperPop), within the code to make the super-population assignments.
