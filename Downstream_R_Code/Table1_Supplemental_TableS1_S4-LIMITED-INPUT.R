@@ -17,15 +17,15 @@ get.igcid = function(char.name){
 
 #############################################################################################
 ###	Table S1 directly relates to output file.											  ###
-### Table 1 and Table S2 are manually converted from terminal output.					  ###
+### Table 1 and Table S4 are manually converted from terminal output.					  ###
 #############################################################################################
 
 ##########################################################################################################
-### For Table S2, this provides "HPV58 / HPV18 Ratio", "Common HPV Detected", and "Previous HPV Types" ###
+### For Table S4, this provides "HPV58 / HPV18 Ratio", "Common HPV Detected", and "Previous HPV Types" ###
 ##########################################################################################################
 
 #####################################################################################
-### For Table S2, "“Unclear” HPV+ Assignments" can be determined from output file ###
+### For Table S4, "“Unclear” HPV+ Assignments" can be determined from output file ###
 #####################################################################################
 
 ###Not Shown (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 20% frequency
