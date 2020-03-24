@@ -1,4 +1,6 @@
-The more stringent read fraction filters reduce the variation in HPV58 genotype assignments in FFPE samples.  However, the qPCR filter essentially removes the increased frequency of HPV58 assignments in FFPE samples (at any read fraction threshold).
+The more stringent read fraction filters reduce the variation in HPV58 genotype assignments in FFPE samples.
+
+The qPCR filter essentially removes the increased frequency of HPV58 assignments in FFPE samples (at any read fraction threshold).  However, please note that only FFPE samples are flagged for qPCR filtering.
 
 **A) Effect of Read Fraction Thresholds *without* qPCR Filter**
 
@@ -48,8 +50,53 @@ The more stringent read fraction filters reduce the variation in HPV58 genotype 
 </tbody>
 </table>
 
-**B) Effect of Read Fraction Thresholds *WITH* qPCR Filter**
+**B) Effect of Read Fraction Thresholds *with* qPCR Filter**
 
+<table>
+  <tbody>
+    <tr>
+	<th align="center"></th>
+	<th align="center">Archived</br>DNA</th>
+	<th align="center">Frozen</br>Tissue</th>
+	<th align="center">FFPE</br>Tissue</th>
+	<th align="center" rowspan="2">FFPE vs DNA</br>FE P-value</th>
+    </tr>
+    <tr>
+	<td align="left">Number of Samples</td>
+	<td align="center">28*</td>
+	<td align="center">40*</td>
+	<td align="center">43</td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Detected</br>(>5% Reads)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">6 (15.0%)</td>
+	<td align="center">9 (21.0%)</td>
+	<td align="center">0.077</td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Alternative Detection Status</br>(>20% Reads)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">4 (10.0%)</td>
+	<td align="center">3 (7.0%)</td>
+	<td align="center">1.00</td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Plurality</br>(Most Abundant HPV-Type)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">4 (10.0%)</td>
+	<td align="center">2 (4.7%)</td>
+	<td align="center">1.00</td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Dominant / Majority</br>(>50% Reads)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">2 (5.0%)</td>
+	<td align="center">1 (2.3%)</td>
+	<td align="center">1.00</td>
+    </tr>
+</tbody>
+</table>
 
 \*There are 36 Archived DNA samples, but 28 is the count of samples excluding 6 prostate cancer negative controls (1 of which would have been excluded if 2 nM is used as the qPCR threshold for a QC flag).  Frozen adjacent normal samples were also excluded
 
