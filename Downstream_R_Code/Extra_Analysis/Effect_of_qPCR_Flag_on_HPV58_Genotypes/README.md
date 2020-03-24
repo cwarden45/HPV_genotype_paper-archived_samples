@@ -13,8 +13,8 @@ The more stringent read fraction filters reduce the variation in HPV58 genotype 
     </tr>
     <tr>
 	<td align="left">Number of Samples</td>
-	<td align="center">28\*</td>
-	<td align="center">40\*</td>
+	<td align="center">28*</td>
+	<td align="center">40*</td>
 	<td align="center">57</td>
     </tr>
     <tr>
@@ -22,7 +22,28 @@ The more stringent read fraction filters reduce the variation in HPV58 genotype 
 	<td align="center">1 (3.6%)</td>
 	<td align="center">6 (15.0%)</td>
 	<td align="center">22 (38.6%)</td>
-	<td align="center">5.0 x 10<sup>-4</sup></td>
+	<td align="center"><b>5.0 x 10<sup>-4</sup></b></td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Alternative Detection Status</br>(>20% Reads)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">4 (10.0%)</td>
+	<td align="center">14 (24.6%)</td>
+	<td align="center"><b>0.017</b></td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Plurality</br>(Most Abundant HPV-Type)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">4 (10.0%)</td>
+	<td align="center">10 (17.5%)</td>
+	<td align="center"><b>0.042</b></td>
+    </tr>
+    <tr>
+	<td align="left">HPV58 Dominant / Majority</br>(>50% Reads)</td>
+	<td align="center">1 (3.6%)</td>
+	<td align="center">2 (5.0%)</td>
+	<td align="center">8 (14.0%)</td>
+	<td align="center">0.078</td>
     </tr>
 </tbody>
 </table>
