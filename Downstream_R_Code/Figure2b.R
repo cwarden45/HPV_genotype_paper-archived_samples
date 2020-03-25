@@ -20,6 +20,21 @@ batch[batch == "170118"] = "FFPE"
 batch = factor(as.character(batch), levels=c("DNA","Frozen","FFPE"))
 batch = batch[match(names(count.mat), meta.table$SAMPLEID)]
 
+##ANOVA for continuous values
+fit = aov(percent.human ~ batch)
+result = summary(fit)
+aov.pvalue = result[[1]][['Pr(>F)']][1]
+print(paste("Human Read ANOVA p-value: ",aov.pvalue,sep=""))
+
+##Fisher's Exact test for binary values
+freq.cat = rep(NA, length(percent.human))
+freq.cat[percent.human < 20]="low human"
+freq.cat[(20 <= percent.human) & (percent.human <= 80)]="middle"
+freq.cat[percent.human > 80]="low HPV"
+
+fisher.mat = table(freq.cat, batch)
+print(fisher.test(fisher.mat))
+
 color.palette = c("chartreuse4","orange","cyan")
 group.levels = levels(batch)
 labelColors = rep("black",times=length(batch))
