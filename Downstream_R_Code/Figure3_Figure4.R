@@ -50,6 +50,40 @@ abline(h=avg.archivedDNA.neg, col="gray")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.2), border=NA)
 legend("top", legend=c("DNA","Frozen","FFPE"), col = c("darkgreen","orange","cyan"),
 	xpd=T, inset = -0.1, ncol=3, pch=16)
+
+	cor.coef = cor(percent.human, qPCR)
+	fit=lm(qPCR ~ percent.human)
+	result = summary(fit)
+	pvalue = result$coefficients[2,4]
+	print(paste("Overall: r= ",round(cor.coef,digits=2),", lm p-value = ",signif(pvalue, digits=2),sep=""))	
+	#abline(lm(fit),col="black")
+	
+	DNA.human = percent.human[meta.table$batch == "161007"]
+	DNA.qPCR = qPCR[meta.table$batch == "161007"]
+	cor.coef = cor(DNA.human, DNA.qPCR)
+	fit=lm(DNA.qPCR ~ DNA.human)
+	result = summary(fit)
+	pvalue = result$coefficients[2,4]
+	print(paste("Archived DNA: r= ",round(cor.coef,digits=2),", lm p-value = ",signif(pvalue, digits=2),sep=""))	
+	abline(lm(fit),col="darkgreen")
+	
+	frozen.human = percent.human[meta.table$batch == "161206"]
+	frozen.qPCR = qPCR[meta.table$batch == "161206"]
+	cor.coef = cor(frozen.human, frozen.qPCR)
+	fit=lm(frozen.qPCR ~ frozen.human)
+	result = summary(fit)
+	pvalue = result$coefficients[2,4]
+	print(paste("Archived Frozen: r= ",round(cor.coef,digits=2),", lm p-value = ",signif(pvalue, digits=2),sep=""))	
+	abline(lm(fit),col="orange")
+
+	FFPE.human = percent.human[meta.table$batch == "170118"]
+	FFPE.qPCR = qPCR[meta.table$batch == "170118"]
+	cor.coef = cor(FFPE.human, FFPE.qPCR)
+	fit=lm(FFPE.qPCR ~ FFPE.human)
+	result = summary(fit)
+	pvalue = result$coefficients[2,4]
+	print(paste("Archived FFPE: r= ",round(cor.coef,digits=2),", lm p-value = ",signif(pvalue, digits=2),sep=""))	
+	abline(lm(fit),col="cyan")
 dev.off()
 
 pdf("Figure4.pdf")
