@@ -64,19 +64,19 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">0.22 (2 HPV58)</td>
 	<td align="center">0.56 (5 HPV58)</td>
 	<td align="center">0.56 (5 HPV58)</td>
-	<td align="center"><b>1.11 (10 HPV58)</b></td>
+	<td align="center"><i>1.11 (10 HPV58)</i></td>
     </tr>
     </tr>
     <tr>
   	<td align="center">FFPE Tissue</td>
-	<td align="center"><b>1.16 (22 HPV58)</b></td>
-	<td align="center"><b>1.10 (22 HPV58)</b></td>
-	<td align="center"><b>1.10 (23 HPV58)</b></td>
-	<td align="center"><b>1.09 (24 HPV58)</b></td>
+	<td align="center"><i>1.16 (22 HPV58)</i></td>
+	<td align="center"><i>1.10 (22 HPV58)</i></td>
+	<td align="center"><i>1.10 (23 HPV58)</i></td>
+	<td align="center"><i>1.09 (24 HPV58)</i></td>
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
-	<td align="center"><b>Overall:</br></b>2 DNA</br><b>7 frozen</b></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br><i>7 frozen</i></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>2 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>3 frozen</br>1 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>0 Frozen</br>0 FFPE</td>
@@ -128,7 +128,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">17</td>
 	<td align="center">20</td>
 	<td align="center">20</td>
-	<td align="center"><b>37</b></td>
+	<td align="center"><i>37</i></td>
     </tr>
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
@@ -144,19 +144,19 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">0.33 (3 HPV58)</td>
 	<td align="center">0.78 (7 HPV58)</td>
 	<td align="center">0.78 (7 HPV58)</td>
-	<td align="center"><b>1.33 (12 HPV58)</b></td>
+	<td align="center"><i>1.33 (12 HPV58)</i></td>
     </tr>
     </tr>
     <tr>
   	<td align="center">FFPE Tissue</td>
-	<td align="center"><b>1.27 (14 HPV58)</b></td>
-	<td align="center"><b>1.27 (14 HPV58)</b></td>
-	<td align="center"><b>1.27 (14 HPV58)</b></td>
-	<td align="center"><b>1.36 (15 HPV58)</b></td>
+	<td align="center"><i>1.27 (14 HPV58)</i></td>
+	<td align="center"><i>1.27 (14 HPV58)</i></td>
+	<td align="center"><i>1.27 (14 HPV58)</i></td>
+	<td align="center"><i>1.36 (15 HPV58)</i></td>
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
-	<td align="center"><b>Overall:</br></b>2 DNA</br><b>7 frozen</b></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br><i>7 frozen</i></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>2 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>3 frozen</br>1 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>0 Frozen</br>0 FFPE</td>
