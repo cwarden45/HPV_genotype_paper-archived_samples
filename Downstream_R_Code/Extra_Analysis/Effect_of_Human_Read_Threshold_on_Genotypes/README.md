@@ -230,7 +230,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     <tr>
   	<td align="center">FFPE Tissue</td>
 	<td align="center">3</br>(0.27 HPV58)</td>
-	<td align="center">3</br>(0.27 HPV58))</td>
+	<td align="center">3</br>(0.27 HPV58)</td>
 	<td align="center"></br>( HPV58)</td>
 	<td align="center"></br>( HPV58)</td>
     </tr>
