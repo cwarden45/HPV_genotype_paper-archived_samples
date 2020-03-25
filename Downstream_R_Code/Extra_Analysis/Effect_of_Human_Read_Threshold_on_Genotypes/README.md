@@ -48,7 +48,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">26</td>
 	<td align="center">30</td>
 	<td align="center">31</td>
-	<td align="center"><b><i></i></b></td>
+	<td align="center"><b><i>37</i></b></td>
     </tr>
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
@@ -61,10 +61,10 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     </tr>
     <tr>
   	<td align="center">Frozen Tissue</td>
-	<td align="center">3</br>(0.33 HPV58)</td>
-	<td align="center">7</br>(0.78 HPV58)</td>
-	<td align="center">7</br>(0.78 HPV58)</td>
-	<td align="center"><b><i>10</br>(1.11 HPV58)</i></b></td>
+	<td align="center">0.33</br>(3 HPV58)</td>
+	<td align="center">0.78</br>(7 HPV58)</td>
+	<td align="center">0.78</br>(7 HPV58)</td>
+	<td align="center"><b><i>1.11</br>(10 HPV58)</i></b></td>
     </tr>
     </tr>
     <tr>
