@@ -12,7 +12,7 @@ The more stringent read fraction filters reduce the number of co-infections, but
 	<th align="center">FFPE Tissue</th>
     </tr>
     <tr>
-	<td align="left" rowspan="2">\>5% Read Fraction</td>
+	<td align="left" rowspan="2">>5% Read Fraction</td>
 	<td align="center">2+ HPV Co-Infection</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">2 (5.0%)</td>
