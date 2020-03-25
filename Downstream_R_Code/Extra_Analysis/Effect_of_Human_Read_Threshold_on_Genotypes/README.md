@@ -80,8 +80,8 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
 	<td align="center"><b>Overall:</b> 2 DNA, 7 frozen, 1 FFPE</br><b>Genotype-specific:</b> 1 frozen</td>
 	<td align="center"><b>Overall:</b> 2 DNA, 3 frozen, 1 FFPE</br><b>Genotype-specific:</b> 2 frozen</td>
-	<td align="center"><b>Overall:</b> 2 DNA, 2 frozen</br>Genotype-specific:</b> 3 frozen, 1 FFPE</td>
-	<td align="center">1.36 (15 HPV58)</td>
+	<td align="center"><b>Overall:</b> 2 DNA, 2 frozen</br><b>Genotype-specific:</b> 3 frozen, 1 FFPE</td>
+	<td align="center"><b>Overall:</b> 2 DNA, 1 frozen</br><b>Genotype-specific:</b> [none] </td>
     </tr>
 </tbody>
 </table>
