@@ -88,7 +88,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 
 **C) Effect of Read Fraction Thresholds *with* qPCR Filter with *20% Read Fractions***
 
- <sup>a<sup>All strategies require at least 20% HPV reads overall and for specific genotypes. See Table S3 for the effects of varying the read threshold. Samples with low amplified DNA concentrations are included in the calculations above. Exclusion of samples with amplified DNA concentrations <2-nM threshold reduces the number of HPV58+ samples, as well as the HPV58/HPV18 ration.
+a<sup>a<sup>All strategies require at least 20% HPV reads overall and for specific genotypes. See Table S3 for the effects of varying the read threshold. Samples with low amplified DNA concentrations are included in the calculations above. Exclusion of samples with amplified DNA concentrations <2-nM threshold reduces the number of HPV58+ samples, as well as the HPV58/HPV18 ration.
 
 <sup>b<sup>Given that 1) the numbers of HPV18+ and HPV58+ samples (including co-infections) are similar, 2) there is more variation among HPV18 sequences than among HPV58 sequences, and 3) off-target human reads positively correlate with HPV58 reads, we believe that a high HPV58/HPV18 ratio likely indicates a relatively high false positive rate for HPV58 assignments. 
 
