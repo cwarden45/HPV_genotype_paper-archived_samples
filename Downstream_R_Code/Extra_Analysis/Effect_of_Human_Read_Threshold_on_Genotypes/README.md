@@ -52,6 +52,30 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">20</td>
 	<td align="center">26</td>
     </tr>
+    <tr>
+	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
+  	<td align="center">Archived DNA</td>
+	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25 (1 HPV58)</td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">Frozen Tissue</td>
+	<td align="center">0.22 (2 HPV58)</td>
+	<td align="center">0.56 (5 HPV58)</td>
+	<td align="center">0.56 (5 HPV58)</td>
+	<td align="center">1.11 (10 HPV58)</td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">FFPE Tissue</td>
+	<td align="center">1.27 (14 HPV58)</td>
+	<td align="center">1.27 (14 HPV58)</td>
+	<td align="center">1.27 (14 HPV58)</td>
+	<td align="center">1.36 (15 HPV58)</td>
+    </tr>
 </tbody>
 </table>
 
