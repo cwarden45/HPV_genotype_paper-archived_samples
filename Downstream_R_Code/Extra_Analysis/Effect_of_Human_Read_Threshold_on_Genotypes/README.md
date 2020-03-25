@@ -78,7 +78,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
-	<td align="center"><b>Overall:</br></b>2 DNA</br>7 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br><b>7 frozen</b></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>2 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>3 frozen</br>1 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>0 Frozen</br>0 FFPE</td>
