@@ -4,6 +4,7 @@ There were 28 archived DNA, 40 frozen tissue, and 43 FFPE ICC samples passing th
 So, while it doesn't exactly match any of the numbers for the comparisons, p-values for a Fisher Exact test were tested for the following conditions:
 
 **1)** 15% genotype (larger group) versus 5% genotype (smaller group), represented by a *black* line
+
 **2)** 10% genotype (larger group) versus 5% genotype (smaller group), represented by a *blue* line
 
 The sample size for the larger groups started at 40 samples and the sample size for the smaller group started at 30 samples.
