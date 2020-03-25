@@ -67,7 +67,7 @@ output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_f
 ###Table S4 (> 0.8x Human Overall, > 0.6x Human Specific Genotype) --> 20% frequency
 ##qPCR_flag = TRUE
 ##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq20_liberal2.txt"#not provided on GitHub
-##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_liberal2FLAGGED.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_liberal2-FLAGGED.txt"#not provided on GitHub
 
 ###Table S4 (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 5% frequency
 ##qPCR_flag = FALSE
