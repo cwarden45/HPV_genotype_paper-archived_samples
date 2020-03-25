@@ -191,7 +191,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">HPV16</td>
 	<td align="center">65</td>
 	<td align="center">65</td>
-	<td align="center"></td>
+	<td align="center">65</td>
 	<td align="center"></td>
     </tr>
     </tr>
@@ -199,7 +199,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">HPV18</td>
 	<td align="center">24</td>
 	<td align="center">24</td>
-	<td align="center"></td>
+	<td align="center">24</td>
 	<td align="center"></td>
     </tr>
     </tr>
@@ -207,7 +207,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">HPV58</td>
 	<td align="center">6</td>
 	<td align="center">9</td>
-	<td align="center"></td>
+	<td align="center">9</td>
 	<td align="center"></td>
     </tr>
     <tr>
@@ -215,7 +215,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">Archived DNA</td>
 	<td align="center">1</br>(0.25 HPV58)</td>
 	<td align="center">1</br>(0.25 HPV58)</td>
-	<td align="center"></br>( HPV58)</td>
+	<td align="center">1</br>(0.25 HPV58)</td>
 	<td align="center"></br>( HPV58)</td>
     </tr>
     </tr>
@@ -223,7 +223,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">Frozen Tissue</td>
 	<td align="center">2</br>(0.22 HPV58)</td>
 	<td align="center">5</br>(0.56 HPV58)</td>
-	<td align="center"></br>( HPV58)</td>
+	<td align="center">5</br>(0.56 HPV58)</td>
 	<td align="center"></br>( HPV58)</td>
     </tr>
     </tr>
@@ -231,7 +231,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">FFPE Tissue</td>
 	<td align="center">3</br>(0.27 HPV58)</td>
 	<td align="center">3</br>(0.27 HPV58)</td>
-	<td align="center"></br>( HPV58)</td>
+	<td align="center">3</br>(0.27 HPV58)</td>
 	<td align="center"></br>( HPV58)</td>
     </tr>
     <tr>
