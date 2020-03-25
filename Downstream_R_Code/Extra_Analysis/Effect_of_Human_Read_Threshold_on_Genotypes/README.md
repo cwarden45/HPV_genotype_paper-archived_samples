@@ -78,10 +78,10 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
-	<td align="center"><b>Overall:</br></b>2 DNA</br>7 frozen</br>1 FFPE</br><b>Genotype-specific:</b></br>1 frozen</td>
-	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br><b>Genotype-specific:</b></br>2 frozen</td>
-	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br><b>Genotype-specific:</b></br>3 frozen</br>1 FFPE</td>
-	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br><b>Genotype-specific:</b></br>[none]</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>7 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>1 frozen</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>2 frozen</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br></br><b>Genotype-specific:</b></br>3 frozen</br>1 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br></br><b>Genotype-specific:</b></br>[none]</td>
     </tr>
 </tbody>
 </table>
