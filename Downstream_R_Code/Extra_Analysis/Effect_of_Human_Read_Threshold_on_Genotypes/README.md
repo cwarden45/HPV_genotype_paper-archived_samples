@@ -6,6 +6,84 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 
 **A) Effect of Read Fraction Thresholds *without* qPCR Filter with *5% Read Fractions***
 
+<table>
+  <tbody>
+    <tr>
+	<th align="center" colspan="2"></th>
+	<th align="center" colspan="4">Parameters for Assigning HPV Genotypes<sup>a</sup></th>
+    </tr>
+    <tr>
+	<td align="center" colspan="2">Overall HPV Threshold</td>
+	<td align="center"><b>&gt1.5x Human</b></td>
+	<td align="center"><b>&gt1.2x Human</b></td>
+	<td align="center"><b>&gt1.0x Human</b></td>
+	<td align="center"><b>&gt0.8x Human</b></td>
+    </tr>
+    <tr>
+	<td align="center" colspan="2">HPV Genotype Threshold</td>
+  	<td align="center"><b>&gt1.2x Human</b></td>
+	<td align="center"><b>&gt1.0x Human</b></td>
+	<td align="center"><b>&gt0.8x Human</b></td>
+	<td align="center"><b>&gt0.6x Human</b></td>
+    </tr>
+    <tr>
+	<td align="center" rowspan="3">Samples Positive for HPV Genotypes </td>
+  	<td align="center">HPV16</td>
+	<td align="center">78</td>
+	<td align="center">80</td>
+	<td align="center">81</td>
+	<td align="center">83</td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">HPV18</td>
+	<td align="center">32</td>
+	<td align="center">33</td>
+	<td align="center">34</td>
+	<td align="center">35</td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">HPV58</td>
+	<td align="center">26</td>
+	<td align="center">30</td>
+	<td align="center">31</td>
+	<td align="center">26</td>
+    </tr>
+    <tr>
+	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
+  	<td align="center">Archived DNA</td>
+	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25 (1 HPV58)</td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">Frozen Tissue</td>
+	<td align="center">0.22 (2 HPV58)</td>
+	<td align="center">0.56 (5 HPV58)</td>
+	<td align="center">0.56 (5 HPV58)</td>
+	<td align="center"><b>1.11 (10 HPV58)</b></td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">FFPE Tissue</td>
+	<td align="center"><b>1.16 (22 HPV58)</b></td>
+	<td align="center"><b>1.10 (22 HPV58)</b></td>
+	<td align="center"><b>1.10 (23 HPV58)</b></td>
+	<td align="center"><b>1.09 (24 HPV58)</b></td>
+    </tr>
+    <tr>
+	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
+	<td align="center"><b>Overall:</br></b>2 DNA</br><b>7 frozen</b></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>2 frozen</br>0 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>3 frozen</br>1 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>0 Frozen</br>0 FFPE</td>
+    </tr>
+</tbody>
+</table>
+
 **B) Effect of Read Fraction Thresholds *without* qPCR Filter with *20% Read Fractions***
 
 <table>
@@ -50,7 +128,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">17</td>
 	<td align="center">20</td>
 	<td align="center">20</td>
-	<td align="center">26</td>
+	<td align="center"><b>37</b></td>
     </tr>
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
@@ -63,10 +141,10 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     </tr>
     <tr>
   	<td align="center">Frozen Tissue</td>
-	<td align="center">0.22 (2 HPV58)</td>
-	<td align="center">0.56 (5 HPV58)</td>
-	<td align="center">0.56 (5 HPV58)</td>
-	<td align="center">1.11 (10 HPV58)</td>
+	<td align="center">0.33 (3 HPV58)</td>
+	<td align="center">0.78 (7 HPV58)</td>
+	<td align="center">0.78 (7 HPV58)</td>
+	<td align="center"><b>1.33 (12 HPV58)</b></td>
     </tr>
     </tr>
     <tr>
