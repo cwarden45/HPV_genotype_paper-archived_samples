@@ -16,14 +16,14 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<th align="center" colspan="4">Parameters for Assigning HPV Genotypes<sup>a</sup></th>
     </tr>
     <tr>
-	<td align="center">Overall HPV Threshold</td>
+	<td align="center" colspan="2">Overall HPV Threshold</td>
 	<td align="center"><b>&gt1.5x Human</b></td>
 	<td align="center"><b>&gt1.2x Human</b></td>
 	<td align="center"><b>&gt1.0x Human</b></td>
 	<td align="center"><b>&gt0.8x Human</b></td>
     </tr>
     <tr>
-	<td align="center">HPV Genotype Threshold</td>
+	<td align="center" colspan="2">HPV Genotype Threshold</td>
   	<td align="center"><b>&gt1.2x Human</b></td>
 	<td align="center"><b>&gt1.0x Human</b></td>
 	<td align="center"><b>&gt0.8x Human</b></td>
