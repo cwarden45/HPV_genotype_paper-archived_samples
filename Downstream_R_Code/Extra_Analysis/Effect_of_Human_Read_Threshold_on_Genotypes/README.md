@@ -143,8 +143,8 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
   	<td align="center">Frozen Tissue</td>
 	<td align="center">0.33</br>(3 HPV58)</td>
 	<td align="center">0.78</br>(7 HPV58)</td>
-	<td align="center">0.78 (7 HPV58)</td>
-	<td align="center"><b><i>1.33 (12 HPV58)</i></b></td>
+	<td align="center">0.78</br>(7 HPV58)</td>
+	<td align="center"><b><i>1.33</br>(12 HPV58)</i></b></td>
     </tr>
     </tr>
     <tr>
