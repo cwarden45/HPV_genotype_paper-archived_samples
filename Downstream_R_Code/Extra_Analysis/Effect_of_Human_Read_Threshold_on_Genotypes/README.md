@@ -48,7 +48,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">26</td>
 	<td align="center">30</td>
 	<td align="center">31</td>
-	<td align="center">26</td>
+	<td align="center"><b><i></i></b></td>
     </tr>
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
@@ -128,7 +128,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">17</td>
 	<td align="center">20</td>
 	<td align="center">20</td>
-	<td align="center"><i>37</i></td>
+	<td align="center"><b><i>26</i></b></td>
     </tr>
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
@@ -144,7 +144,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">0.22</br>(2 HPV58)</td>
 	<td align="center">0.56</br>(5 HPV58)</td>
 	<td align="center">0.56</br>(5 HPV58)</td>
-	<td align="center"><b><i>1.33</br>(12 HPV58)</i></b></td>
+	<td align="center"><b><i>1.11</br>(10 HPV58)</i></b></td>
     </tr>
     </tr>
     <tr>
