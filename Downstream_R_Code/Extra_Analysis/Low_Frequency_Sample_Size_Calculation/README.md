@@ -15,7 +15,7 @@ This results in the following plot:
 
 ![Sample size estimation](40-30_sample_size_estimation.png "Sample size estimation")
 
-There other methods for p-value calculation that can be more sensitive, and multiple tests were compared in subfolders including but not limited to  [Sample_Type_Full_Statistical_Analysis](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Sample_Type_Full_Statistical_Analysis).  However, higher false positives (from an underestimated false positive rate) and potentially more samples from the same patient than expected for FFPE samples may also be worth taking into consideration.  So, with the right parameters / filtering, we thought the Fisher's Exact test provided the best balance for our study (as far as we could tell).
+There other methods for p-value calculation that can be more sensitive, and multiple tests were compared in subfolders including but not limited to  [Sample_Type_Full_Statistical_Analysis](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Sample_Type_Full_Statistical_Analysis).  However, higher false positives (possibly from an underestimated false positive rate) may also be worth taking into consideration.  So, with the right parameters / filtering, we thought the Fisher's Exact test provided the best balance for our study (as far as we could tell).
 
 The use of integers can cause the p-values to not strictly decrease, which is why a loess trendline was added.
 
