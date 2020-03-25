@@ -53,26 +53,26 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
   	<td align="center">Archived DNA</td>
-	<td align="center">0.25 (1 HPV58)</td>
-	<td align="center">0.25 (1 HPV58)</td>
-	<td align="center">0.25 (1 HPV58)</td>
-	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
     </tr>
     </tr>
     <tr>
   	<td align="center">Frozen Tissue</td>
-	<td align="center">0.22 (2 HPV58)</td>
-	<td align="center">0.56 (5 HPV58)</td>
-	<td align="center">0.56 (5 HPV58)</td>
-	<td align="center"><b><i>1.11 (10 HPV58)</i></b></td>
+	<td align="center">0.22</br>(2 HPV58)</td>
+	<td align="center">0.56</br>(5 HPV58)</td>
+	<td align="center">0.56</br>(5 HPV58)</td>
+	<td align="center"><b><i>1.11</br>(10 HPV58)</i></b></td>
     </tr>
     </tr>
     <tr>
   	<td align="center">FFPE Tissue</td>
-	<td align="center"><b><i>1.16 (22 HPV58)</i></b></td>
-	<td align="center"><b><i>1.10 (22 HPV58)</i></b></td>
-	<td align="center"><b><i>1.10 (23 HPV58)</i></b></td>
-	<td align="center"><b><i>1.09 (24 HPV58)</i></b></td>
+	<td align="center"><b><i>1.16</br>(22 HPV58)</i></b></td>
+	<td align="center"><b><i>1.10</br>(22 HPV58)</i></b></td>
+	<td align="center"><b><i>1.10</br>(23 HPV58)</i></b></td>
+	<td align="center"><b><i>1.09</br>(24 HPV58)</i></b></td>
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
@@ -133,26 +133,26 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
   	<td align="center">Archived DNA</td>
-	<td align="center">0.25 (1 HPV58)</td>
-	<td align="center">0.25 (1 HPV58)</td>
-	<td align="center">0.25 (1 HPV58)</td>
-	<td align="center">0.25 (1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
+	<td align="center">0.25</br>(1 HPV58)</td>
     </tr>
     </tr>
     <tr>
   	<td align="center">Frozen Tissue</td>
-	<td align="center">0.33 (3 HPV58)</td>
+	<td align="center">0.33</br>(3 HPV58)</td>
+	<td align="center">0.78</br>(7 HPV58)</td>
 	<td align="center">0.78 (7 HPV58)</td>
-	<td align="center">0.78 (7 HPV58)</td>
-	<td align="center"><i>1.33 (12 HPV58)</i></td>
+	<td align="center"><b><i>1.33 (12 HPV58)</i></b></td>
     </tr>
     </tr>
     <tr>
   	<td align="center">FFPE Tissue</td>
-	<td align="center"><i>1.27 (14 HPV58)</i></td>
-	<td align="center"><i>1.27 (14 HPV58)</i></td>
-	<td align="center"><i>1.27 (14 HPV58)</i></td>
-	<td align="center"><i>1.36 (15 HPV58)</i></td>
+	<td align="center"><b><i>1.27</br>(14 HPV58)</i></b></td>
+	<td align="center"><b><i>1.27</br>(14 HPV58)</i></b></td>
+	<td align="center"><b><i>1.27</br>(14 HPV58)</i></b></td>
+	<td align="center"><b><i>1.36</br>(15 HPV58)</i></b></td>
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
