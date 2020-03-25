@@ -71,10 +71,10 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     </tr>
     <tr>
   	<td align="center">FFPE Tissue</td>
-	<td align="center">1.27 (14 HPV58)</td>
-	<td align="center">1.27 (14 HPV58)</td>
-	<td align="center">1.27 (14 HPV58)</td>
-	<td align="center">1.36 (15 HPV58)</td>
+	<td align="center"><b>1.27 (14 HPV58)</b></td>
+	<td align="center"><b>1.27 (14 HPV58)</b></td>
+	<td align="center"><b>1.27 (14 HPV58)</b></td>
+	<td align="center"><b>1.36 (15 HPV58)</b></td>
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
