@@ -11,8 +11,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 <table>
   <tbody>
     <tr>
-	<th align="center"></th>
-	<th align="center"></th>
+	<th align="center" colspan="2"></th>
 	<th align="center" colspan="4">Parameters for Assigning HPV Genotypes<sup>a</sup></th>
     </tr>
     <tr>
