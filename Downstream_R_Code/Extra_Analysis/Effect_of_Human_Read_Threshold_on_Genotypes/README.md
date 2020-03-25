@@ -192,7 +192,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">65</td>
 	<td align="center">65</td>
 	<td align="center">65</td>
-	<td align="center"></td>
+	<td align="center">67</td>
     </tr>
     </tr>
     <tr>
@@ -200,7 +200,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">24</td>
 	<td align="center">24</td>
 	<td align="center">24</td>
-	<td align="center"></td>
+	<td align="center">24</td>
     </tr>
     </tr>
     <tr>
@@ -208,7 +208,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">6</td>
 	<td align="center">9</td>
 	<td align="center">9</td>
-	<td align="center"></td>
+	<td align="center">14</td>
     </tr>
     <tr>
 	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
@@ -216,7 +216,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">1</br>(0.25 HPV58)</td>
 	<td align="center">1</br>(0.25 HPV58)</td>
 	<td align="center">1</br>(0.25 HPV58)</td>
-	<td align="center"></br>( HPV58)</td>
+	<td align="center">1</br>(0.25 HPV58)</td>
     </tr>
     </tr>
     <tr>
@@ -224,7 +224,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">2</br>(0.22 HPV58)</td>
 	<td align="center">5</br>(0.56 HPV58)</td>
 	<td align="center">5</br>(0.56 HPV58)</td>
-	<td align="center"></br>( HPV58)</td>
+	<td align="center"><b><i>1.11</br>(10 HPV58)</i></b></td>
     </tr>
     </tr>
     <tr>
@@ -232,7 +232,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 	<td align="center">3</br>(0.27 HPV58)</td>
 	<td align="center">3</br>(0.27 HPV58)</td>
 	<td align="center">3</br>(0.27 HPV58)</td>
-	<td align="center"></br>( HPV58)</td>
+	<td align="center">3</br>(0.27 HPV58)</td>
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
