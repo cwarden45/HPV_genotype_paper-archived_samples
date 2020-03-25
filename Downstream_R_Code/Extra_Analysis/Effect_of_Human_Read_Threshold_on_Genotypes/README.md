@@ -166,6 +166,84 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
 
 **C) Effect of Read Fraction Thresholds *with* qPCR Filter with *20% Read Fractions***
 
+<table>
+  <tbody>
+    <tr>
+	<th align="center" colspan="2"></th>
+	<th align="center" colspan="4">Parameters for Assigning HPV Genotypes<sup>a</sup></th>
+    </tr>
+    <tr>
+	<td align="center" colspan="2">Overall HPV Threshold</td>
+	<td align="center"><b>&gt1.5x Human</b></td>
+	<td align="center"><b>&gt1.2x Human</b></td>
+	<td align="center"><b>&gt1.0x Human</b></td>
+	<td align="center"><b>&gt0.8x Human</b></td>
+    </tr>
+    <tr>
+	<td align="center" colspan="2">HPV Genotype Threshold</td>
+  	<td align="center"><b>&gt1.2x Human</b></td>
+	<td align="center"><b>&gt1.0x Human</b></td>
+	<td align="center"><b>&gt0.8x Human</b></td>
+	<td align="center"><b>&gt0.6x Human</b></td>
+    </tr>
+    <tr>
+	<td align="center" rowspan="3">Samples Positive for HPV Genotypes </td>
+  	<td align="center">HPV16</td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">HPV18</td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">HPV58</td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+    </tr>
+    <tr>
+	<td align="center" rowspan="3">HPV58/HPV18 Ratio<sup>b</sup></td>
+  	<td align="center">Archived DNA</td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">Frozen Tissue</td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+    </tr>
+    </tr>
+    <tr>
+  	<td align="center">FFPE Tissue</td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+	<td align="center"></td>
+    </tr>
+    <tr>
+	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
+	<td align="center"><b>Overall:</br></b> DNA</br> frozen</br> FFPE</br></br><b>Genotype-specific:</b></br> DNA</br> Frozen</br> FFPE</td>
+	<td align="center"><b>Overall:</br></b> DNA</br> frozen</br> FFPE</br></br><b>Genotype-specific:</b></br> DNA</br> Frozen</br> FFPE</td>
+	<td align="center"><b>Overall:</br></b> DNA</br> frozen</br> FFPE</br></br><b>Genotype-specific:</b></br> DNA</br> Frozen</br> FFPE</td>
+	<td align="center"><b>Overall:</br></b> DNA</br> frozen</br> FFPE</br></br><b>Genotype-specific:</b></br> DNA</br> Frozen</br> FFPE</td>
+    </tr>
+</tbody>
+</table>
+
 <sup>a</sup>All strategies require at least 20% HPV reads overall and for specific genotypes. See Table S3 for the effects of varying the read threshold. Samples with low amplified DNA concentrations are included in the calculations above. Exclusion of samples with amplified DNA concentrations <2-nM threshold reduces the number of HPV58+ samples, as well as the HPV58/HPV18 ration.
 
 <sup>b</sup>Given that 1) the numbers of HPV18+ and HPV58+ samples (including co-infections) are similar, 2) there is more variation among HPV18 sequences than among HPV58 sequences, and 3) off-target human reads positively correlate with HPV58 reads, we believe that a high HPV58/HPV18 ratio likely indicates a relatively high false positive rate for HPV58 assignments. 
