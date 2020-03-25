@@ -156,7 +156,7 @@ The values are generated from [Table1_Supplemental_TableS1_S4-LIMITED-INPUT.R](h
     </tr>
     <tr>
 	<th align="center" colspan="2">Samples with “Unclear” Genotype Assignments<sup>c</sup></th>
-	<td align="center"><b>Overall:</br></b>2 DNA</br><i>7 frozen</i></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
+	<td align="center"><b>Overall:</br></b>2 DNA</br><b><i>7 frozen</i></b></br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>1 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>3 frozen</br>1 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>2 frozen</br>0 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>2 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>3 frozen</br>1 FFPE</td>
 	<td align="center"><b>Overall:</br></b>2 DNA</br>1 frozen</br>0 FFPE</br></br><b>Genotype-specific:</b></br>0 DNA</br>0 Frozen</br>0 FFPE</td>
