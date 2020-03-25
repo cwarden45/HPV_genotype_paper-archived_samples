@@ -70,7 +70,7 @@ points(total.size, pvalues,
 	col=rgb(red=0, green=0, blue=1, alpha=0.5), pch=16)
 max.not.detected = max(total.size[pvalues > 0.05])
 print(max.not.detected)
-abline(v=max.not.detected, col = rgb(red=0, green=1, blue=0, alpha=0.8), lty=4)
+abline(v=max.not.detected, col = rgb(red=0, green=0, blue=1, alpha=0.8), lty=4)
 loess.model = loess(pvalues ~ total.size)
 lines(total.size, predict(loess.model), col = "blue", lwd=4)
 rect(-10, -0.1, max(total.size) + 100, 0.05, col=rgb(red=0, green=1, blue=0, alpha=0.2), border=NA)
