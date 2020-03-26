@@ -46,7 +46,9 @@ for (i in 1:length(group.levels)){
 ab.mat = t(apply(count.mat, 1, count.to.ab, total=total.counts))
 
 export.ab.mat = t(ab.mat)
-export.ab.mat = data.frame(Sample=rownames(export.ab.mat),export.ab.mat)
+export.ab.mat = data.frame(Sample=rownames(export.ab.mat),
+							percent.human=percent.human,
+							export.ab.mat)
 write.table(export.ab.mat,"Selected_Output_Files/read_fraction_values.txt", quote=F, sep="\t", row.names=F)
 
 selected.HPV = c("HPV16","HPV18","HPV58","HPV45")
