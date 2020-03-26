@@ -6,9 +6,9 @@ Overview of "*Extra_Analysis*" folder contents
  - [Confirming-Completing_Patient_Annotations](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Confirming-Completing_Patient_Annotations) - justification for using plink Identity-By-Descent (IBD) for identifying samples that come from the same patient
  - [Cross-Contamination_Into_Samples_From_Other_Labs](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Cross-Contamination_Into_Samples_From_Other_Labs) - recovery of exact matches to the PEAR-merged L1 Amplicon in other lab's samples (where that exact sequence should be rare, or likely non-existent if there was not an index hopping)
  - [Effect_of_Human_Read_Threshold_on_Genotypes](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Effect_of_Human_Read_Threshold_on_Genotypes) - comparision of 4 sets of thresholds relative to off-target human reads to see the effect of HPV16/HPV18/HPV58 assignments (and "unclear" genotype assignments.  Repeated for the following other conditions
-  - minimum 5% read fractions (overall + genotype), without qPCR filter
-  - minimum 20% read fractions (overall + genotype), without qPCR filter
-  - minimum 20% read fractions (overall + genotype), **with** qPCR filter
+   - minimum 5% read fractions (overall + genotype), without qPCR filter
+    - minimum 20% read fractions (overall + genotype), without qPCR filter
+     - minimum 20% read fractions (overall + genotype), **with** qPCR filter
  - [Effect_of_qPCR_Flag_on_Co-Infections](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Effect_of_qPCR_Flag_on_Co-Infections)
  - [Effect_of_qPCR_Flag_on_HPV58_Genotypes](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Effect_of_qPCR_Flag_on_HPV58_Genotypes)
  - [Effect_of_qPCR_Flag_on_Tumor-Tumor_Divergence](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Effect_of_qPCR_Flag_on_Tumor-Tumor_Divergence)
