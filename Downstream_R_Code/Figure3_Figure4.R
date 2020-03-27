@@ -92,6 +92,7 @@ par(mfrow=c(2,2))
 plot(percent.human, qPCR,
 	pch=16, col=coinfection.col,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
+text(-12,60,labels = c("A."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=0:3, col = c("gray","black","orange","red"),
@@ -101,6 +102,7 @@ legend("top", legend=0:3, col = c("gray","black","orange","red"),
 plot(percent.human, qPCR,
 	pch=16, col=HPV58.col,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
+text(-12,60,labels = c("B."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=c("HPV58-","HPV58+"), col = c("black","red"),
@@ -117,6 +119,7 @@ HPV58.col = HPV58.col[meta.table$batch == "170118"]
 plot(percent.human, qPCR,
 	pch=16, col=coinfection.col,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
+text(-7,11.5,labels = c("C."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=0:3, col = c("gray","black","orange","red"),
@@ -126,6 +129,7 @@ legend("top", legend=0:3, col = c("gray","black","orange","red"),
 plot(percent.human, qPCR,
 	pch=16, col=HPV58.col,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
+text(-7,11.5,labels = c("D."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=c("HPV58-","HPV58+"), col = c("black","red"),
