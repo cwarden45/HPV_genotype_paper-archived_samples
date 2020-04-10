@@ -237,6 +237,7 @@ FFPE.years = meta.table$collection.year[meta.table$batch == "170118"]
 FFPE.years = FFPE.years[!is.na(FFPE.years)]
 print(paste("FFPE (1990-2010): ",length(FFPE.years[(FFPE.years >= 1990)&(FFPE.years <=2010)]),
 						" / ",length(FFPE.years),sep=""))
+print(ks.test(Frozen.years, FFPE.years))
 print(wilcox.test(Frozen.years, FFPE.years))
 						
 collection.start = 1980
