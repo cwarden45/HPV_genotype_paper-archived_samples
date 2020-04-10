@@ -48,6 +48,34 @@ for (i in 1:length(selected.HPV)){
 	plot.type = selected.HPV[i]
 	print(plot.type)
 	subtype.freq = as.numeric(ab.mat[rownames(ab.mat) == plot.type,])
+	
+	#Overall ANOVA
+	fit = aov(subtype.freq ~ meta.table$batch)
+	result = summary(fit)
+	aov.pvalue = result[[1]][['Pr(>F)']][1]
+	print(paste("Overall ANOVA p-value: ",aov.pvalue,sep=""))
+	#FFPE vs DNA
+	temp.freq  = subtype.freq[meta.table$batch != "Frozen"]
+	temp.batch = meta.table$batch[meta.table$batch != "Frozen"]
+	fit = aov(temp.freq ~ temp.batch)
+	result = summary(fit)
+	aov.pvalue = result[[1]][['Pr(>F)']][1]
+	print(paste("-->FFPE vs DNA ANOVA p-value: ",aov.pvalue,sep=""))	
+	#FFPE vs Frozen
+	temp.freq  = subtype.freq[meta.table$batch != "DNA"]
+	temp.batch = meta.table$batch[meta.table$batch != "DNA"]
+	fit = aov(temp.freq ~ temp.batch)
+	result = summary(fit)
+	aov.pvalue = result[[1]][['Pr(>F)']][1]
+	print(paste("-->FFPE vs Frozen ANOVA p-value: ",aov.pvalue,sep=""))	
+	#Frozen vs DNA
+	temp.freq  = subtype.freq[meta.table$batch != "FFPE"]
+	temp.batch = meta.table$batch[meta.table$batch != "FFPE"]
+	fit = aov(temp.freq ~ temp.batch)
+	result = summary(fit)
+	aov.pvalue = result[[1]][['Pr(>F)']][1]
+	print(paste("-->Frozen vs DNA ANOVA p-value: ",aov.pvalue,sep=""))	
+	
 	par(mar=c(7,10,7,7))
 	#plot(meta.table$batch, subtype.freq, cex.main=3, cex.axis=3,cex.lab=3,
 	#	ylab="", xaxt="n",
