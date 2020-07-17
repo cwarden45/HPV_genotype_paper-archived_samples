@@ -16,7 +16,7 @@ output_suffix = "_freq20.txt"
 
 minFreq = 15
 
-alignmentFolder = "../../../../../Paper_Draft_PLOS_Pathogens/Pipeline_Code/HPV_typing/PEAR_hg38_plus_35_HPV_Alignment"#these files are large and not on GitHub (put the output of this script is provided)
+alignmentFolder = "../../../../../Paper_Draft_PLOS_Pathogens/Pipeline_Code/HPV_typing/PEAR_hg38_plus_35_HPV_Alignment"#these files are large and not on GitHub (but the output of this script is provided)
 summaryFile = "../../Public_Input_Files/hg38_plus_35HPV_genotype_calls_freq5.txt"
 
 seqStats = HPVtype + "_seq_stats" + output_suffix
