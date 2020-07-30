@@ -1,6 +1,4 @@
-#setwd("R:\\jogembo\\Seq\\170118\\Paper_Draft_BMC_Genomics_from_PLOS_Pathogens_Draft18\\HPV_type_paper-archived_samples\\Paired-End_FASTQ_Code")
-
-#NOTE: This code assumes ther is an extra variable in the parameter file called "Count_File" (for the output file of counts)
+#NOTE: This code assumes there is an extra variable in the parameter file called "Count_File" (for the output file of counts)
 #NOTE: I set "Count_File" equal to "PE_HPVtype_counts.txt"
 
 #NOTE: Next, use PE_HPVtype_counts-part2.R to change sample names
