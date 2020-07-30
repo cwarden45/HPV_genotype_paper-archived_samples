@@ -10,7 +10,7 @@ unclear_cutoff = 15
 hpv_human_fc = 1.2
 geno_human_fc = 1.0
 
-#15% used instead of 5% for some results in paper, but this may not be necessary for some sample types
+#20% used instead of 5% for some results in paper, but this may not be necessary for some sample types
 
 parameterFile = "parameters.txt"
 
