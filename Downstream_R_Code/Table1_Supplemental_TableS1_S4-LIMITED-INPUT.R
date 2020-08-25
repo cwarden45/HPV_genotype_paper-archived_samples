@@ -34,9 +34,9 @@ get.igcid = function(char.name){
 ##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_conservative.txt"#not provided on GitHub
 
 ###Table S4 (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 20% frequency
-##qPCR_flag = TRUE
-##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq20_conservative.txt"#not provided on GitHub
-##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_conservative-FLAGGED.txt"#not provided on GitHub
+#qPCR_flag = TRUE
+#input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq20_conservative.txt"#not provided on GitHub
+#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_conservative-FLAGGED.txt"#not provided on GitHub
 
 ###Table S4 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 20% frequency
 #qPCR_flag = FALSE
@@ -70,9 +70,9 @@ output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_f
 ##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_liberal2-FLAGGED.txt"#not provided on GitHub
 
 ###Table S4 (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 5% frequency
-##qPCR_flag = FALSE
-##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq5_conservative.txt"#not provided on GitHub
-##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_conservative.txt"#not provided on GitHub
+#qPCR_flag = FALSE
+#input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq5_conservative.txt"#not provided on GitHub
+#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5_conservative.txt"#not provided on GitHub
 
 ###Table S3 + S4 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 5% frequency
 ## This is part of the input for Table S3 (since we need to go up from the 5% frequency assignments)
@@ -524,7 +524,7 @@ meta.table = data.frame(meta.table, barcode=barcode.table$barcode, runInfo,
 
 write.table(meta.table, output.file, quote=F, sep="\t", row.names=F)
 
-##reformat table for Additional_File_01_Supplemental_Table_S1.xlsx
+##reformat table for Supplemental_Table_S1.xlsx
 ##Change "NA" values
 ##Ignore/delete this file under other settings
 
@@ -599,4 +599,4 @@ output.table = as.matrix(output.table)
 new.cols = c("Sample ID","Sample Type","Tissue Type","Collection Year","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported Pair ID","QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
 colnames(output.table)=new.cols
 
-write.table(output.table,"Additional_File_01_Supplemental_Table_S1.txt", quote=F, sep="\t", row.names=F)
+write.table(output.table,"Supplemental_Table_S1.txt", quote=F, sep="\t", row.names=F)
