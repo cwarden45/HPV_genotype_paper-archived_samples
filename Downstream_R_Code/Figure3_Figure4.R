@@ -47,9 +47,12 @@ plot(percent.human, qPCR,
 	pch=16, col=sample.col,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
 abline(h=avg.archivedDNA.neg, col="gray")
+abline(h=2, col="red")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.2), border=NA)
 legend("top", legend=c("DNA","Frozen","FFPE"), col = c("darkgreen","orange","cyan"),
 	xpd=T, inset = -0.1, ncol=3, pch=16)
+legend("topright", legend=c("HPV- Mean","qPCR Flag"),
+		col=c("gray","red"), lwd=1)
 
 	cor.coef = cor(percent.human, qPCR)
 	fit=lm(qPCR ~ percent.human)
@@ -94,9 +97,13 @@ plot(percent.human, qPCR,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
 text(-12,60,labels = c("A."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
+abline(h=2, col="red")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=0:3, col = c("gray","black","orange","red"),
 	xpd=T, inset = -0.2, ncol=4, pch=16, cex=0.8)
+legend("topright",
+		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		col=c("gray","red"), lwd=1, cex=0.6)
 
 #color by HPV58 status (all)
 plot(percent.human, qPCR,
@@ -104,10 +111,14 @@ plot(percent.human, qPCR,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
 text(-12,60,labels = c("B."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
+abline(h=2, col="red")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=c("HPV58-","HPV58+"), col = c("black","red"),
 	xpd=T, inset = -0.2, ncol=2, pch=16, cex=0.8)
-
+legend("topright",
+		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		col=c("gray","red"), lwd=1, cex=0.6)
+		
 #plot FFPE
 FFPE.table = meta.table[meta.table$batch == "170118",]
 qPCR = qPCR[meta.table$batch == "170118"]
@@ -121,9 +132,13 @@ plot(percent.human, qPCR,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
 text(-7,11.5,labels = c("C."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
+abline(h=2, col="red")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=0:3, col = c("gray","black","orange","red"),
 	xpd=T, inset = -0.2, ncol=4, pch=16, cex=0.8)
+legend("topright",
+		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		col=c("gray","red"), lwd=1, cex=0.6)
 	
 #color by HPV58 status (FFPE)
 plot(percent.human, qPCR,
@@ -131,7 +146,11 @@ plot(percent.human, qPCR,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
 text(-7,11.5,labels = c("D."), xpd=T, font=2, cex=1.5)
 abline(h=avg.archivedDNA.neg, col="gray")
+abline(h=2, col="red")
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=c("HPV58-","HPV58+"), col = c("black","red"),
 	xpd=T, inset = -0.2, ncol=2, pch=16, cex=0.8)
+legend("topright",
+		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		col=c("gray","red"), lwd=1, cex=0.6)
 dev.off()
