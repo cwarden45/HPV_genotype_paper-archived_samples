@@ -12,6 +12,6 @@ If filtering for samples used for statistical analysis and considering only QC A
 
 ![Predicted Ancestry by Sample Type](predicted_ancestry_by_sample_type.png "Predicted Ancestry by Sample Type")
 
-The above plot shows frequencies of reported race per sample type, with supervised ADMIXTURE predictions (AMR/EUR) for “White/Caucasian” individuals. ADMIXTURE assignments always matched reported race, but if there was no reported race and no QC Array data for a particular sample (or if the reported race was “Other”), those samples were not included in the analysis.  As you can see, no FFPE samples were processed with the QC Array.
+The above plot shows frequencies of reported race per sample type, with supervised ADMIXTURE predictions (AMR/EUR) for “White/Caucasian” individuals. As you can see, no FFPE samples were processed with the QC Array (and therefore not included in the analysis).
 
 There are additional benchmarks (and method details) for the ancestry prediction process on [this page](https://github.com/cwarden45/QCarray_SuperPop/tree/master/1000_Genomes_Benchmarks), within the code to make the super-population assignments.
