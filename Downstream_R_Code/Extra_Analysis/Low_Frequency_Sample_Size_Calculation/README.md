@@ -1,5 +1,5 @@
 
-There were 28 archived DNA, 40 frozen tissue, and 43 FFPE ICC samples passing the qCPR filter that we propose (a subset of which would be HPV+ for the genotype analysis).
+There were 28 archived DNA, 40 frozen tissue, and 43 FFPE ICC samples passing the qPCR filter that we propose (a subset of which would be HPV+ for the genotype analysis).
 
 So, while it doesn't exactly match any of the numbers for the comparisons, p-values for a Fisher Exact test were tested for the following conditions:
 
