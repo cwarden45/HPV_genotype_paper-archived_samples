@@ -1,4 +1,4 @@
-#without qPCR flags
+#without qPCR flags (Table S3)
 #input.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
 
 #with qPCR flags
@@ -31,9 +31,7 @@ parse.coinfection.count2 = function(string, threshold){
 
 input.table = read.table(input.file, head=T, sep="\t")
 print(dim(input.table))
-input.table = input.table[-grep("prostate", input.table$sample.type),]
-print(dim(input.table))
-input.table = input.table[-grep("adjacent normal", input.table$sample.type),]
+input.table = input.table[(input.table$sample.type == "Invasive Cervical Cancer")|(input.table$sample.type == "Vulvar Cancer")|(input.table$sample.type == "Endometrial + Cervical Cancer"),]
 print(dim(input.table))
 input.table = input.table[input.table$HPV.status != "qPCR Flag",]
 print(dim(input.table))
