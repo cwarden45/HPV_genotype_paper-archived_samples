@@ -8,6 +8,6 @@ A small faction of reads can be aligned to the HPV52 genome reference.  The **BW
 If **Bowtie1** is used instead of BWA-MEM, then the HPV52 false positives art lower:
 ![Bowtie1 L1 Alignment](IGV_Bowtie1-HPV52-zoom.png "Bowtie1 L1 Alignment")
 
-However, we believe that we underestimate the percent of human off-target reads if we use Bowtie1 instead of BWA-MEM.
+However, we believe that we **underestimate** the percent of *human off-target reads* if we use Bowtie1 instead of BWA-MEM.
 
 I should also acknowledge that I learned about this from an anonymous reviewer, citing the [Matsukura and Sugase 2004](https://pubmed.ncbi.nlm.nih.gov/15207629/) publication.
