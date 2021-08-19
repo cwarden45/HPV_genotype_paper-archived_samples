@@ -1,8 +1,8 @@
-input.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
-output.file = "human_reads_vs_HPV-genotype_freq5.pdf"
+#input.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
+#output.file = "human_reads_vs_HPV-genotype_freq5.pdf"
 
-#input.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5-FLAGGED.txt"
-#output.file = "human_reads_vs_HPV-genotype_freq5-FLAGGED.pdf"
+input.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5-FLAGGED.txt"
+output.file = "human_reads_vs_HPV-genotype_freq5-FLAGGED.pdf"
 
 count.to.ab = function(counts, total){
 	return(100*(counts/total))

@@ -13,7 +13,7 @@
     <tr>
   	<td align="center">HPV16</td>
 	<td align="center"><b>r = -0.64</br>lm p-value = 4.5 x 10<sup>-5</sup></b></td>
-	<td align="center"><b>r = -0.43</br>lm p-value = 0.0038</b></td>
+	<td align="center"><b>r = -0.43</br>lm p-value = 0.0039</b></td>
 	<td align="center"><b>r = -0.29</br>lm p-value = 0.026</b></td>
     </tr>
     <tr>
@@ -24,13 +24,13 @@
     </tr>
     <tr>
   	<td align="center">HPV58</td>
-	<td align="center">r = -0.11</br>lm p-value = 0.54</td>
-	<td align="center"><b>r = 0.71</br>lm p-value = 5.5 x 10<sup>-8</sup></b></td>
+	<td align="center">r = -0.12</br>lm p-value = 0.52</td>
+	<td align="center"><b>r = 0.71</br>lm p-value = 5.3 x 10<sup>-8</sup></b></td>
 	<td align="center"><b>r = 0.49</br>lm p-value = 0.00011</b></td>
     </tr>
     <tr>
   	<td align="center">HPV45</td>
-	<td align="center">r = 0.33</br>lm p-value = 0.057</td>
+	<td align="center">r = 0.18</br>lm p-value = 0.32</td>
 	<td align="center">r = -0.11</br>lm p-value = 0.47</td>
 	<td align="center">r = -0.11</br>lm p-value = 0.42</td>
     </tr>
@@ -52,25 +52,25 @@
     </tr>
     <tr>
   	<td align="center">HPV16</td>
-	<td align="center"><b>r = -0.62</br>lm p-value = 0.00011</b></td>
-	<td align="center"><b>r = -0.43</br>lm p-value = 0.0038</b></td>
+	<td align="center"><b>r = -0.64</br>lm p-value = 4.4 x 10<sup>-5</sup></b></td>
+	<td align="center"><b>r = -0.43</br>lm p-value = 0.0039</b></td>
 	<td align="center"><b>r = -0.35</br>lm p-value = 0.021</b></td>
     </tr>
     <tr>
   	<td align="center">HPV18</td>
-	<td align="center">r = -0.21</br>lm p-value = 0.23</td>
+	<td align="center">r = -0.22</br>lm p-value = 0.21</td>
 	<td align="center">r = -0.26</br>lm p-value = 0.086</td>
 	<td align="center">r = -0.11</br>lm p-value = 0.50</td>
     </tr>
     <tr>
   	<td align="center">HPV58</td>
-	<td align="center">r = -0.11</br>lm p-value = 0.54</td>
-	<td align="center"><b>r = 0.71</br>lm p-value = 5.5 x 10<sup>-8</sup></b></td>
+	<td align="center">r = -0.12</br>lm p-value = 0.52</td>
+	<td align="center"><b>r = 0.71</br>lm p-value = 5.3 x 10<sup>-8</sup></b></td>
 	<td align="center">r = 0.28</br>lm p-value = 0.07</td>
     </tr>
     <tr>
   	<td align="center">HPV45</td>
-	<td align="center">r = 0.28</br>lm p-value = 0.11</td>
+	<td align="center">r = 0.18</br>lm p-value = 0.32</td>
 	<td align="center">r = -0.11</br>lm p-value = 0.47</td>
 	<td align="center">r = -0.09</br>lm p-value = 0.58</td>
     </tr>
