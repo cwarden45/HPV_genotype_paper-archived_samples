@@ -10,11 +10,35 @@ meta.table$batch[meta.table$batch == "161206"] = "Frozen"
 meta.table$batch[meta.table$batch == "170118"] = "FFPE"
 meta.table$batch = factor(as.character(meta.table$batch), levels=c("DNA","Frozen","FFPE"))
 
-#HPV+ tumor
+##This is presented as an introduction, so revise to **not* filter for HPV+ tumor
+##Even though some samples are present in multiple sample types, filter for 1 sample per patient per group.
 print(dim(meta.table))
-meta.table = meta.table[meta.table$HPV.status=="pos",]
+meta.table = meta.table[meta.table$HPV.status == "pos",]
 print(dim(meta.table))
-meta.table = meta.table[-grep(".N",meta.table$SAMPLEID),]
+meta.table = meta.table[(meta.table$sample.type == "Invasive Cervical Cancer")|(meta.table$sample.type == "Vulvar Cancer")|(meta.table$sample.type == "Endometrial + Cervical Cancer"),]
+print(dim(meta.table))
+keep.flag = rep(TRUE,nrow(meta.table))
+for (batch_value in levels(meta.table$batch)){
+	batch.table = meta.table[meta.table$batch == batch_value,]
+	batch.table = batch.table[!is.na(batch.table$extra.pairID),]
+	
+	batch.pair.counts = table(batch.table$extra.pairID)
+	rep.pairs = names(batch.pair.counts[batch.pair.counts > 1])
+	for (rep.pair in rep.pairs){
+		print(rep.pair)
+		#arbitrarily remove 2nd sample from plot
+		pair.table = batch.table[batch.table$extra.pairID == rep.pair,]
+		#print(pair.table$SAMPLEID)
+		
+		dup.sample = as.character(pair.table$SAMPLEID[2])
+		print(dup.sample)
+		keep.flag[meta.table$SAMPLEID == dup.sample]=FALSE
+	}#end for (rep.pair in rep.pairs)
+	
+}#end for (batch_value in meta.table$batch)
+
+print(table(keep.flag))
+meta.table = meta.table[keep.flag,]
 print(dim(meta.table))
 
 merged.ethnicity = as.character(meta.table$reported.race)
@@ -37,7 +61,7 @@ plot.ethnicity[grep("Caucasian",plot.ethnicity)]="Caucasian-Reported"
 plot.table = table(plot.ethnicity, meta.table$batch)
 pdf("to_AI/Figure1c.pdf", useDingbats=FALSE)
 par(mar=c(5,5,5,12))
-barplot(plot.table, beside=T, col=c("orange","green", "plum4"))
+barplot(plot.table, beside=T, col=c("orange","green", "plum4"), main="HPV+ Tumor")
 legend(13,30,legend=c("African / AFR", "Asian / EAS", "Caucasian-Reported","Caucasian-EUR","Caucasian-AMR","Caucasian-EUR/AMR"),
 			col=c("orange", "green", "plum4","blue","red","black"), xpd=T, pch=15)
 

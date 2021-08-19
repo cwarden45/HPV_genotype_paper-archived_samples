@@ -8,9 +8,11 @@ parse.HPV.status = function(string, type){
 
 input.table = read.table("Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20-FLAGGED.txt", head=T, sep="\t")
 print(dim(input.table))
-input.table = input.table[-grep("prostate", input.table$sample.type),]
+input.table = input.table[-grep("Prostate", input.table$sample.type),]
 print(dim(input.table))
-input.table = input.table[-grep("adjacent normal", input.table$sample.type),]
+input.table = input.table[input.table$sample.type != "Adjacent Normal Cervix",]
+print(dim(input.table))
+input.table = input.table[input.table$sample.type != "Non-Malignant Vagina",]
 print(dim(input.table))
 input.table = input.table[input.table$HPV.status != "qPCR Flag",]
 input.table$HPV.status = as.factor(as.character(input.table$HPV.status))

@@ -3,17 +3,18 @@ get.igcid = function(char.name){
 	return(sample.info[1])
 }#end def get.igcid
 
-#############################################################################################
-### For Table S1, manually change the following values under "batch": 					  ###
-### 161007 --> DNA  											      					  ###
-### 161206 --> Frozen  											      					  ###
-### 170118 --> FFPE  											     					  ###
-### These refer to folder locations.  Addititional FFPE batches defined from FASTQ files. ###
-###																						  ###
-###	Manually change "pairID" to "reported.pairID"								          ###
-###																						  ###
-###	Delete CLN / IGC ID and other extra names (redundancies to troubleshoot code).        ###
-#############################################################################################
+################################################################################################
+### If the correct file is generated lsat, there should already be reformatting for Table S1 ###
+### 161007 --> DNA  											      					  	 ###
+### 161206 --> Frozen  											      					  	 ###
+### 170118 --> FFPE  											     					  	 ###
+### These refer to folder locations.  Addititional FFPE batches defined from FASTQ files. 	 ###
+###																						  	 ###
+###	Manually change "pairID" to "Frozen pairID"												 ###
+###	Manually change "extra.pairID" to "Expanded / QC Array Pair ID"						  	 ###
+###																						  	 ###
+###	Delete CLN / IGC ID and other extra names (redundancies to troubleshoot code).        	 ###
+################################################################################################
 
 #############################################################################################
 ###	Table S1 directly relates to output file.											  ###
@@ -34,16 +35,16 @@ get.igcid = function(char.name){
 ##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_conservative.txt"#not provided on GitHub
 
 ###Table S4 (> 1.5x Human Overall, > 1.2x Human Specific Genotype) --> 20% frequency
-#qPCR_flag = TRUE
-#input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq20_conservative.txt"#not provided on GitHub
-#output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_conservative-FLAGGED.txt"#not provided on GitHub
+##qPCR_flag = TRUE
+##input.file = "../Paired-End_FASTQ_Code/hg38_plus_35HPV_genotype_calls_freq20_conservative.txt"#not provided on GitHub
+##output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20_conservative-FLAGGED.txt"#not provided on GitHub
 
 ###Table S4 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 20% frequency
 #qPCR_flag = FALSE
 #input.file = "Public_Input_Files/hg38_plus_35HPV_genotype_calls_freq20.txt"
 #output.file = "Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq20.txt"
 
-## Table S1 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 20% frequency
+## Table S1 + S4 (> 1.2x  Human Overall, > 1.0x Human Specific Genotype) --> 20% frequency
 ## This is also the input for Table 2 (since we want to report the intermediate 20% frequency assignments, with qPCR flags)
 qPCR_flag = TRUE
 input.file = "Public_Input_Files/hg38_plus_35HPV_genotype_calls_freq20.txt"
@@ -145,7 +146,6 @@ meta.table = data.frame(Seq.IGC.ID=igcID, seq.pathID=pathID,
 						batch=batchID)
 
 meta.table$seq.pathID = as.character(meta.table$seq.pathID)
-meta.table$seq.pathID[meta.table$seq.pathID == "51450-T"]="51540-T"
 meta.table$seq.pathID[meta.table$seq.pathID == "16142-01-1"]="16142-01-01"
 meta.table$seq.pathID[meta.table$seq.pathID == "16142-01-2"]="16142-01-02"
 meta.table$seq.pathID[meta.table$seq.pathID == "16142-01-3"]="16142-01-03"
@@ -222,6 +222,93 @@ path.table = rbind(path.table, temp.table)
 
 meta.table = cbind(meta.table, path.table[match(meta.table$seq.pathID, path.table$pathID),])
 
+#add histological subtype information
+temp.table = read.table("../../Copied_Files/Histology_Cnext_pathologyreports-REFORMAT.txt", head=T, sep="\t")
+
+temp.table$DEID = as.character(temp.table$DEID)
+temp.table$DEID = gsub("-\\(JOG-\\d+\\)","",temp.table$DEID)
+
+normal.rows = temp.table[grep("-N-T",temp.table$DEID),]
+temp.table$DEID = gsub("-N-T","-T",temp.table$DEID)
+normal.rows$DEID = gsub("-N-T","-N",normal.rows$DEID)
+temp.table = rbind(temp.table, normal.rows)
+
+hist.table = temp.table[match(meta.table$seq.pathID, temp.table$DEID),]
+print(meta.table$seq.pathID[is.na(hist.table$Histological.Subtype)])
+
+hist.table$Histological.Subtype = as.character(hist.table$Histological.Subtype)
+hist.table$Histological.Subtype[meta.table$sample.type == "adjacent normal"] = "Adjacent Normal Cervix"
+
+meta.table$sample.type = as.character(meta.table$sample.type)
+meta.table$sample.type[hist.table$Histological.Subtype == "Adenocarcinoma (Adeno)"] = "Invasive Cervical Cancer"
+meta.table$sample.type[hist.table$Histological.Subtype == "Adenosquamous"] = "Invasive Cervical Cancer"
+meta.table$sample.type[hist.table$Histological.Subtype == "Cervical Small Cell Carcinoma"] = "Invasive Cervical Cancer"
+meta.table$sample.type[hist.table$Histological.Subtype == "Squamous Cell Carcinoma (SCC)"] = "Invasive Cervical Cancer"
+meta.table$sample.type[hist.table$Histological.Subtype == "Unavailable"] = "Invasive Cervical Cancer"
+
+
+meta.table$sample.type[meta.table$seq.pathID == "16142-01-55"] = "Non-Malignant Vagina"
+meta.table$sample.type[meta.table$sample.type == "nlprostate"] = "Normal Prostate"
+meta.table$sample.type[meta.table$sample.type == "adjacent normal"] = "Adjacent Normal Cervix"
+
+meta.table$sample.type[meta.table$sample.type == "cxca"] = "Invasive Cervical Cancer"
+meta.table$sample.type[meta.table$sample.type == "vulvaca"] = "Vulvar Cancer"
+meta.table$sample.type[hist.table$Histological.Subtype == "Endometroid + Serous Papillary Carcinoma"] = "Endometrial + Cervical Cancer"
+
+meta.table$sample.type[meta.table$sample.type == "prostate"] = "Prostate Cancer"
+meta.table$sample.type = as.factor(meta.table$sample.type)
+
+meta.table = data.frame(meta.table, hist.subtype=hist.table$Histological.Subtype)
+
+print(table(meta.table$hist.subtype))
+overall.hist.subtype = table(meta.table$batch, meta.table$hist.subtype)
+print(overall.hist.subtype)
+
+hist.FE.mat = matrix(ncol=2,nrow=3)
+colnames(hist.FE.mat) = c("Adeno","SSC")
+rownames(hist.FE.mat) = c("DNA","Frozen","FFPE")
+
+#hist.FE.mat[1,1]=overall.hist.subtype[1,1]
+#hist.FE.mat[2,1]=overall.hist.subtype[2,1]
+#hist.FE.mat[3,1]=overall.hist.subtype[3,1]
+
+hist.FE.mat[1,1]=overall.hist.subtype[1,1] + overall.hist.subtype[1,2]
+hist.FE.mat[2,1]=overall.hist.subtype[2,1] + overall.hist.subtype[2,2]
+hist.FE.mat[3,1]=overall.hist.subtype[3,1] + overall.hist.subtype[3,2]
+
+hist.FE.mat[1,2]=overall.hist.subtype[1,8]
+hist.FE.mat[2,2]=overall.hist.subtype[2,8]
+hist.FE.mat[3,2]=overall.hist.subtype[3,8]
+
+print(hist.FE.mat)
+print(fisher.test(hist.FE.mat))
+
+print(hist.FE.mat[c(1,3),])
+print(fisher.test(hist.FE.mat[c(1,3),]))
+
+#print(hist.FE.mat[c(2,3),])
+#print(fisher.test(hist.FE.mat[c(2,3),]))
+
+#print(hist.FE.mat[c(1,2),])
+#print(fisher.test(hist.FE.mat[c(1,2),]))
+
+temp.HPV58.table = meta.table[grep("HPV58",meta.table$genotype),]
+HPV58.hist.subtype = table(temp.HPV58.table$batch,temp.HPV58.table$hist.subtype)
+
+FFPE.HPV58.hist.FE.mat = matrix(ncol=2,nrow=2)
+colnames(FFPE.HPV58.hist.FE.mat) = c("Adeno","SSC")
+rownames(FFPE.HPV58.hist.FE.mat) = c("Positive","Negative")
+
+FFPE.HPV58.hist.FE.mat[1,1]=HPV58.hist.subtype[3,1]
+FFPE.HPV58.hist.FE.mat[1,2]=HPV58.hist.subtype[3,8]
+
+FFPE.HPV58.hist.FE.mat[2,1]=overall.hist.subtype[3,1] - HPV58.hist.subtype[3,1]
+FFPE.HPV58.hist.FE.mat[2,2]=overall.hist.subtype[3,8] - HPV58.hist.subtype[3,8]
+
+print(FFPE.HPV58.hist.FE.mat)
+print(fisher.test(FFPE.HPV58.hist.FE.mat))
+
+#parse collection year information
 print(mean(meta.table$collection.year, na.rm=T))
 print(sd(meta.table$collection.year, na.rm=T))
 
@@ -274,7 +361,7 @@ print(paste("Co-Infection vs Year (2-var) p-value: ",pvalue,sep=""))
 extra.pairs = read.table("../../Copied_Files/Yafan_same_samples.txt", head=T, sep="\t")
 extra.pairs = extra.pairs[extra.pairs$Pair1 != "16142-01-22",]
 extra.pairs$Pair2 = as.character(extra.pairs$Pair2)
-extra.pairs$Pair2[extra.pairs$Pair2 == "51450-T"]="51540-T"
+#correct label is 51450-T --> do not change back to match minor typo (51540-T)
 
 extra.pairID = rep(NA, nrow(meta.table))
 batch2.TNcounts = table(meta.table$pairID)
@@ -345,6 +432,9 @@ for(i in 1:nrow(QCarray.table)){
 
 #add QC Array call rate
 call.rate.table = read.table("../../Copied_Files/R_call_rate.txt", head=T, sep="\t")
+call.rate.table$SampleID = as.character(call.rate.table$SampleID)
+call.rate.table$SampleID[call.rate.table$SampleID == "S51540.T"] = "S51450.T" #minor typo
+
 QCarray.call.rate = as.character(call.rate.table$overall.call.rate[match(meta.table$SAMPLEID,call.rate.table$SampleID)])
 
 meta.table = data.frame(meta.table, extra.pairID, QCarray.call.rate)
@@ -353,7 +443,7 @@ meta.table = data.frame(meta.table, extra.pairID, QCarray.call.rate)
 age.table = read.table("../../Copied_Files/OgemboStudy_DemographicV2_DEID.txt", head=T, sep="\t")
 age.table$PathID = as.character(age.table$PathID)
 age.table$PathID = paste("S",age.table$PathID,sep="")
-age.table$PathID[age.table$PathID == "S51450.T"]="S51540.T"
+#correct label is 51450-T --> do not change back to match minor typo (51540-T)
 #S16142.01.22 was not processed
 print(dim(age.table))
 #print(age.table$DEID[-match(meta.table$seq.pathID, age.table$DEID, nomatch=0)])
@@ -410,6 +500,8 @@ meta.table = data.frame(meta.table,
 
 #ethnicity information - ADMIXTURE
 array.table = read.table("../../Copied_Files/ADMIXTURE_super_pop_assignments.txt", head=T, sep="\t")					
+array.table$sample = as.character(array.table$sample)
+array.table$sample[array.table$sample == "S51540.T"] = "S51450.T" #minor typo
 
 ADMIXTURE.top = array.table$max.assignment[match(meta.table$SAMPLEID,array.table$sample)]
 ADMIXTURE.mixed = array.table$mixed.assignment[match(meta.table$SAMPLEID,array.table$sample)]
@@ -420,6 +512,8 @@ print(table(ADMIXTURE.mixed))
 
 #ethnicity information - bootstrap
 array.table = read.table("../../Copied_Files/overall_distance_bootstrap_assignments.txt", head=T, sep="\t")					
+array.table$sample = as.character(array.table$sample)
+array.table$sample[array.table$sample == "S51540.T"] = "S51450.T" #minor typo
 
 bootstrap.ethnicity = array.table$min.overall.dist[match(meta.table$SAMPLEID,array.table$sample)]
 meta.table = data.frame(meta.table,bootstrap.ethnicity)
@@ -433,13 +527,14 @@ ADMIXTURE.mixed.AMR.EUR[ADMIXTURE.mixed=="EUR"]="EUR"
 
 AMR.EUR.table = table(ADMIXTURE.mixed.AMR.EUR, meta.table$batch)
 fisher.mat =AMR.EUR.table[1:2,1:2]
+#print(fisher.mat)
 result = fisher.test(fisher.mat)
 print(result)
 
 #reported ethnicity
 reported.race.table = read.table("../../Copied_Files/Ogembo_Cohort_Demographics.txt", head=T, sep="\t")					
 reported.race.table$PathID = paste("S",as.character(reported.race.table$PathID),sep="")
-reported.race.table$PathID[reported.race.table$PathID == "S51450.T"]="S51540.T"
+#correct label is 51450-T --> do not change back to match minor typo (51540-T)
 
 #matchedIDs = reported.race.table$PathID[match(meta.table$SAMPLEID,reported.race.table$PathID, nomatch=0)]
 #print(meta.table$SAMPLEID[-match(matchedIDs,meta.table$SAMPLEID)])
@@ -528,7 +623,7 @@ write.table(meta.table, output.file, quote=F, sep="\t", row.names=F)
 ##Change "NA" values
 ##Ignore/delete this file under other settings
 
-filtered.cols = c("SAMPLEID","batch","sample.type","collection.year","Age","reported.race","human.percent","HPV.percent","HPV.status","genotype","genotype.percent","prev.HPV.status","qPCR.nM","L1.median.human.insert.size","L1.max.human.insert.size","pairID","extra.pairID","QCarray.call.rate","ADMIXTURE.top","ADMIXTURE.mixed","bootstrap.ethnicity","barcode","runInfo","total.reads")
+filtered.cols = c("SAMPLEID","batch","sample.type","hist.subtype","collection.year","Age","reported.race","human.percent","HPV.percent","HPV.status","genotype","genotype.percent","prev.HPV.status","qPCR.nM","L1.median.human.insert.size","L1.max.human.insert.size","pairID","extra.pairID","QCarray.call.rate","ADMIXTURE.top","ADMIXTURE.mixed","bootstrap.ethnicity","barcode","runInfo","total.reads")
 
 output.table = meta.table[,match(filtered.cols, names(meta.table)),]
 
@@ -538,12 +633,8 @@ output.table$batch[output.table$batch == "161206"]= "Frozen Tissue"
 output.table$batch[output.table$batch == "170118"]= "FFPE Tissue"
 
 output.table$sample.type = as.character(output.table$sample.type)
-output.table$sample.type[is.na(output.table$sample.type)]="ICC"
-output.table$sample.type[output.table$sample.type == "cxca"]="ICC"
-output.table$sample.type[output.table$sample.type == "prostate"]="Prostate Cancer"
-output.table$sample.type[output.table$sample.type == "vulvaca"]="Vulval Cancer"
-output.table$sample.type[output.table$sample.type == "nlprostate"]="Normal Prostate"
-output.table$sample.type[output.table$sample.type == "adjacent normal"]="Adjacent Normal Cervix"
+output.table$sample.type[is.na(output.table$sample.type)]="Invasive Cervical Cancer"
+
 
 output.table$collection.year = as.character(output.table$collection.year)
 output.table$collection.year[is.na(output.table$collection.year)]="[Not Provided]"
@@ -596,7 +687,7 @@ output.table$bootstrap.ethnicity[is.na(output.table$bootstrap.ethnicity)]="[No B
 
 output.table = as.matrix(output.table)
 
-new.cols = c("Sample ID","Sample Type","Tissue Type","Collection Year","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported Pair ID","QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
+new.cols = c("Sample ID","Sample Type","Tissue Type","Histological Subtype","Collection Year","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported Pair ID","QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
 colnames(output.table)=new.cols
 
 write.table(output.table,"Supplemental_Table_S1.txt", quote=F, sep="\t", row.names=F)
