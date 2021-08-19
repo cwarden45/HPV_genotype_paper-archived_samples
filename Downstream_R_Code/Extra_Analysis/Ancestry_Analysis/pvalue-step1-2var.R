@@ -56,7 +56,7 @@ calc.fe.pvalue = function(binary.arr, grp){
 	return(result$p.value)
 }#end def calc.fe.pvalue
 
-library(metagenomeSeq)
+#library(metagenomeSeq)
 library(gplots)
 
 #use 20% read fraction genotypes (filtering qPCR flagged samples from all analysis)
@@ -68,7 +68,7 @@ meta.table = meta.table[meta.table$HPV.status == "pos",]
 print(dim(meta.table))
 meta.table = meta.table[meta.table$genotype != "unclear",]
 print(dim(meta.table))
-meta.table = meta.table[-grep(".N",meta.table$SAMPLEID),]
+meta.table = meta.table[(meta.table$sample.type == "Invasive Cervical Cancer")|(meta.table$sample.type == "Vulvar Cancer")|(meta.table$sample.type == "Endometrial + Cervical Cancer"),]
 print(dim(meta.table))
 
 meta.table$batch = as.character(meta.table$batch)
