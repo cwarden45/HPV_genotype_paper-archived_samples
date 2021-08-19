@@ -53,4 +53,4 @@ To define representative sequences for each HPV genotype per sample, we aligned 
 
 **(BOTTOM)** Same data as shown in *(TOP)*, but each sample is colored according whether or not it contains an HPV58 co-infection (in red), which was common for samples with HPV16 present at <80% frequency. 
 
-Most representative sequences found at <70% frequency were in FFPE samples, and most samples containing representative sequences for HPV16 at <80% frequency were co-infected with HPV58 (if considering genotypes **before a qPCR filter is applied**).
+Most representative sequences found at <70% frequency (among the alignments for a given HPV genotype) were in FFPE samples, and most samples containing representative sequences for HPV16 at <80% frequency were co-infected with HPV58 (if considering genotypes **before a qPCR filter is applied**).  In other words, we see more variation in the *HPV16* sequence when there is a preliminary HPV58 co-infection, **but** many of those samples would have been flagged for removal using the qPCR filter.
