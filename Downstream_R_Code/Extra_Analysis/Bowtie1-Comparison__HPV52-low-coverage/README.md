@@ -33,11 +33,17 @@ If you look for any non-zero **Bowtie1** read counts from **Bowtie1-PE_HPVtype_c
 However, if you go back to the main **PE_HPVtype_counts_final_names.txt** file used for then publication (with the BWA-MEM alignments), then we can use `extract_HPV_type_reads-HPV52-PEAR.py` to check PEAR-merged reads for the following samples:
 
 **S16142.01.12**: 6 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
+
 *S16142.01.49*: 6 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
+
 *S16142.01.16*: 4 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
+
 *S16142.01.33*: 2 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
+
 *S16142.01.43*: 2 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
+
 *S16142.01.11*: 1 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
+
 *S16142.01.21*: 1 BWA-MEM *Paired-End* samtools idxstats Adjusted Read Counts
 
 Among the PEAR merged alignments, can define representative HPV52 sequences among the folowing:
@@ -48,4 +54,4 @@ Among the PEAR merged alignments, can define representative HPV52 sequences amon
 
 You can see a Clustal Omega alignment with the representative sequence and L1 Amplicon Expected reference (along with the primer mismatch locations) below:
 
-![HPV52 alignment](HPV52_alignment.jpeg "HPV52 Clustal Omega alignment")
+![HPV52 alignment](HPV52_alignment.JPG "HPV52 Clustal Omega alignment")
