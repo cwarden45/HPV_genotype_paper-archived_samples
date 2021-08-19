@@ -1,0 +1,5 @@
+HPV.subtype	detection.diff	fe.pvalue	fe.fdr	fe.status
+HPV16	82.6	0.05	0.1	No Change
+HPV18	-91.3	0.02	0.08	No Change
+HPV58	4.3	1	1	No Change
+HPV59	8.7	1	1	No Change
