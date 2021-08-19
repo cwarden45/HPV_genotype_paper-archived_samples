@@ -70,7 +70,9 @@ meta.table = read.table("../../Selected_Output_Files/combined_genotype_with_year
 print(dim(meta.table))
 meta.table = meta.table[meta.table$HPV.status == "pos",]
 print(dim(meta.table))
-meta.table = meta.table[-grep(".N",meta.table$SAMPLEID),]
+meta.table = meta.table[meta.table$genotype != "unclear",]
+print(dim(meta.table))
+meta.table = meta.table[(meta.table$sample.type == "Invasive Cervical Cancer")|(meta.table$sample.type == "Vulvar Cancer")|(meta.table$sample.type == "Endometrial + Cervical Cancer"),]
 print(dim(meta.table))
 meta.table$batch = as.character(meta.table$batch)
 meta.table$batch[meta.table$batch == "161007"] = "DNA"
@@ -109,8 +111,13 @@ percent.human = as.numeric(percent.human)
 meta.table$genotype = as.factor(as.character(meta.table$genotype))
 mixed.geno = levels(meta.table$genotype)[grep(",",levels(meta.table$genotype))]
 
-genotypes = levels(meta.table$genotype)[-grep(",",levels(meta.table$genotype))]
+if(length(mixed.geno) > 0){
+	genotypes = levels(meta.table$genotype)[-grep(",",levels(meta.table$genotype))]
+}else{
+	genotypes = levels(meta.table$genotype)
+}#end else
 print(length(genotypes))
+
 for (geno in mixed.geno){
 	geno.arr = unlist(strsplit(geno,split=","))
 	for (j in 1:length(geno.arr)){

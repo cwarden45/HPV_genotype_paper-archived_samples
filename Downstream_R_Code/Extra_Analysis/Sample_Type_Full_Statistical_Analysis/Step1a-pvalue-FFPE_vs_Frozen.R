@@ -73,7 +73,9 @@ meta.table = read.table("../../Selected_Output_Files/combined_genotype_with_year
 print(dim(meta.table))
 meta.table = meta.table[meta.table$HPV.status == "pos",]
 print(dim(meta.table))
-meta.table = meta.table[-grep(".N",meta.table$SAMPLEID),]
+meta.table = meta.table[meta.table$genotype != "unclear",]
+print(dim(meta.table))
+meta.table = meta.table[(meta.table$sample.type == "Invasive Cervical Cancer")|(meta.table$sample.type == "Vulvar Cancer")|(meta.table$sample.type == "Endometrial + Cervical Cancer"),]
 print(dim(meta.table))
 meta.table$batch = as.character(meta.table$batch)
 meta.table$batch[meta.table$batch == "161007"] = "DNA"
