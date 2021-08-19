@@ -1,0 +1,26 @@
+CLUSTAL O(1.2.4) multiple sequence alignment
+
+
+S16142.01.33_PEAR_HPV52      -----------------------TCGTAGTACTAATATGACTTTATGTACTGAAGAAAAA	37
+S16142.01.21_PEAR_HPV52      -----------------------TCGTAGCACTAACATGACATTATGCACTGAGGTAAAT	37
+Forward_Primer               TTTGTTACTGTGGTAGATACTAC-------------------------------------	23
+Reverse_Primer_REVCOM        ------------------------------------------------------------	0
+HPV52_genomicL1              TTTGTCACAGTTGTGGATACCACTCGTAGCACTAACATGACTTTATGTGCTGAGGTGAAA	60
+S16142.01.12_PEAR_HPV52      -----------------------TCGTAGCACTAACATGACTTTATGTGCTGAGGTTAAA	37
+                                                                                         
+
+S16142.01.33_PEAR_HPV52      AAGGAACGTACATATAAAAATGAAAATTTTAAGGAATATCTTAGACATGTTGAA------	91
+S16142.01.21_PEAR_HPV52      AAGGAGGGTACATATAAAAATGAAAATTTTAAGGAATATGTAAGTCATGTTGAA------	91
+Forward_Primer               ------------------------------------------------------------	23
+Reverse_Primer_REVCOM        ------------------------------------------------------GAATAT	6
+HPV52_genomicL1              AAGGAAAGCACATATAAAAATGAAAATTTTAAGGAATACCTTCGTCATGGCGAGGAATTC	120
+S16142.01.12_PEAR_HPV52      AAGGAAAGCACATATAAAAATGAAAATTTTAAGGAATACCTTCGTCATGGCGAG------	91
+                                                                                         
+
+S16142.01.33_PEAR_HPV52      -------------------	91
+S16142.01.21_PEAR_HPV52      -------------------	91
+Forward_Primer               -------------------	23
+Reverse_Primer_REVCOM        GATTTACAGTTTATTTTTC	25
+HPV52_genomicL1              GATTTACAATTTATTTTTC	139
+S16142.01.12_PEAR_HPV52      -------------------	91
+                                                

@@ -1,0 +1,8 @@
+Sample	HPV.status	HPV.percent	human.percent	genotype	genotype.percent
+15929_16142-01-12	pos	skip	skip	HPV52	qPCR_flag
+15965_16142-01-49	pos	skip	skip	HPV52	HPV31pos_lowHPV52
+15933_16142-01-16	pos	skip	skip	HPV52	HPV67pos_lowHPV52
+15949_16142-01-33	pos	skip	skip	HPV52	HPV58pos_lowHPV52
+15959_16142-01-43	pos	skip	skip	HPV52	HPV53pos_lowHPV52
+15928_16142-01-11	pos	skip	skip	HPV52	HPV18pos_lowHPV52
+15938_16142-01-21	pos	skip	skip	HPV52	qPCR_flag
