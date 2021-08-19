@@ -3,10 +3,10 @@ It should be noted that some HPV genotypes may not be well amplified with this p
 For example, HPV52 has 5 mutations from the forward primer and 3 mutations from the reverse primer.
 
 A small faction of reads can be aligned to the HPV52 genome reference.  The BWA-MEM alignment is shown below:
-![BWA-MEM L1 Alignment](HPV_genotype_by_Age.png "BWA-MEM L1 Alignment")
+![BWA-MEM L1 Alignment](IGV_BWA-MEM_HPV52-zoom.png "BWA-MEM L1 Alignment")
 
 If Bowtie1 is used instead of BWA-MEM, then the HPV52 false positives art lower:
-![Bowtie1 L1 Alignment](HPV_genotype_by_Age.png "Bowtie1 L1 Alignment")
+![Bowtie1 L1 Alignment](IGV_Bowtie1-HPV52-zoom.png "Bowtie1 L1 Alignment")
 
 However, we believe that we **underestimate** the percent of *human off-target reads* if we use Bowtie1 instead of BWA-MEM.
 
