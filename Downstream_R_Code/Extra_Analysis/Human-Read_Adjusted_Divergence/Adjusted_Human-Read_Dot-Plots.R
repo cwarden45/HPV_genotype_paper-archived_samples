@@ -1,7 +1,7 @@
-human.cutoff = 1.2
+#human.cutoff = 1.2
 #human.cutoff = 1.0
 #human.cutoff = 0.8
-#human.cutoff = 0.6
+human.cutoff = 0.6
 
 library("RColorBrewer")
 
