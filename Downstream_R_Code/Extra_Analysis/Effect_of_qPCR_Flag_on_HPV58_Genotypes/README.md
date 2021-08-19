@@ -17,35 +17,35 @@ The qPCR filter essentially removes the increased frequency of HPV58 assignments
 	<td align="left">Number of Samples</td>
 	<td align="center">28*</td>
 	<td align="center">40*</td>
-	<td align="center">57</td>
+	<td align="center">56*</td>
     </tr>
     <tr>
 	<td align="left">HPV58 Detected</br>(>5% Reads)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">6 (15.0%)</td>
-	<td align="center">22 (38.6%)</td>
+	<td align="center">22 (39.3%)</td>
 	<td align="center"><b>5.0 x 10<sup>-4</sup></b></td>
     </tr>
     <tr>
 	<td align="left">HPV58 Alternative Detection Status</br>(>20% Reads)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">4 (10.0%)</td>
-	<td align="center">14 (24.6%)</td>
-	<td align="center"><b>0.017</b></td>
+	<td align="center">14 (25.0%)</td>
+	<td align="center"><b>0.016</b></td>
     </tr>
     <tr>
 	<td align="left">HPV58 Plurality</br>(Most Abundant HPV-Type)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">4 (10.0%)</td>
-	<td align="center">10 (17.5%)</td>
+	<td align="center">10 (17.9%)</td>
 	<td align="center"><b>0.042</b></td>
     </tr>
     <tr>
 	<td align="left">HPV58 Dominant / Majority</br>(>50% Reads)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">2 (5.0%)</td>
-	<td align="center">8 (14.0%)</td>
-	<td align="center">0.078</td>
+	<td align="center">8 (14.3%)</td>
+	<td align="center">0.075</td>
     </tr>
 </tbody>
 </table>
@@ -65,40 +65,40 @@ The qPCR filter essentially removes the increased frequency of HPV58 assignments
 	<td align="left">Number of Samples</td>
 	<td align="center">28*</td>
 	<td align="center">40*</td>
-	<td align="center">43</td>
+	<td align="center">42*</td>
     </tr>
     <tr>
 	<td align="left">HPV58 Detected</br>(>5% Reads)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">6 (15.0%)</td>
-	<td align="center">9 (21.0%)</td>
-	<td align="center">0.077</td>
+	<td align="center">9 (21.5%)</td>
+	<td align="center">0.043</td>
     </tr>
     <tr>
 	<td align="left">HPV58 Alternative Detection Status</br>(>20% Reads)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">4 (10.0%)</td>
-	<td align="center">3 (7.0%)</td>
-	<td align="center">1.00</td>
+	<td align="center">3 (7.1%)</td>
+	<td align="center">0.65</td>
     </tr>
     <tr>
 	<td align="left">HPV58 Plurality</br>(Most Abundant HPV-Type)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">4 (10.0%)</td>
-	<td align="center">2 (4.7%)</td>
+	<td align="center">2 (4.8%)</td>
 	<td align="center">1.00</td>
     </tr>
     <tr>
 	<td align="left">HPV58 Dominant / Majority</br>(>50% Reads)</td>
 	<td align="center">1 (3.6%)</td>
 	<td align="center">2 (5.0%)</td>
-	<td align="center">1 (2.3%)</td>
+	<td align="center">1 (2.4%)</td>
 	<td align="center">1.00</td>
     </tr>
 </tbody>
 </table>
 
-\*There are 36 Archived DNA samples, but 28 is the count of samples excluding 6 prostate cancer negative controls (1 of which would have been excluded if 2 nM is used as the qPCR threshold for a QC flag).  Frozen adjacent normal samples were also excluded
+\*There are 36 Archived DNA samples, but 28 is the count of samples excluding 6 prostate cancer negative controls (1 of which would have been excluded if 2 nM is used as the qPCR threshold for a QC flag).  Frozen adjacent normal samples and one FFPE non-malignant vagina sample were also excluded.
 
 P-values are calculating using a Fisher’s exact test (FE) for a given set of genotype assignments.  These p-values are slightly different than reported in the folder [Sample_Type_Full_Statistical_Analysis](https://github.com/cwarden45/HPV_genotype_paper-archived_samples/tree/master/Downstream_R_Code/Extra_Analysis/Sample_Type_Full_Statistical_Analysis) folder because that other analysis including more sample filtering for HPV+ samples (looking at 81 rather than 85 samples, where all 4 filtered samples were HPV58-).  More specifically, these results are slightly more significant (since you have fewer HPV58- samples).
 
