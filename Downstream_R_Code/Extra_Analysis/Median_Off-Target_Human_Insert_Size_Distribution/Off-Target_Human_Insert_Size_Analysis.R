@@ -1,5 +1,5 @@
 count.file = "../../Public_Input_Files/PE_HPVtype_counts_final_names.txt"
-meta.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq15.txt"
+meta.file = "../../Selected_Output_Files/combined_genotype_with_year_and_ethnicity_freq5.txt"
 
 count.to.ab = function(counts, total){
 	return(100*(counts/total))
