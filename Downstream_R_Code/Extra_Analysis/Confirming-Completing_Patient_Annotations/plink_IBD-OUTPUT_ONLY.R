@@ -5,8 +5,18 @@ meta.1KG.table = read.table("../../../../Copied_Files/QC_Array_1000_Genomes_samp
 meta.QCarray.table = read.table("../../../../Copied_Files/QC_Array_combined_sample_description.txt", head=T, sep="\t")
 colnames(meta.QCarray.table) = c("subject","population","super.population")
 meta.QCarray.table = meta.QCarray.table[is.na(meta.QCarray.table$population),]
+meta.QCarray.table$subject = as.character(meta.QCarray.table$subject)
+meta.QCarray.table$subject[meta.QCarray.table$subject == "S51540.T"] = "S51450.T" #fix typo
 
+plink.table$IID1 = as.character(plink.table$IID1)
+plink.table$IID1[plink.table$IID1 == "S51540.T"] = "S51450.T" #fix typo
+plink.table$IID2 = as.character(plink.table$IID2)
+plink.table$IID2[plink.table$IID2 == "S51540.T"] = "S51450.T" #fix typo
 plink.pairID = paste(plink.table$IID1,plink.table$IID2,sep="-")
+
+sampleIDs = colnames(allele.mat)
+sampleIDs[sampleIDs == "S51540.T"] = "S51450.T" #fix typo
+colnames(allele.mat) = sampleIDs
 
 k1g.parent.PI_HAT = c()
 k1g.child.PI_HAT = c()
@@ -142,7 +152,7 @@ output.table = data.frame(PairID = combinedID, type=relationship.type,
 write.table(output.table,"PI_HAT-pairwise_values.txt", sep="\t", quote=F, row.names=F)
 
 png("PI_HAT-distributions.png")
-par(mar=c(12,5,2,5))
+par(mar=c(13,5,2,5))
 plot(output.table$type, output.table$plink.IBD.PI_HAT,
 	ylab="PI_HAT",col="gray", las=2)
 dev.off()
