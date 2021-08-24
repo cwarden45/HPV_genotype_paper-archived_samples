@@ -12,8 +12,6 @@ If Bowtie1 is used instead of BWA-MEM, then the HPV52 false positives art lower:
 
 However, we believe that we **underestimate** the percent of *human off-target reads* if we use Bowtie1 instead of BWA-MEM.
 
-I should also acknowledge that I learned about this from an anonymous reviewer, citing the [Matsukura and Sugase 2004](https://pubmed.ncbi.nlm.nih.gov/15207629/) publication.
-
 The Bowtie1 alignment were run outside of the Docker image for this project.  However, Bowtie version 1.2.2 was used with the following command:
 
 ```
@@ -55,3 +53,5 @@ Among the PEAR merged alignments, can define representative HPV52 sequences amon
 You can see a Clustal Omega alignment with the representative sequence and L1 Amplicon Expected reference (along with the primer mismatch locations) below:
 
 ![HPV52 alignment](HPV52_alignment.JPG "HPV52 Clustal Omega alignment")
+
+I should also acknowledge that I learned about this from an anonymous reviewer, citing the [Matsukura and Sugase 2004](https://pubmed.ncbi.nlm.nih.gov/15207629/) publication.
