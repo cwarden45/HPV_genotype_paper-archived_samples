@@ -54,4 +54,4 @@ You can see a Clustal Omega alignment with the representative sequence and L1 Am
 
 ![HPV52 alignment](HPV52_alignment.JPG "HPV52 Clustal Omega alignment")
 
-I should also acknowledge that I learned about this from an anonymous reviewer, citing the [Matsukura and Sugase 2004](https://pubmed.ncbi.nlm.nih.gov/15207629/) publication.
+**I should also acknowledge that I learned about this from an anonymous reviewer, citing the [Matsukura and Sugase 2004](https://pubmed.ncbi.nlm.nih.gov/15207629/) publication for difficulties in amplifying HPV52.**
