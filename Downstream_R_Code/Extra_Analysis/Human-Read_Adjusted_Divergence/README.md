@@ -1,4 +1,4 @@
-**NOTE:** These are comparisons for testing **without** a qPCR flag to filter samples.
+**NOTE:** These are comparisons for testing ***without*** a qPCR flag to filter samples.
 
 Pearson Correlation Coefficients for Tumor-Tumor Pairs
 -----------------
