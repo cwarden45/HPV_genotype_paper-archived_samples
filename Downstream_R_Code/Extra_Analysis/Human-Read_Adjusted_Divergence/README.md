@@ -77,7 +77,7 @@ HPV58 in Tumor-Normal Pairs
 	<td align="center"><b>&gt0.6x Human</b></td>
     </tr>
     <tr>
-	<td align="center">HPV58 in Tumor-Normal Pairs/td>
+	<td align="center">HPV58 in Tumor-Normal Pairs</td>
   	<td align="center">All HPV58 Tumor Frequencies Low</td>
 	<td align="center">All HPV58 Tumor Frequencies Low</td>
 	<td align="center">All HPV58 Tumor Frequencies Low</td>
