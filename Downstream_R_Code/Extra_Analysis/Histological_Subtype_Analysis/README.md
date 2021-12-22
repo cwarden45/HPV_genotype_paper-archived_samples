@@ -47,7 +47,34 @@ The following comparisons were run on the samples with **>20% read fractions and
 
 **20% Minimum Read Fraction Assignments *without* qPCR Filter**
 
-
+<table>
+  <tbody>
+    <tr>
+	<th align="center">Histological Subtype</th>
+	<th align="center">Archived</br>DNA</th>
+	<th align="center">Frozen</br>Tissue</th>
+	<th align="center">FFPE</br>Tissue</th>
+    </tr>
+    <tr>
+	<td align="left">Squamous Cell Carcinoma (SSC)</td>
+	<td align="center"><u><b>HPV16</b></u>: 18 / 23 (<b><i>78%</b></i>)</br><u>HPV18</u>: 2 / 23 (<i>9%</i>)</br><u>HPV16 + HPV18</u>: 0 / 23 (<i>0%</i>)</td>
+	<td align="center"><u><b>HPV16</b></u>: 14 / 25 (<b><i>56%</b></i>)</br><u>HPV18</u>: 4 / 25 (<i>16%</i>)</br><u>HPV16 + HPV18</u>: 0 / 25 (<i>0%</i>)</td>
+	<td align="center"><u><b>HPV16</b></u>: 12 / 27 (<b><i>44%</b></i>)</br><u>HPV18</u>: 5 / 27 (<i>19%</i>)</br><u>HPV16 + HPV18</u>: 0 / 37 (<i>0%</i>)</td>
+    </tr>
+    <tr>
+	<td align="left">Adenocarcinoma (Adeno)</td>
+	<td align="center"><u>HPV16</u>: 0 / 3 (<i>0%</i>)</br><u><b>HPV18</b></u>: 1/ 3 (<b><i>33%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 3 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 1 / 7 (<i>14%</i>)</br><u><b>HPV18</b></u>: 4 / 7 (<b><i>57%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 7 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 6 / 11 (<i>55%</i>)</br><u>HPV18</u>: 4 / 11 (<i>36%</i>)</br><u>HPV16 + HPV18</u>: 1 / 11 (<i>9%</i>)</td>
+    </tr>
+    <tr>
+	<td align="left">Adenosquamous Carcinoma (ASC)</td>
+	<td align="center"><u>HPV16</u>: 0 / 1 (<i>0%</i>)</br><u>HPV18</u>: 1/ 1 (</b><i>100%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 1 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 0 samples </br><u>HPV18</u>: 0 samples </br><u>HPV16 + HPV18</u>: 0 samples </td>
+	<td align="center"><u>HPV16</u>: 2 / 3 (<i>67%</i>)</br><u>HPV18</u>: 1 / 3 (<i>33%</i>)</br><u>HPV16 + HPV18</u>: 0 / 3 (<i>0%</i>)</td>
+    </tr>
+</tbody>
+</table>
 
 In the tables above, replicate samples are counted more than once.  However, samples must have a histological subtype, meaning that these are all cervical cancer samples.
 **HPV16 has been previously been published to be more common in SSC, and HPV18 has previously been published to be more common in Adenocarcinoma.**  As expected, HPV16 + HPV18 co-infections decrease with the qPCR filter.
