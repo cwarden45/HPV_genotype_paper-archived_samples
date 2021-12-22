@@ -14,7 +14,7 @@ The following comparisons were run on the samples with **>20% read fractions and
 
 **3b)** binomial GLM for logistic regression for **overall samples** on **read counts** with 2-variables (*adjusting for archive type*, along with histological subtype), using the `glm()` R-base function with the parameter `family="binomial"`.
 
-**5% Minimum Read Fraction Assignments *without* qPCR Filter**
+**5% Minimum Read Fraction Assignments *without* qPCR Filter:**
 
 <table>
   <tbody>
@@ -45,7 +45,7 @@ The following comparisons were run on the samples with **>20% read fractions and
 </tbody>
 </table>
 
-**20% Minimum Read Fraction Assignments *without* qPCR Filter**
+**20% Minimum Read Fraction Assignments *without* qPCR Filter:**
 
 <table>
   <tbody>
