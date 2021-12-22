@@ -14,6 +14,32 @@ The following comparisons were run on the samples with **>20% read fractions and
 
 **3b)** binomial GLM for logistic regression for **overall samples** on **read counts** with 2-variables (*adjusting for archive type*, along with histological subtype), using the `glm()` R-base function with the parameter `family="binomial"`.
 
+**5% Minimum Read Fraction Assignments *without* qPCR Filter**
+
+<table>
+  <tbody>
+    <tr>
+	<th align="center">Histological Subtype</th>
+	<th align="center">Archived</br>DNA</th>
+	<th align="center">Frozen</br>Tissue</th>
+	<th align="center">FFPE</br>Tissue</th>
+    </tr>
+    <tr>
+	<td align="left">Squamous Cell Carcinoma (SSC)</td>
+	<td align="center"><u>HPV16</u>: 18 / 23 (<b><i>78%</b></i>)</br><u>HPV18</u>: 2 / 23 (<i>9%</i>)</br><u>HPV16 + HPV18</u>: 0 / 23 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 15 / 25 (<b><i>60%</b></i>)</br><u>HPV18</u>: 4 / 25 (<i>16%</i>)</br><u>HPV16 + HPV18</u>: 0 / 25 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 15 / 37 (<b><i>41%</b></i>))</br><u>HPV18</u>: 5 / 37 (<i>14%</i>)</br><u>HPV16 + HPV18</u>: 8 / 37 (<i>22%</i>)</td>
+    </tr>
+</tbody>
+</table>
+
+**20% Minimum Read Fraction Assignments *without* qPCR Filter**
+
+
+
+In the tables above, replicate samples are counted more than once.  However, samples must have a histological subtype, meaning that these are all cervical cancer samples.
+**HPV16 has been previously been published to be more common in SSC, and HPV18 has previously been published to be more common in Adenocarcinoma.**  As expected, HPV16 + HPV18 co-infections decrease with the qPCR filter.
+
 
 Here is a barplot of the samples with **20%** HPV genotype assignments (**with** the qPCR filter), for the 3 most common histological subtypes:
 
