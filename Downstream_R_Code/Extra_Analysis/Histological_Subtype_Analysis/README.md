@@ -45,7 +45,7 @@ The following comparisons were run on the samples with **>20% read fractions and
 </tbody>
 </table>
 
-**20% Minimum Read Fraction Assignments *without* qPCR Filter:**
+**20% Minimum Read Fraction Assignments *with* qPCR Filter:**
 
 <table>
   <tbody>
