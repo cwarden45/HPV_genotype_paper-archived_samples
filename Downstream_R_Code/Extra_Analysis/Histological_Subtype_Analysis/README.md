@@ -26,14 +26,14 @@ The following comparisons were run on the samples with **>20% read fractions and
     </tr>
     <tr>
 	<td align="left">Squamous Cell Carcinoma (SSC)</td>
-	<td align="center"><u>HPV16</u>: 18 / 23 (<b><i>78%</b></i>)</br><u>HPV18</u>: 2 / 23 (<i>9%</i>)</br><u>HPV16 + HPV18</u>: 0 / 23 (<i>0%</i>)</td>
-	<td align="center"><u>HPV16</u>: 15 / 25 (<b><i>60%</b></i>)</br><u>HPV18</u>: 4 / 25 (<i>16%</i>)</br><u>HPV16 + HPV18</u>: 0 / 25 (<i>0%</i>)</td>
-	<td align="center"><u>HPV16</u>: 15 / 37 (<b><i>41%</b></i>)</br><u>HPV18</u>: 5 / 37 (<i>14%</i>)</br><u>HPV16 + HPV18</u>: 8 / 37 (<i>22%</i>)</td>
+	<td align="center"><u><b>HPV16</b></u>: 18 / 23 (<b><i>78%</b></i>)</br><u>HPV18</u>: 2 / 23 (<i>9%</i>)</br><u>HPV16 + HPV18</u>: 0 / 23 (<i>0%</i>)</td>
+	<td align="center"><u><b>HPV16</b></u>: 15 / 25 (<b><i>60%</b></i>)</br><u>HPV18</u>: 4 / 25 (<i>16%</i>)</br><u>HPV16 + HPV18</u>: 0 / 25 (<i>0%</i>)</td>
+	<td align="center"><u><b>HPV16</b></u>: 15 / 37 (<b><i>41%</b></i>)</br><u>HPV18</u>: 5 / 37 (<i>14%</i>)</br><u>HPV16 + HPV18</u>: 8 / 37 (<i>22%</i>)</td>
     </tr>
     <tr>
 	<td align="left">Adenocarcinoma (Adeno)</td>
-	<td align="center"><u>HPV16</u>: 0 / 3 (<i>0%</i>)</br><u>HPV18</u>: 1/ 3 (<b><i>33%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 3 (<i>0%</i>)</td>
-	<td align="center"><u>HPV16</u>: 1 / 7 (<i>14%</i>)</br><u>HPV18</u>: 4 / 7 (<b><i>57%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 7 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 0 / 3 (<i>0%</i>)</br><u><b>HPV18</b></u>: 1/ 3 (<b><i>33%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 3 (<i>0%</i>)</td>
+	<td align="center"><u>HPV16</u>: 1 / 7 (<i>14%</i>)</br><u><b>HPV18</b></u>: 4 / 7 (<b><i>57%</b></i>)</br><u>HPV16 + HPV18</u>: 0 / 7 (<i>0%</i>)</td>
 	<td align="center"><u>HPV16</u>: 7 / 13 (<i>54%</i>)</br><u>HPV18</u>: 4 / 13 (<i>31%</i>)</br><u>HPV16 + HPV18</u>: 1 / 13 (<i>8%</i>)</td>
     </tr>
     <tr>
