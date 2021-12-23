@@ -49,31 +49,33 @@ pdf(paste("to_AI/Figure1a.pdf",sep=""), useDingbats=FALSE)
 par(mar=c(5,5,3,3), mfrow=c(2,2))
 plot(pc.values$PC1, pc.values$PC2, col = labelColors, xlab = paste("PC1 (",round(100* variance.explained[1] , digits = 2),"%)", sep = ""),
 	ylab = paste("PC2 (",round(100* variance.explained[2] , digits = 2),"%)", sep = ""),
-	pch=19, cex=0.5)
+	pch=19, cex=0.5, cex.axis=0.8, cex.lab=2)
 box(which="figure", xpd=T)
 
 plot(pc.values$PC3, pc.values$PC2, col = labelColors,
 	xlab = paste("PC3 (",round(100* variance.explained[3] , digits = 2),"%)", sep = ""),
 	ylab = paste("PC2 (",round(100* variance.explained[2] , digits = 2),"%)", sep = ""),
-	pch=19, cex=0.5)
+	pch=19, cex=0.5, cex.axis=0.8, cex.lab=2)
 box(which="figure", xpd=T)
 
 plot(pc.values$PC1, pc.values$PC3, col = labelColors,
 	xlab = paste("PC1 (",round(100* variance.explained[1] , digits = 2),"%)", sep = ""),
 	ylab = paste("PC3 (",round(100* variance.explained[3] , digits = 2),"%)", sep = ""),
-	pch=19, cex=0.5)
+	pch=19, cex=0.5, cex.axis=0.8, cex.lab=2)
 box(which="figure", xpd=T)
 		
 par(mar=c(0,0,0,0))
 plot(NA, xlim=0:1, ylim=0:1, xaxt="n",yaxt="n")
 legend("center",legend=c(super.pop,"QC Array"),col=c(color.pallete,"black"),
-		pch=19, xpd=T, inset=-0.25)
+		pch=19, xpd=T, inset=-0.25, cex=2)
 dev.off()
 
 pdf(paste("to_AI/Figure1b.pdf",sep=""), useDingbats=FALSE)
+par(mar=c(5,5,3,3))
 plot(pc.values$PC4, pc.values$PC3, col = labelColors,
 	xlab = paste("PC4 (",round(100* variance.explained[4] , digits = 2),"%)", sep = ""),
 	ylab = paste("PC3 (",round(100* variance.explained[3] , digits = 2),"%)", sep = ""),
-	pch=19, cex=0.7)
-legend("top",legend=c(super.pop,"QC Array"),col=c(color.pallete,"black"),ncol=6, xpd=T, inset=-0.1, pch=19)
+	pch=19, cex=0.7, cex.axis=1.5, cex.lab=2)
+legend("top",legend=c(super.pop,"QC Array"),col=c(color.pallete,"black"),
+		ncol=6, cex=1, xpd=T, inset=-0.1, pch=19)
 dev.off()

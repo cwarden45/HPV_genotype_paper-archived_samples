@@ -60,10 +60,13 @@ plot.ethnicity = merged.ethnicity
 plot.ethnicity[grep("Caucasian",plot.ethnicity)]="Caucasian-Reported"
 plot.table = table(plot.ethnicity, meta.table$batch)
 pdf("to_AI/Figure1c.pdf", useDingbats=FALSE)
-par(mar=c(5,5,5,12))
-barplot(plot.table, beside=T, col=c("orange","green", "plum4"), main="HPV+ Tumor")
-legend(13,30,legend=c("African / AFR", "Asian / EAS", "Caucasian-Reported","Caucasian-EUR","Caucasian-AMR","Caucasian-EUR/AMR"),
-			col=c("orange", "green", "plum4","blue","red","black"), xpd=T, pch=15)
+par(mar=c(5,5,12,5))
+barplot(plot.table, beside=T, col=c("orange","green", "plum4"), main="",
+			cex.axis=2, cex.names=1.5)
+mtext("HPV+ Tumor",3, cex=1.5, padj=-2, font=2)
+legend("top",legend=c("African / AFR", "Asian / EAS", "Caucasian-Reported","Caucasian-EUR","Caucasian-AMR","Caucasian-EUR/AMR"),
+			col=c("orange", "green", "plum4","blue","red","black"), xpd=T, pch=15,
+			cex=1.5, ncol=2, inset=-0.55)
 
 plot.table = table(merged.ethnicity, meta.table$batch)
 plot.table = plot.table[match(c("Caucasian-EUR","Caucasian-AMR","Caucasian-AMR/EUR"),rownames(plot.table)),]
