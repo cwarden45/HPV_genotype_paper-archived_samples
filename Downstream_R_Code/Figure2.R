@@ -121,7 +121,7 @@ for (i in 1:length(selected.HPV)){
 	plot(percent.human, subtype.freq,
 		pch=21, col="black", bg=labelColors,
 		xlim=c(0,100), ylim=c(0,100), las=2, lwd=1,
-		main = "", cex=2, cex.main=3, cex.axis=3,cex.lab=3,
+		main = "", cex=3, cex.main=3, cex.axis=3,cex.lab=3,
 		xlab = "", ylab="")
 	mtext("Percentage of Human Reads",1, cex=2, padj=4)
 	mtext(paste("",plot.type," Read Fraction",sep=""),2, cex=2, padj=-3.5)
