@@ -38,8 +38,8 @@ for (i in 1:length(group.levels)){
 print(paste("ANOVA Insert Size co-infection p-value: ",aov.pvalue,sep=""))
 
 #, useDingbats=FALSE
-png("Insert_Size_Figure.png", width=600, height=200)
-par(mfcol=c(1,3))
+png("Insert_Size_Figure.png", width=800, height=200)
+par(mfcol=c(1,4))
 
 	boxplot(median.insert.size~meta.table$batch,cex.main=0.8, cex.axis=0.8,cex.lab=0.8, cex=0.6,
 		ylab="Median Insert Size", outline=FALSE, ylim=c(0,250),
@@ -83,6 +83,14 @@ for(i in 1:nrow(meta.table)){
 
 plot(median.insert.size, percent.HPV58, cex=0.6,
 		xlab="Median Insert Size",ylab="Percent HPV58",
+		col=labelColors, pch=16)
+#inset=-0.35
+legend("top",group.levels, pch=16, col=color.palette,
+			ncol=3, inset=-0.20, xpd=T, cex=0.8)
+			
+#create as requested
+plot(meta.table$collection.year, median.insert.size, cex=0.6,
+		xlab="Collection Date",ylab="Median Insert Size",
 		col=labelColors, pch=16)
 #inset=-0.35
 legend("top",group.levels, pch=16, col=color.palette,
