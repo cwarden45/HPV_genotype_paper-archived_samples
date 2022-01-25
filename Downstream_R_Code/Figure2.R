@@ -8,14 +8,16 @@ count.to.ab = function(counts, total){
 }#end def count.to.ab
 
 count.table = read.table(count.file, head=T, sep="\t")
+#print(count.table[1:10,1:10])
 total.counts = as.numeric(count.table[count.table$HPV.type == "TOTAL",2:ncol(count.table)])
-count.mat = count.table[1:(nrow(count.table)-1),2:ncol(count.table)]
-rownames(count.mat) = count.table$HPV.type[1:(nrow(count.table)-1)]
+count.mat = count.table[1:(nrow(count.table)-2),2:ncol(count.table)]
+rownames(count.mat) = count.table$HPV.type[1:(nrow(count.table)-2)]
 names(total.counts) = names(count.mat)
 mappable.count = as.character(names(count.mat))
 
-
 ab.mat = t(apply(count.mat, 1, count.to.ab, total=total.counts))
+#print(ab.mat[1:10,1:10])
+
 
 meta.table = read.table(meta.file, head=T, sep = "\t")
 meta.table$batch = as.character(meta.table$batch)
@@ -23,28 +25,28 @@ meta.table$batch[meta.table$batch == "161007"] = "DNA"
 meta.table$batch[meta.table$batch == "161206"] = "Frozen"
 meta.table$batch[meta.table$batch == "170118"] = "FFPE"
 meta.table$batch = factor(as.character(meta.table$batch), levels=c("DNA","Frozen","FFPE"))
-mappable.meta = as.character(meta.table$SAMPLEID)
-mappable.meta = gsub("-",".",mappable.meta)
-mappable.meta = gsub("_",".",mappable.meta)
 
-percent.human = as.character(meta.table$human.percent[match(names(count.mat), meta.table$SAMPLEID)])
+print(names(count.mat))
+print(meta.table$SAMPLEID)
+
+percent.human = as.character(meta.table$human.percent[match(names(count.mat), meta.table$SAMPLEID)])#this has already been mapped to match the count matrix order --> removing later code will fix the bug.
 percent.human = gsub("\\%","",percent.human)
 percent.human = as.numeric(percent.human)
 
-matchedIDs = mappable.count[match(mappable.meta, mappable.count, nomatch=0)]
-unmatched.countID = mappable.count[-match(matchedIDs,mappable.count)]
-unmatched.meta = mappable.meta[-match(matchedIDs,mappable.meta)]
-
-ab.mat = ab.mat[,match(mappable.meta, mappable.count)]
+#In order to fix the bug, I have to map this in a similar way as the percent human.
+remapped.batch = meta.table$batch[match(names(count.mat), meta.table$SAMPLEID)]
 
 color.palette = c("chartreuse4","orange","cyan")
-group.levels = levels(meta.table$batch)
-labelColors = rep("black",times=length(meta.table$batch))
+group.levels = levels(remapped.batch)
+labelColors = rep("black",times=length(remapped.batch))
 for (i in 1:length(group.levels)){
-	labelColors[meta.table$batch == as.character(group.levels[i])] = color.palette[i]
+	labelColors[remapped.batch == as.character(group.levels[i])] = color.palette[i]
 }#end for (i in 1:length(group.levels))
 
 selected.HPV = c("HPV16","HPV18","HPV58","HPV45")
+
+#print(ab.mat[1:10,1:10])
+#percent.human[1:10]
 
 pdf("Figure2.pdf", width=30, height=20, useDingbats=FALSE)
 par(mfrow=c(2,4))
@@ -55,27 +57,27 @@ for (i in 1:length(selected.HPV)){
 	subtype.freq = as.numeric(ab.mat[rownames(ab.mat) == plot.type,])
 	
 	#Overall ANOVA
-	fit = aov(subtype.freq ~ meta.table$batch)
+	fit = aov(subtype.freq ~ remapped.batch)
 	result = summary(fit)
 	aov.pvalue = result[[1]][['Pr(>F)']][1]
 	print(paste("Overall ANOVA p-value: ",aov.pvalue,sep=""))
 	#FFPE vs DNA
-	temp.freq  = subtype.freq[meta.table$batch != "Frozen"]
-	temp.batch = meta.table$batch[meta.table$batch != "Frozen"]
+	temp.freq  = subtype.freq[remapped.batch != "Frozen"]
+	temp.batch = remapped.batch[remapped.batch != "Frozen"]
 	fit = aov(temp.freq ~ temp.batch)
 	result = summary(fit)
 	aov.pvalue = result[[1]][['Pr(>F)']][1]
 	print(paste("-->FFPE vs DNA ANOVA p-value: ",aov.pvalue,sep=""))	
 	#FFPE vs Frozen
-	temp.freq  = subtype.freq[meta.table$batch != "DNA"]
-	temp.batch = meta.table$batch[meta.table$batch != "DNA"]
+	temp.freq  = subtype.freq[remapped.batch != "DNA"]
+	temp.batch = remapped.batch[remapped.batch != "DNA"]
 	fit = aov(temp.freq ~ temp.batch)
 	result = summary(fit)
 	aov.pvalue = result[[1]][['Pr(>F)']][1]
 	print(paste("-->FFPE vs Frozen ANOVA p-value: ",aov.pvalue,sep=""))	
 	#Frozen vs DNA
-	temp.freq  = subtype.freq[meta.table$batch != "FFPE"]
-	temp.batch = meta.table$batch[meta.table$batch != "FFPE"]
+	temp.freq  = subtype.freq[remapped.batch != "FFPE"]
+	temp.batch = remapped.batch[remapped.batch != "FFPE"]
 	fit = aov(temp.freq ~ temp.batch)
 	result = summary(fit)
 	aov.pvalue = result[[1]][['Pr(>F)']][1]
@@ -85,12 +87,12 @@ for (i in 1:length(selected.HPV)){
 	#plot(meta.table$batch, subtype.freq, cex.main=3, cex.axis=3,cex.lab=3,
 	#	ylab="", xaxt="n",
 	#	col=color.palette, pch=16, main=plot.type)
-	boxplot(subtype.freq~meta.table$batch,cex.main=3, cex.axis=3,cex.lab=3,
+	boxplot(subtype.freq~remapped.batch,cex.main=3, cex.axis=3,cex.lab=3,
 		ylab="", xaxt="n", outline=FALSE, ylim=c(0,100),
 		col=color.palette, pch=16, main=plot.type)
-	mtext(levels(meta.table$batch), side=1, at =1:length(levels(meta.table$batch)), las=1, cex=2, line=3)
+	mtext(levels(remapped.batch), side=1, at =1:length(levels(remapped.batch)), las=1, cex=2, line=3)
 	mtext(paste("",plot.type," Read Fraction",sep=""),2, cex=2, padj=-3.5)
-	points(jitter(as.numeric(meta.table$batch), 1),subtype.freq, pch=16, cex=2)
+	points(jitter(as.numeric(remapped.batch), 1),subtype.freq, pch=16, cex=2)
 
 	if(i == 1){
 		text(-0.1,110, labels="A.", xpd=T, cex=6, font=2)
@@ -98,7 +100,7 @@ for (i in 1:length(selected.HPV)){
 }#end for (i in 1:nrow(ab.table))
 
 ##ANOVA for continuous values (Figure 2B)
-fit = aov(percent.human ~ meta.table$batch)
+fit = aov(percent.human ~ remapped.batch)
 result = summary(fit)
 aov.pvalue = result[[1]][['Pr(>F)']][1]
 print(paste("Human Read ANOVA p-value: ",aov.pvalue,sep=""))
@@ -109,13 +111,18 @@ freq.cat[percent.human < 20]="low human"
 freq.cat[(20 <= percent.human) & (percent.human <= 80)]="middle"
 freq.cat[percent.human > 80]="low HPV"
 
-fisher.mat = table(freq.cat, meta.table$batch)
+fisher.mat = table(freq.cat, remapped.batch)
 print(fisher.test(fisher.mat))
+
+#print(ab.mat[1:10,1:10])
+#percent.human[1:10]
+print(dim(ab.mat))
 
 for (i in 1:length(selected.HPV)){
 	plot.type = selected.HPV[i]
 	print(plot.type)
 	subtype.freq = as.numeric(ab.mat[rownames(ab.mat) == plot.type,])
+	
 	#par(mar=c(5,5,5,3))
 	par(mar=c(10,10,10,7))
 	plot(percent.human, subtype.freq,
@@ -125,12 +132,12 @@ for (i in 1:length(selected.HPV)){
 		xlab = "", ylab="")
 	mtext("Percentage of Human Reads",1, cex=2, padj=4)
 	mtext(paste("",plot.type," Read Fraction",sep=""),2, cex=2, padj=-3.5)
-	DNA.freq = subtype.freq[meta.table$batch == "DNA"]
-	DNA.percent.human = percent.human[meta.table$batch == "DNA"]
-	frozen.freq = subtype.freq[meta.table$batch == "Frozen"]
-	frozen.percent.human = percent.human[meta.table$batch == "Frozen"]
-	FFPE.freq = subtype.freq[meta.table$batch == "FFPE"]
-	FFPE.percent.human = percent.human[meta.table$batch == "FFPE"]
+	DNA.freq = subtype.freq[remapped.batch == "DNA"]
+	DNA.percent.human = percent.human[remapped.batch == "DNA"]
+	frozen.freq = subtype.freq[remapped.batch == "Frozen"]
+	frozen.percent.human = percent.human[remapped.batch == "Frozen"]
+	FFPE.freq = subtype.freq[remapped.batch == "FFPE"]
+	FFPE.percent.human = percent.human[remapped.batch == "FFPE"]
 	
 	cor.coef = cor(DNA.freq, DNA.percent.human)
 	fit=lm(DNA.freq~ DNA.percent.human)
