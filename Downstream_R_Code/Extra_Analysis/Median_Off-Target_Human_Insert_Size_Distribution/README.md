@@ -10,4 +10,6 @@
 
 **(C)** Scatterplot of the percentage of HPV58 reads plotted against median insert size.
 
+**(D)** Scatterplot of median insert size plotted against collection date.
+
 **NOTE:** Samples are sequencing following gel extraction for an amplicon of the expected size.  So, this having reads similar to the expected size is not surprising (even if the distribution of reads would have been different if gel extraction had not been performed).
