@@ -50,8 +50,8 @@ if (Radapter== "") or (Radapter == "[required]"):
 	print "Need to enter a value for 'Reverse_Primer'!"
 	sys.exit()
 	
-inputFolder = fullReadFolder + "/Downsample_Reads"
-outputFolder = fullReadFolder + "/Cutadapt_Downsample_Reads"
+inputFolder = fullReadFolder
+outputFolder = fullReadFolder + "/Cutadapt_Full_Reads"
 
 command = "mkdir " + outputFolder
 os.system(command)
