@@ -50,7 +50,7 @@ if (threads== "") or (threads == "[required]"):
 	print "Need to enter a value for 'Threads'!"
 	sys.exit()
 	
-readsFolder = fullReadFolder + "/Cutadapt_Downsample_Reads"
+readsFolder = fullReadFolder + "/Cutadapt_Full_Reads"
 
 command = "mkdir " + hpvAlignmentFolder
 os.system(command)
