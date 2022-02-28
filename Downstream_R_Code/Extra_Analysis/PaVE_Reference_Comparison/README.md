@@ -31,7 +31,7 @@ The resulting **PaVE_220HPV_PE_HPVtype_counts-final_names.txt** file is uploaded
 
 ![Completely Concordant Genotypes](genotype_concordance.png "Completely Concordant Genotypes")
 
-**Please notice that no additonal HPV genotype assignments are made using the larger set of HPV reference genomes, if considering only samples that pass the qPCR flag.**  This might be expected given the sample size of this cohort makes detection of very rare HPV types/genotypes less likely, along with these being tumor samples and low-risk HPV types are included within the PaVE database.
+**Please notice that *no* additonal HPV genotype assignments are made using the larger set of HPV reference genomes from the PaVE database, if considering only samples that pass the qPCR flag.**  This might be expected given the sample size of this cohort makes detection of very rare HPV types/genotypes less likely, along with these being tumor samples and low-risk HPV types are included within the PaVE database.
 
 **6)** A scatterplot showing the adjusted counts assigned per HPV type per sample can be created using `compare_read_counts.R`.
 
