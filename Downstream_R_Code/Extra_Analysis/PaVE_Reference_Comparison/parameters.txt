@@ -1,0 +1,15 @@
+Parameter	Value
+Sample_Description_File	sample_description_file.txt
+Reads_Folder	/path/to/Reads
+Forward_Primer	TTTGTTACTGTGGTAGATACTAC
+Reverse_Primer	GAAAAATAAACTGTAAATCATATTC
+Alignment_Folder	../../../../../Code/Round26-PAVE/hg38_plus_PaVE_220HPV_Alignment-Full_Reads_Combined
+Threads	2
+BWA_Ref	../../../../../Code/Round26-PAVE/hg38_plus_PaVE220.fa
+HPV_Human_Ref_FC	1.2
+HPV_Freq_Cutoff	20
+Type_Human_Ref_FC	1.0
+Type_Freq_Cutoff	20
+Unclear_Cutoff	15
+Summary_File	hg38_plus_PaVE_220HPV_genotype_calls.txt
+Count_File	PaVE_220HPV_PE_HPVtype_counts.txt
