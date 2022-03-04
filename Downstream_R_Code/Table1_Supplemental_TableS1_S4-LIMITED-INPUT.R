@@ -292,22 +292,6 @@ print(fisher.test(hist.FE.mat[c(1,3),]))
 #print(hist.FE.mat[c(1,2),])
 #print(fisher.test(hist.FE.mat[c(1,2),]))
 
-temp.HPV58.table = meta.table[grep("HPV58",meta.table$genotype),]
-HPV58.hist.subtype = table(temp.HPV58.table$batch,temp.HPV58.table$hist.subtype)
-
-FFPE.HPV58.hist.FE.mat = matrix(ncol=2,nrow=2)
-colnames(FFPE.HPV58.hist.FE.mat) = c("Adeno","SSC")
-rownames(FFPE.HPV58.hist.FE.mat) = c("Positive","Negative")
-
-FFPE.HPV58.hist.FE.mat[1,1]=HPV58.hist.subtype[3,1]
-FFPE.HPV58.hist.FE.mat[1,2]=HPV58.hist.subtype[3,8]
-
-FFPE.HPV58.hist.FE.mat[2,1]=overall.hist.subtype[3,1] - HPV58.hist.subtype[3,1]
-FFPE.HPV58.hist.FE.mat[2,2]=overall.hist.subtype[3,8] - HPV58.hist.subtype[3,8]
-
-print(FFPE.HPV58.hist.FE.mat)
-print(fisher.test(FFPE.HPV58.hist.FE.mat))
-
 #parse collection year information
 print(mean(meta.table$collection.year, na.rm=T))
 print(sd(meta.table$collection.year, na.rm=T))
@@ -685,9 +669,70 @@ output.table$ADMIXTURE.top[is.na(output.table$ADMIXTURE.top)]="[No >50% Assignme
 output.table$ADMIXTURE.mixed[is.na(output.table$ADMIXTURE.mixed)]="[No >20% Assignment]"
 output.table$bootstrap.ethnicity[is.na(output.table$bootstrap.ethnicity)]="[No Bootstrap Assignment]"
 
+consent.table = read.table("../../Copied_Files/Checked_consent.txt", head=T, sep="\t")
+consent.mappable_ID = as.character(consent.table$DE.ID)
+consent.mappable_ID=gsub("-\\(JOG-\\d+\\)-",".",consent.mappable_ID)
+consent.mappable_ID=gsub("-",".",consent.mappable_ID)
+consent.mappable_ID=paste("S",consent.mappable_ID,sep="")
+
+#samples with 2003 consent forms also have 2012 consent signatures; so, code to check consent table can start in 2007 (which is when IRB #07047 started).
+signed_year = gsub("^\\d+/\\d+/","",consent.table$signed_date)
+consent.table = data.frame(consent.table, signed_year)
+
+consent.status = rep("Uncertain About Consent Expectation",nrow(output.table))
+Archived_DNA.pairs = unique(output.table$extra.pairID[output.table$batch == "Archived DNA"])
+Archived_DNA.pairs = Archived_DNA.pairs[-grep("\\[No Provided",Archived_DNA.pairs)]
+
+for (i in 1:nrow(output.table)){
+	if(output.table$batch[i] == "Archived DNA"){
+		consent.status[i]="Discard Samples - No General Consent"
+	}else{
+		if(output.table$collection.year[i] == "[Not Provided]"){
+			if(output.table$SAMPLEID[i] == "S51450.T"){
+				#collection date not provided, but paired with 16142-01-01 (with a collection date of 1989)
+				consent.status[i]="Expect Discard Samples, Without General Consent?"
+			}else{
+				print("Please check consent details:")
+				print(output.table[i,])
+				stop()
+			}#end else
+		}else{
+			numeric_year = as.numeric(as.character(output.table$collection.year))
+			#print(output.table$collection.year)
+			#print(numeric_year)
+			if (output.table$collection.year[i] <= 1995){
+				if (output.table$extra.pairID[i] %in% Archived_DNA.pairs){
+					consent.status[i]="Discard Samples - No General Consent"
+				}else{
+					consent.status[i]="Expect Discard Samples, Without General Consent?"
+				}#end else
+			}else if((output.table$collection.year[i] >= 2002) & (output.table$collection.year[i] <= 2007)){
+				consent.status[i]="Expect Pre-Biorepository General Consent?"
+			}else if (output.table$collection.year[i] >= 2007){
+			
+				if (output.table$SAMPLEID[i] %in% consent.mappable_ID){
+					temp_consent_table = consent.table[consent.mappable_ID == output.table$SAMPLEID[i],]
+					
+					if (7047 %in% temp_consent_table$protno){
+						COHBR_signed_years = temp_consent_table$signed_year[temp_consent_table$protno == 7047]
+						consent.status[i]=paste("Confirmed IRB #07047 (signed ",paste(COHBR_signed_years,collapse="+"),")",sep="")
+					}else{
+						consent.status[i]="Confirmed Consent but not Biorespository Consent Form"
+					}#end else
+				}else{
+					consent.status[i]="Expect Biorepository - Consent Not Confirmed by Honest Broker"
+				}#end else
+				
+			}#end else if (output.table$collection.year >= 2007)
+		}#end else
+	}#end else
+}#end for (i in 1:nrow(output.table))
+
+output.table = data.frame(output.table[,1:5], consent.status, output.table[,6:ncol(output.table)])
+
 output.table = as.matrix(output.table)
 
-new.cols = c("Sample ID","Sample Type","Tissue Type","Histological Subtype","Collection Year","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported Pair ID","QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
+new.cols = c("Sample ID","Sample Type","Tissue Type","Histological Subtype","Collection Year","Consent Notes","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported Pair ID","QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
 colnames(output.table)=new.cols
 
 write.table(output.table,"Supplemental_Table_S1.txt", quote=F, sep="\t", row.names=F)
