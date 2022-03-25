@@ -1,4 +1,4 @@
-Statistical significance of the effects of sample type on HPV genotype assignments in HPV+ tumor samples.
+Statistical significance of the effects of archive type on HPV genotype assignments in HPV+ tumor samples.
 -----------------
 
 ### Overview for Table
