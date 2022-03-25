@@ -1,3 +1,11 @@
+## Summary
+
+For this study, we obtained the same genotypes and highly correlated read counts if we used our set of **35** HPV + hg38 human genome reference versus the PaVE **220** HPV + hg38 human genome reference.
+
+For other papers, it might be helpful to start from the PaVE database, but the strategy that we describe could still be helpful in accessing if there was an important HPV type within a cohort that was missing from the PaVE database that explains a large fraction of the reads in at least 1 sample.
+
+## Details
+
 **1)** The [PaVE](https://pave.niaid.nih.gov/) database is for a variety of papliomavirsuses.
 
 So, the first step was to search for *human* papliomavirsus (HPV) reference genomes.
