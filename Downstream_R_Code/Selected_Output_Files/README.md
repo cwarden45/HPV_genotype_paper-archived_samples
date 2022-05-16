@@ -1,4 +1,4 @@
-**combined_genotype_with_year_and_ethnicity_freq20-FLAGGED.txt** - similar to *hg38_plus_35HPV_genotype_calls_freq20.txt*, but with extra columns of metadata.  Also, HPV genotype assignments have been revised to **include a status of having a qPCR filter**.  *This is most similar to what is given some additional emphasis in the publication, even though we *also* emphasize points that don't use this particular set of genotype assignments*.
+**combined_genotype_with_year_and_ethnicity_freq20-FLAGGED.txt** - similar to *hg38_plus_35HPV_genotype_calls_freq20.txt*, but with extra columns of metadata.  Also, HPV genotype assignments have been revised to **include a status of having a qPCR filter**.  ***This is most similar to what is given some additional emphasis in the publication, even though we *also* emphasize points that don't use this particular set of genotype assignments***.
 
 **combined_genotype_with_year_and_ethnicity_freq5.txt** - similar to *hg38_plus_35HPV_genotype_calls_freq5.txt*, but with extra columns of metadata.  Importantly, this still does **not** include any labeling of filtering / QC flags based upon the qPCR concentration.
 
