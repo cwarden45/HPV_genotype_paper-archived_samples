@@ -46,13 +46,13 @@ pdf("Figure3.pdf")
 plot(percent.human, qPCR,
 	pch=16, col=sample.col,
 	xlab="Percentage of Human Reads", ylab="DNA concentration via qPCR (nM)")
-abline(h=avg.archivedDNA.neg, col="gray")
-abline(h=2, col="red")
+abline(h=avg.archivedDNA.neg, col="gray", lwd=1.5)
+abline(h=2, col="red", lwd=1.5)
 rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.2), border=NA)
 legend("top", legend=c("DNA","Frozen","FFPE"), col = c("darkgreen","orange","cyan"),
 	xpd=T, inset = -0.1, ncol=3, pch=16)
-legend("topright", legend=c("HPV- Mean","qPCR Flag"),
-		col=c("gray","red"), lwd=1)
+legend("topright", legend=c("HPV- Mean","qPCR Filter"),
+		col=c("gray","red"), lwd=1.5)
 
 	cor.coef = cor(percent.human, qPCR)
 	fit=lm(qPCR ~ percent.human)
@@ -102,7 +102,7 @@ rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=0:3, col = c("gray","black","orange","red"),
 	xpd=T, inset = -0.2, ncol=4, pch=16, cex=0.8)
 legend("topright",
-		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		legend=c("Archived DNA HPV- Mean","qPCR Filter"),
 		col=c("gray","red"), lwd=1, cex=0.6)
 
 #color by HPV58 status (all)
@@ -116,7 +116,7 @@ rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=c("HPV58-","HPV58+"), col = c("black","red"),
 	xpd=T, inset = -0.2, ncol=2, pch=16, cex=0.8)
 legend("topright",
-		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		legend=c("Archived DNA HPV- Mean","qPCR Filter"),
 		col=c("gray","red"), lwd=1, cex=0.6)
 		
 #plot FFPE
@@ -137,7 +137,7 @@ rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=0:3, col = c("gray","black","orange","red"),
 	xpd=T, inset = -0.2, ncol=4, pch=16, cex=0.8)
 legend("topright",
-		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		legend=c("Archived DNA HPV- Mean","qPCR Filter"),
 		col=c("gray","red"), lwd=1, cex=0.6)
 	
 #color by HPV58 status (FFPE)
@@ -151,6 +151,6 @@ rect(-20, -10, 120, 2, col=rgb(red=1, green=0, blue=0, alpha=0.1), border=NA)
 legend("top", legend=c("HPV58-","HPV58+"), col = c("black","red"),
 	xpd=T, inset = -0.2, ncol=2, pch=16, cex=0.8)
 legend("topright",
-		legend=c("Archived DNA HPV- Mean","qPCR Flag"),
+		legend=c("Archived DNA HPV- Mean","qPCR Filter"),
 		col=c("gray","red"), lwd=1, cex=0.6)
 dev.off()
