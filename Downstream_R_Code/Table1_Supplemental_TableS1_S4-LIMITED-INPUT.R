@@ -9,11 +9,6 @@ get.igcid = function(char.name){
 ### 161206 --> Frozen  											      					  	 ###
 ### 170118 --> FFPE  											     					  	 ###
 ### These refer to folder locations.  Addititional FFPE batches defined from FASTQ files. 	 ###
-###																						  	 ###
-###	Manually change "pairID" to "Frozen pairID"												 ###
-###	Manually change "extra.pairID" to "Expanded / QC Array Pair ID"						  	 ###
-###																						  	 ###
-###	Delete CLN / IGC ID and other extra names (redundancies to troubleshoot code).        	 ###
 ################################################################################################
 
 #############################################################################################
@@ -734,11 +729,29 @@ for (i in 1:nrow(output.table)){
 	}#end else
 }#end for (i in 1:nrow(output.table))
 
+###################################################################################################
+###     ~~~~~~ Added code to automatically make additional formatting changes ~~~~~~			###
+###     																						###
+###     																						###
+###	Previously, manually changed "pairID" to "Frozen pairID"							        ###
+###	Previously, manually changed "extra.pairID" to "Expanded / QC Array Pair ID"			    ###
+###																						  	    ###
+###	Previously, deleted CLN / IGC ID and other extra names (redundancies to troubleshoot code). ###
+###################################################################################################
+
 output.table = data.frame(output.table[,1:5], consent.status, output.table[,6:ncol(output.table)])
+
+#I believe "partialQCarray.pair"1 would have otherwise been "pair8"
+#So, re-number pairs after adding QC array pairs.
+print(head(output.table))
+output.table$extra.pairID = as.character(output.table$extra.pairID)
+output.table$extra.pairID[output.table$extra.pairID == "pair9"]="pair8"
+output.table$extra.pairID[output.table$extra.pairID == "pair10"]="pair9"
+output.table$extra.pairID[output.table$extra.pairID == "pair11"]="pair10"
 
 output.table = as.matrix(output.table)
 
-new.cols = c("Sample ID","Sample Type","Tissue Type","Histological Subtype","Collection Year","Consent Notes","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported Pair ID","QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
+new.cols = c("Sample ID","Sample Type","Tissue Type","Histological Subtype","Collection Year","Consent Notes","Patient Age","Reported Race","Percentage of Off-Target Human Reads","Percentage of HPV-Aligned Reads","Overall HPV Status","HPV Genotype","Percentage of Specific HPV Genotype Reads","Previous HPV Genotype","Amplified DNA Concentration(qPCR, nM)","L1 Median Human Insert Size(base pairs)","L1 Maximum Human Insert Size (base pairs)","Reported.Pair.ID","Reported + QC Array Pair ID","QC Array Call Rate","Primary ADMIXTURE Super-Population Assignment","Mixed ADMIXTURE Super-Population Assignment","Bootstrap Super-Population Assignment","Sequencing Barcode","Run Information","Total Reads")
 colnames(output.table)=new.cols
 
 #print(head(output.table))
@@ -747,5 +760,8 @@ output.table[,"Overall HPV Status"][output.table[,"Overall HPV Status"] == "qPCR
 output.table[,"HPV Genotype"][output.table[,"HPV Genotype"] == "qPCR Flag"]="qPCR Filter"
 output.table[,"Percentage of Specific HPV Genotype Reads"][output.table[,"Percentage of Specific HPV Genotype Reads"] == "qPCR Flag"]="qPCR Filter"
 
+print(dim(output.table))
+output.table = output.table[,colnames(output.table) != "Reported.Pair.ID"]
+print(dim(output.table))
 
 write.table(output.table,"Supplemental_Table_S1.txt", quote=F, sep="\t", row.names=F)
