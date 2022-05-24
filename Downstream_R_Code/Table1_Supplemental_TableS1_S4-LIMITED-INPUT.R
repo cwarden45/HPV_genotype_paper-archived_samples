@@ -4,7 +4,7 @@ get.igcid = function(char.name){
 }#end def get.igcid
 
 ################################################################################################
-### If the correct file is generated lsat, there should already be reformatting for Table S1 ###
+### If the correct file is generated lst, there should already be reformatting for Table S1 ###
 ### 161007 --> DNA  											      					  	 ###
 ### 161206 --> Frozen  											      					  	 ###
 ### 170118 --> FFPE  											     					  	 ###
